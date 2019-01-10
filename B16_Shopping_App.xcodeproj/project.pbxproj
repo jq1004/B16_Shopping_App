@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		D27142D121E7E2BC00F127A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D27142D021E7E2BC00F127A0 /* AppDelegate.m */; };
-		D27142D421E7E2BC00F127A0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27142D321E7E2BC00F127A0 /* ViewController.m */; };
 		D27142D721E7E2BC00F127A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27142D521E7E2BC00F127A0 /* Main.storyboard */; };
 		D27142D921E7E2BE00F127A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D27142D821E7E2BE00F127A0 /* Assets.xcassets */; };
 		D27142DC21E7E2BE00F127A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27142DA21E7E2BE00F127A0 /* LaunchScreen.storyboard */; };
 		D27142DF21E7E2BE00F127A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D27142DE21E7E2BE00F127A0 /* main.m */; };
+		D2E09F2E21E7F43F00F14D43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E09F2D21E7F43F00F14D43 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D27142CC21E7E2BC00F127A0 /* B16_Shopping_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = B16_Shopping_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27142CF21E7E2BC00F127A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D27142D021E7E2BC00F127A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D27142D221E7E2BC00F127A0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D27142D321E7E2BC00F127A0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D27142D621E7E2BC00F127A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D27142D821E7E2BE00F127A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D27142DB21E7E2BE00F127A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D27142DD21E7E2BE00F127A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D27142DE21E7E2BE00F127A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D2E09F2C21E7F43F00F14D43 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D2E09F2D21E7F43F00F14D43 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,17 +58,65 @@
 		D27142CE21E7E2BC00F127A0 /* B16_Shopping_App */ = {
 			isa = PBXGroup;
 			children = (
-				D27142CF21E7E2BC00F127A0 /* AppDelegate.h */,
-				D27142D021E7E2BC00F127A0 /* AppDelegate.m */,
-				D27142D221E7E2BC00F127A0 /* ViewController.h */,
-				D27142D321E7E2BC00F127A0 /* ViewController.m */,
-				D27142D521E7E2BC00F127A0 /* Main.storyboard */,
-				D27142D821E7E2BE00F127A0 /* Assets.xcassets */,
-				D27142DA21E7E2BE00F127A0 /* LaunchScreen.storyboard */,
-				D27142DD21E7E2BE00F127A0 /* Info.plist */,
-				D27142DE21E7E2BE00F127A0 /* main.m */,
+				D2D1514321E7F765009B3087 /* Main */,
+				D2D1514221E7F753009B3087 /* Resources */,
+				D2E09F3321E7F69300F14D43 /* Supporting Files */,
+				D2E09F3221E7F67A00F14D43 /* Storyboard */,
+				D2E09F3121E7F64700F14D43 /* AppDelegate */,
+				D2E09F3021E7F60000F14D43 /* Signup & Login */,
 			);
 			path = B16_Shopping_App;
+			sourceTree = "<group>";
+		};
+		D2D1514221E7F753009B3087 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D27142D821E7E2BE00F127A0 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D2D1514321E7F765009B3087 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D27142DE21E7E2BE00F127A0 /* main.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D2E09F3021E7F60000F14D43 /* Signup & Login */ = {
+			isa = PBXGroup;
+			children = (
+				D2E09F2C21E7F43F00F14D43 /* LoginViewController.h */,
+				D2E09F2D21E7F43F00F14D43 /* LoginViewController.m */,
+			);
+			path = "Signup & Login";
+			sourceTree = "<group>";
+		};
+		D2E09F3121E7F64700F14D43 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D27142CF21E7E2BC00F127A0 /* AppDelegate.h */,
+				D27142D021E7E2BC00F127A0 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D2E09F3221E7F67A00F14D43 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D27142D521E7E2BC00F127A0 /* Main.storyboard */,
+				D27142DA21E7E2BE00F127A0 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		D2E09F3321E7F69300F14D43 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D27142DD21E7E2BE00F127A0 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D27142D421E7E2BC00F127A0 /* ViewController.m in Sources */,
+				D2E09F2E21E7F43F00F14D43 /* LoginViewController.m in Sources */,
 				D27142DF21E7E2BE00F127A0 /* main.m in Sources */,
 				D27142D121E7E2BC00F127A0 /* AppDelegate.m in Sources */,
 			);
