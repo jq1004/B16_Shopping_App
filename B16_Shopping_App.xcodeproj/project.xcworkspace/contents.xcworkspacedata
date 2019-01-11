@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:B16_Shopping_App.xcodeproj">
+      location = "group:../B16_Shopping_App/Services">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9F3A6A321E9119E00E5EA8A /* APIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3A6A021E9119D00E5EA8A /* APIHandler.m */; };
+		B9F3A6A421E9119E00E5EA8A /* APIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3A6A121E9119D00E5EA8A /* APIParser.m */; };
 		D27142D121E7E2BC00F127A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D27142D021E7E2BC00F127A0 /* AppDelegate.m */; };
 		D27142D721E7E2BC00F127A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27142D521E7E2BC00F127A0 /* Main.storyboard */; };
 		D27142D921E7E2BE00F127A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D27142D821E7E2BE00F127A0 /* Assets.xcassets */; };
@@ -16,6 +18,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B9F3A69F21E9119D00E5EA8A /* APIParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIParser.h; sourceTree = "<group>"; };
+		B9F3A6A021E9119D00E5EA8A /* APIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIHandler.m; sourceTree = "<group>"; };
+		B9F3A6A121E9119D00E5EA8A /* APIParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIParser.m; sourceTree = "<group>"; };
+		B9F3A6A221E9119D00E5EA8A /* APIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIHandler.h; sourceTree = "<group>"; };
+		B9F3A6A621E911BE00E5EA8A /* B16_Shopping_App_PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = B16_Shopping_App_PrefixHeader.pch; sourceTree = "<group>"; };
+		B9F3A6A721E911BE00E5EA8A /* B16_Shopping_App_Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = B16_Shopping_App_Constants.h; sourceTree = "<group>"; };
 		D27142CC21E7E2BC00F127A0 /* B16_Shopping_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = B16_Shopping_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27142CF21E7E2BC00F127A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D27142D021E7E2BC00F127A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -39,6 +47,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B9F3A69E21E9119D00E5EA8A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B9F3A69F21E9119D00E5EA8A /* APIParser.h */,
+				B9F3A6A121E9119D00E5EA8A /* APIParser.m */,
+				B9F3A6A221E9119D00E5EA8A /* APIHandler.h */,
+				B9F3A6A021E9119D00E5EA8A /* APIHandler.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B9F3A6A521E911BE00E5EA8A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B9F3A6A621E911BE00E5EA8A /* B16_Shopping_App_PrefixHeader.pch */,
+				B9F3A6A721E911BE00E5EA8A /* B16_Shopping_App_Constants.h */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		D27142C321E7E2BC00F127A0 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +86,8 @@
 		D27142CE21E7E2BC00F127A0 /* B16_Shopping_App */ = {
 			isa = PBXGroup;
 			children = (
+				B9F3A6A521E911BE00E5EA8A /* Utilities */,
+				B9F3A69E21E9119D00E5EA8A /* Services */,
 				D2D1514321E7F765009B3087 /* Main */,
 				D2D1514221E7F753009B3087 /* Resources */,
 				D2E09F3321E7F69300F14D43 /* Supporting Files */,
@@ -190,8 +220,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2E09F2E21E7F43F00F14D43 /* LoginViewController.m in Sources */,
+				B9F3A6A421E9119E00E5EA8A /* APIParser.m in Sources */,
 				D27142DF21E7E2BE00F127A0 /* main.m in Sources */,
 				D27142D121E7E2BC00F127A0 /* AppDelegate.m in Sources */,
+				B9F3A6A321E9119E00E5EA8A /* APIHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,8 +366,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A9AX43D7M6;
-				INFOPLIST_FILE = B16_Shopping_App/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Utilities/B16_Shopping_App_PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/B16_Shopping_App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,8 +385,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A9AX43D7M6;
-				INFOPLIST_FILE = B16_Shopping_App/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Utilities/B16_Shopping_App_PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/B16_Shopping_App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,0 +1,14 @@
+//
+//  B16_Shopping_App_PrefixHeader.pch
+//  B16_Shopping_App
+//
+//  Created by Da Chen on 1/11/19.
+//  Copyright © 2019 Da Chen. All rights reserved.
+//
+
+#ifndef B16_Shopping_App_PrefixHeader_pch
+#define B16_Shopping_App_PrefixHeader_pch
+
+#import "B16_Shopping_App_Constants.h"
+
+#endif /* B16_Shopping_App_PrefixHeader_pch */

@@ -15,7 +15,6 @@
 
 @implementation APIHandler
 
-
 + (instancetype)sharedInstance
 {
     
@@ -29,7 +28,8 @@
     return instance;
 }
 
--(void)signUpAPI: (NSString *)fname : (NSString *)lname : (NSString *)address : (NSString *)password : (NSString *)email : (NSString *)mobile : (void (^) (NSString* response))completionHandler
+
+- (void)signUpUserWithFirstName:(NSString *)fname lastName:(NSString *)lname address:(NSString *)address password:(NSString *)password email:(NSString *)email mobile:(NSString *)mobile completionHandler:(void (^) (NSString *response))completionHandler
 {
     
     NSString *urlstring = [NSString stringWithFormat:@"http://rjtmobile.com/aamir/e-commerce/ios-app/shop_reg.php?fname=%@&lname=%@&address=%@&email=%@&mobile=%@&password=%@",fname,lname,address,email,mobile,password];
@@ -53,7 +53,7 @@
     
 }
 
--(void)updateProfileAPI: (NSString *)fname : (NSString *)lname : (NSString *)address : (NSString *)email : (NSString *)mobile : (void (^) (NSString* response))completionHandler
+- (void)updateProfileUserWithFirstName:(NSString *)fname lastName:(NSString *)lname address:(NSString *)address email:(NSString *)email mobile:(NSString *)mobile completionHandler:(void (^) (NSString *response))completionHandler
 {
     
     NSString *urlstring = [NSString stringWithFormat:@"http://rjtmobile.com/aamir/e-commerce/ios-app/edit_profile.php?fname=%@&lname=%@&address=%@&email=%@&mobile=%@",fname,lname,address,email,mobile];
@@ -74,6 +74,21 @@
         }
     }];
     [datatask resume];
+}
+
+- (void)loginUserWithPhone:(NSString *)phoneNumber password:(NSString *)password
+{
+    NSString *strURL = [NSString stringWithFormat:@"%@mobile=%@&password=%@", kLOGINAPI, phoneNumber, password];
+    NSURL *url = [NSURL URLWithString:strURL];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        NSLog(@"%@", data);
+    }];
+    [dataTask resume];
     
 }
 

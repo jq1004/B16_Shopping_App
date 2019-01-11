@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "APIHandler.h"
 
 @interface LoginViewController ()
 
@@ -16,7 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+}
+
+- (IBAction)login:(id)sender {
+    NSString *phone = _phoneText.text;
+    NSString *pwd = _password.text;
+    [[APIHandler sharedInstance] loginUserWithPhone:phone password:pwd];
 }
 
 @end

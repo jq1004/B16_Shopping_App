@@ -10,7 +10,12 @@
 
 @interface APIHandler : NSObject
 
-+(instancetype)sharedInstance;
--(void)signUpAPI: (NSString *)fname : (NSString *)lname : (NSString *)address : (NSString *)password : (NSString *)email : (NSString *)mobile : (void (^) (NSString* response))completionHandler;
--(void)updateProfileAPI: (NSString *)fname : (NSString *)lname : (NSString *)address : (NSString *)email : (NSString *)mobile : (void (^) (NSString* response))completionHandler;
++ (instancetype)sharedInstance;
+
+- (void)signUpUserWithFirstName:(NSString *)fname lastName:(NSString *)lname address:(NSString *)address password:(NSString *)password email:(NSString *)email mobile:(NSString *)mobile completionHandler:(void (^) (NSString *response))completionHandler;
+
+- (void)updateProfileUserWithFirstName:(NSString *)fname lastName:(NSString *)lname address:(NSString *)address email:(NSString *)email mobile:(NSString *)mobile completionHandler:(void (^) (NSString *response))completionHandler;
+
+- (void)loginUserWithPhone:(NSString *)phoneNumber password:(NSString *)password;
+
 @end
