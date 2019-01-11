@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		454B884921E9419000DF190F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454B884721E9419000DF190F /* Main.storyboard */; };
+		454B885421E941AA00DF190F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B884C21E941A900DF190F /* HomeViewController.m */; };
+		454B885521E941AA00DF190F /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B884E21E941A900DF190F /* MyOrderViewController.m */; };
+		454B885621E941AA00DF190F /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B885021E941A900DF190F /* UserProfileViewController.m */; };
+		454B885721E941AA00DF190F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B885121E941A900DF190F /* MenuViewController.m */; };
 		D27142D121E7E2BC00F127A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D27142D021E7E2BC00F127A0 /* AppDelegate.m */; };
-		D27142D721E7E2BC00F127A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27142D521E7E2BC00F127A0 /* Main.storyboard */; };
 		D27142D921E7E2BE00F127A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D27142D821E7E2BE00F127A0 /* Assets.xcassets */; };
 		D27142DC21E7E2BE00F127A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27142DA21E7E2BE00F127A0 /* LaunchScreen.storyboard */; };
 		D27142DF21E7E2BE00F127A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D27142DE21E7E2BE00F127A0 /* main.m */; };
@@ -16,10 +20,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		454B884821E9419000DF190F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		454B884B21E941A900DF190F /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		454B884C21E941A900DF190F /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		454B884D21E941A900DF190F /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		454B884E21E941A900DF190F /* MyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
+		454B884F21E941A900DF190F /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		454B885021E941A900DF190F /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
+		454B885121E941A900DF190F /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		454B885221E941A900DF190F /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
 		D27142CC21E7E2BC00F127A0 /* B16_Shopping_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = B16_Shopping_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27142CF21E7E2BC00F127A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D27142D021E7E2BC00F127A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D27142D621E7E2BC00F127A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D27142D821E7E2BE00F127A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D27142DB21E7E2BE00F127A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D27142DD21E7E2BE00F127A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -39,6 +51,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		454B884A21E941A900DF190F /* BuyerVCs */ = {
+			isa = PBXGroup;
+			children = (
+				454B884B21E941A900DF190F /* UserProfileViewController.h */,
+				454B884C21E941A900DF190F /* HomeViewController.m */,
+				454B884D21E941A900DF190F /* MenuViewController.h */,
+				454B884E21E941A900DF190F /* MyOrderViewController.m */,
+				454B884F21E941A900DF190F /* HomeViewController.h */,
+				454B885021E941A900DF190F /* UserProfileViewController.m */,
+				454B885121E941A900DF190F /* MenuViewController.m */,
+				454B885221E941A900DF190F /* MyOrderViewController.h */,
+			);
+			path = BuyerVCs;
+			sourceTree = "<group>";
+		};
+		454B885321E941A900DF190F /* SellerVCs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SellerVCs;
+			sourceTree = "<group>";
+		};
 		D27142C321E7E2BC00F127A0 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +92,8 @@
 		D27142CE21E7E2BC00F127A0 /* B16_Shopping_App */ = {
 			isa = PBXGroup;
 			children = (
+				454B884A21E941A900DF190F /* BuyerVCs */,
+				454B885321E941A900DF190F /* SellerVCs */,
 				D2D1514321E7F765009B3087 /* Main */,
 				D2D1514221E7F753009B3087 /* Resources */,
 				D2E09F3321E7F69300F14D43 /* Supporting Files */,
@@ -105,7 +141,7 @@
 		D2E09F3221E7F67A00F14D43 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				D27142D521E7E2BC00F127A0 /* Main.storyboard */,
+				454B884721E9419000DF190F /* Main.storyboard */,
 				D27142DA21E7E2BE00F127A0 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
@@ -176,9 +212,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454B884921E9419000DF190F /* Main.storyboard in Resources */,
 				D27142DC21E7E2BE00F127A0 /* LaunchScreen.storyboard in Resources */,
 				D27142D921E7E2BE00F127A0 /* Assets.xcassets in Resources */,
-				D27142D721E7E2BC00F127A0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,17 +227,21 @@
 			files = (
 				D2E09F2E21E7F43F00F14D43 /* LoginViewController.m in Sources */,
 				D27142DF21E7E2BE00F127A0 /* main.m in Sources */,
+				454B885521E941AA00DF190F /* MyOrderViewController.m in Sources */,
+				454B885621E941AA00DF190F /* UserProfileViewController.m in Sources */,
+				454B885721E941AA00DF190F /* MenuViewController.m in Sources */,
 				D27142D121E7E2BC00F127A0 /* AppDelegate.m in Sources */,
+				454B885421E941AA00DF190F /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D27142D521E7E2BC00F127A0 /* Main.storyboard */ = {
+		454B884721E9419000DF190F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D27142D621E7E2BC00F127A0 /* Base */,
+				454B884821E9419000DF190F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
