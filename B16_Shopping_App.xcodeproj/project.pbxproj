@@ -66,13 +66,6 @@
 			path = BuyerVCs;
 			sourceTree = "<group>";
 		};
-		454B885321E941A900DF190F /* SellerVCs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SellerVCs;
-			sourceTree = "<group>";
-		};
 		D27142C321E7E2BC00F127A0 = {
 			isa = PBXGroup;
 			children = (
@@ -93,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				454B884A21E941A900DF190F /* BuyerVCs */,
-				454B885321E941A900DF190F /* SellerVCs */,
 				D2D1514321E7F765009B3087 /* Main */,
 				D2D1514221E7F753009B3087 /* Resources */,
 				D2E09F3321E7F69300F14D43 /* Supporting Files */,
