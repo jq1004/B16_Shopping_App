@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "APIHandler.h"
+#import "APIParser.h"
 
 @interface LoginViewController ()
 
@@ -22,7 +23,9 @@
 - (IBAction)login:(id)sender {
     NSString *phone = _phoneText.text;
     NSString *pwd = _password.text;
-    [[APIHandler sharedInstance] loginUserWithPhone:phone password:pwd];
+    [[APIHandler sharedInstance] loginApiCall:phone password:pwd withCompletion:^(NSData* result, NSError* error) {
+        [[APIParser sharedInstance] loginParser:result andError:error]; 
+    }];
 }
 
 @end

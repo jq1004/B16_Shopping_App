@@ -16,6 +16,8 @@
 
 - (void)updateProfileUserWithFirstName:(NSString *)fname lastName:(NSString *)lname address:(NSString *)address email:(NSString *)email mobile:(NSString *)mobile completionHandler:(void (^) (NSString *response))completionHandler;
 
-- (void)loginUserWithPhone:(NSString *)phoneNumber password:(NSString *)password;
+- (void)loginApiCall:(NSString *)phoneNumber password:(NSString *)pwd withCompletion:(void (^)(NSData *result, NSError *error))block;
+
+- (void)forgetPwdApiCall:(NSString *)email withCompletion:(void (^)(NSError *error))block;
 
 @end

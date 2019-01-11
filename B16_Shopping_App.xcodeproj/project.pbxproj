@@ -14,6 +14,7 @@
 		D27142D921E7E2BE00F127A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D27142D821E7E2BE00F127A0 /* Assets.xcassets */; };
 		D27142DC21E7E2BE00F127A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27142DA21E7E2BE00F127A0 /* LaunchScreen.storyboard */; };
 		D27142DF21E7E2BE00F127A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D27142DE21E7E2BE00F127A0 /* main.m */; };
+		D275706821E92CD20047A2D6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D275706721E92CD20047A2D6 /* UserInfo.m */; };
 		D2E09F2E21E7F43F00F14D43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E09F2D21E7F43F00F14D43 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,8 @@
 		D27142DB21E7E2BE00F127A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D27142DD21E7E2BE00F127A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D27142DE21E7E2BE00F127A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D275706621E92CD20047A2D6 /* UserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		D275706721E92CD20047A2D6 /* UserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		D2E09F2C21E7F43F00F14D43 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D2E09F2D21E7F43F00F14D43 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +89,7 @@
 		D27142CE21E7E2BC00F127A0 /* B16_Shopping_App */ = {
 			isa = PBXGroup;
 			children = (
+				D275706521E92CB90047A2D6 /* Models */,
 				B9F3A6A521E911BE00E5EA8A /* Utilities */,
 				B9F3A69E21E9119D00E5EA8A /* Services */,
 				D2D1514321E7F765009B3087 /* Main */,
@@ -96,6 +100,15 @@
 				D2E09F3021E7F60000F14D43 /* Signup & Login */,
 			);
 			path = B16_Shopping_App;
+			sourceTree = "<group>";
+		};
+		D275706521E92CB90047A2D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D275706621E92CD20047A2D6 /* UserInfo.h */,
+				D275706721E92CD20047A2D6 /* UserInfo.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D2D1514221E7F753009B3087 /* Resources */ = {
@@ -223,6 +236,7 @@
 				B9F3A6A421E9119E00E5EA8A /* APIParser.m in Sources */,
 				D27142DF21E7E2BE00F127A0 /* main.m in Sources */,
 				D27142D121E7E2BC00F127A0 /* AppDelegate.m in Sources */,
+				D275706821E92CD20047A2D6 /* UserInfo.m in Sources */,
 				B9F3A6A321E9119E00E5EA8A /* APIHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

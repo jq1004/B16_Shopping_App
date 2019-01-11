@@ -76,20 +76,30 @@
     [datatask resume];
 }
 
-- (void)loginUserWithPhone:(NSString *)phoneNumber password:(NSString *)password
-{
-    NSString *strURL = [NSString stringWithFormat:@"%@mobile=%@&password=%@", kLOGINAPI, phoneNumber, password];
+- (void)loginApiCall:(NSString *)phoneNumber password:(NSString *)pwd withCompletion:(void (^)(NSData *result, NSError *error))block {
+    NSString *strURL = [NSString stringWithFormat:@"%@mobile=%@&password=%@", kLOGINAPI, phoneNumber, pwd];
     NSURL *url = [NSURL URLWithString:strURL];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"GET"];
     
     NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
-        NSLog(@"%@", data);
+        block(data, error);
     }];
     [dataTask resume];
+}
+
+- (void)forgetPwdApiCall:(NSString *)email withCompletion:(void (^)(NSError *))block {
+    NSString *strURL = [NSString stringWithFormat:@"%@email=%@", kLOGINAPI, email];
+    NSURL *url = [NSURL URLWithString:strURL];
     
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        block(error);
+    }];
+    [dataTask resume];
 }
 
 @end

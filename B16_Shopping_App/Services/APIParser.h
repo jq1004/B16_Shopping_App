@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserInfo.h"
 
 @interface APIParser : NSObject
 
 +(instancetype)sharedInstance;
+
+- (UserInfo *)loginParser:(NSData *)userDetail andError:(NSError *)error;
 
 @end

@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../B16_Shopping_App/Services">
-   </FileRef>
-   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>
