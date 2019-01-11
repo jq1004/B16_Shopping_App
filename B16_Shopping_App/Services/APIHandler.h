@@ -10,6 +10,8 @@
 
 @interface APIHandler : NSObject
 
-+(instancetype)sharedInstance;
++ (instancetype)sharedInstance;
+
+- (void) loginApiCall:(NSString *)phoneNumber password:(NSString *)pwd;
 
 @end

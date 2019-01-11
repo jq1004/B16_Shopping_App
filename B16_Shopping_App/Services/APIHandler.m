@@ -15,7 +15,6 @@
 
 @implementation APIHandler
 
-
 + (instancetype)sharedInstance
 {
     
@@ -27,6 +26,20 @@
     });
     
     return instance;
+}
+
+- (void) loginApiCall:(NSString *)phoneNumber password:(NSString *)pwd {
+    NSString *strURL = [NSString stringWithFormat:@"%@mobile=%@&password=%@", kLOGINAPI, phoneNumber, pwd];
+    NSURL *url = [NSURL URLWithString:strURL];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        NSLog(@"%@", data);
+    }];
+    [dataTask resume];
 }
 
 @end

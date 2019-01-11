@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "APIHandler.h"
 
 @interface LoginViewController ()
 
@@ -19,24 +20,12 @@
 }
 
 - (IBAction)login:(id)sender {
-    [self tempApiCall];
+    [self callApi];
 }
 
-- (void) tempApiCall {
-    // Make api call
+- (void) callApi {
     NSString *phone = _phoneText.text;
     NSString *pwd = _password.text;
-    // Constant header
-    NSString *strURL = [NSString stringWithFormat:@"%@mobile=%@&password=%@", kLOGINAPI, phone, pwd];
-    NSURL *url = [NSURL URLWithString:strURL];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"GET"];
-    
-    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
-        NSLog(@"%@", data);
-    }];
-    [dataTask resume];
+    [[APIHandler sharedInstance] loginApiCall:phone password:pwd];
 }
 @end
