@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43A2495A21E959AA00E828E3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A2495821E958EA00E828E3 /* SWRevealViewController.m */; };
+		103CED62325F76F948C059CA /* libPods-B16_Shopping_App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A37915627B697F02D242AAD /* libPods-B16_Shopping_App.a */; };
 		454B884921E9419000DF190F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454B884721E9419000DF190F /* Main.storyboard */; };
 		454B885421E941AA00DF190F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B884C21E941A900DF190F /* HomeViewController.m */; };
 		454B885521E941AA00DF190F /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B884E21E941A900DF190F /* MyOrderViewController.m */; };
@@ -26,8 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		43A2495721E958EA00E828E3 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		43A2495821E958EA00E828E3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		1626AD7A4CF65F3D35D93007 /* Pods-B16_Shopping_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B16_Shopping_App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-B16_Shopping_App/Pods-B16_Shopping_App.debug.xcconfig"; sourceTree = "<group>"; };
+		2A37915627B697F02D242AAD /* libPods-B16_Shopping_App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-B16_Shopping_App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31CCEB0A085BF88D7ECDADAA /* Pods-B16_Shopping_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B16_Shopping_App.release.xcconfig"; path = "Pods/Target Support Files/Pods-B16_Shopping_App/Pods-B16_Shopping_App.release.xcconfig"; sourceTree = "<group>"; };
 		454B884821E9419000DF190F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		454B884B21E941A900DF190F /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
 		454B884C21E941A900DF190F /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				103CED62325F76F948C059CA /* libPods-B16_Shopping_App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,8 +76,6 @@
 		43A2495621E958EA00E828E3 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				43A2495721E958EA00E828E3 /* SWRevealViewController.h */,
-				43A2495821E958EA00E828E3 /* SWRevealViewController.m */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -93,6 +93,15 @@
 				454B884E21E941A900DF190F /* MyOrderViewController.m */,
 			);
 			path = BuyerVCs;
+			sourceTree = "<group>";
+		};
+		4AFD5D99957B13E0A37071C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1626AD7A4CF65F3D35D93007 /* Pods-B16_Shopping_App.debug.xcconfig */,
+				31CCEB0A085BF88D7ECDADAA /* Pods-B16_Shopping_App.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		B9F3A69E21E9119D00E5EA8A /* Services */ = {
@@ -115,11 +124,21 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		BE78D32CAF14B57D2D239172 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A37915627B697F02D242AAD /* libPods-B16_Shopping_App.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D27142C321E7E2BC00F127A0 = {
 			isa = PBXGroup;
 			children = (
 				D27142CE21E7E2BC00F127A0 /* B16_Shopping_App */,
 				D27142CD21E7E2BC00F127A0 /* Products */,
+				4AFD5D99957B13E0A37071C6 /* Pods */,
+				BE78D32CAF14B57D2D239172 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,6 +247,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D27142E221E7E2BE00F127A0 /* Build configuration list for PBXNativeTarget "B16_Shopping_App" */;
 			buildPhases = (
+				C9B038E5ECD0B51DBD046449 /* [CP] Check Pods Manifest.lock */,
 				D27142C821E7E2BC00F127A0 /* Sources */,
 				D27142C921E7E2BC00F127A0 /* Frameworks */,
 				D27142CA21E7E2BC00F127A0 /* Resources */,
@@ -286,12 +306,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C9B038E5ECD0B51DBD046449 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-B16_Shopping_App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D27142C821E7E2BC00F127A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43A2495A21E959AA00E828E3 /* SWRevealViewController.m in Sources */,
 				D2E09F2E21E7F43F00F14D43 /* LoginViewController.m in Sources */,
 				D2C4751221E97B9F00428E67 /* SignUpViewController.m in Sources */,
 				B9F3A6A421E9119E00E5EA8A /* APIParser.m in Sources */,
@@ -443,6 +487,7 @@
 		};
 		D27142E321E7E2BE00F127A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1626AD7A4CF65F3D35D93007 /* Pods-B16_Shopping_App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -462,6 +507,7 @@
 		};
 		D27142E421E7E2BE00F127A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31CCEB0A085BF88D7ECDADAA /* Pods-B16_Shopping_App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

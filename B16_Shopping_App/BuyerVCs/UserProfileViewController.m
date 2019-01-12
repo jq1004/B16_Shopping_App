@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *mobileTxtF;
 @property (weak, nonatomic) IBOutlet UITextField *emailTxtF;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBtn;
+
 
 @end
 
@@ -27,8 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _menuBarBtn.target = self.revealViewController;
-    _menuBarBtn.action = @selector(revealToggle:);
+    _menuBtn.target = self.revealViewController;
+    _menuBtn.action = @selector(revealToggle:);
     
     _userProfileImgView.layer.borderWidth = 2;
     _userProfileImgView.layer.borderColor = [UIColor colorWithRed:1.00 green:0.23 blue:0.82 alpha:1.0].CGColor;
