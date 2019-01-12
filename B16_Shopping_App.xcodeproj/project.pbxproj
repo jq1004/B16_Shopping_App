@@ -20,6 +20,8 @@
 		D27142DC21E7E2BE00F127A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27142DA21E7E2BE00F127A0 /* LaunchScreen.storyboard */; };
 		D27142DF21E7E2BE00F127A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D27142DE21E7E2BE00F127A0 /* main.m */; };
 		D275706821E92CD20047A2D6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D275706721E92CD20047A2D6 /* UserInfo.m */; };
+		D2C4751221E97B9F00428E67 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C4751121E97B9F00428E67 /* SignUpViewController.m */; };
+		D2C4751621E97E4500428E67 /* UIViewController+UIViewControllerCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C4751521E97E4500428E67 /* UIViewController+UIViewControllerCategory.m */; };
 		D2E09F2E21E7F43F00F14D43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E09F2D21E7F43F00F14D43 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,10 @@
 		D27142DE21E7E2BE00F127A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D275706621E92CD20047A2D6 /* UserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		D275706721E92CD20047A2D6 /* UserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		D2C4751021E97B9F00428E67 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		D2C4751121E97B9F00428E67 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		D2C4751421E97E4500428E67 /* UIViewController+UIViewControllerCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UIViewControllerCategory.h"; sourceTree = "<group>"; };
+		D2C4751521E97E4500428E67 /* UIViewController+UIViewControllerCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UIViewControllerCategory.m"; sourceTree = "<group>"; };
 		D2E09F2C21E7F43F00F14D43 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D2E09F2D21E7F43F00F14D43 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +134,7 @@
 		D27142CE21E7E2BC00F127A0 /* B16_Shopping_App */ = {
 			isa = PBXGroup;
 			children = (
+				D2C4751321E97D3900428E67 /* Extensions */,
 				43A2495621E958EA00E828E3 /* Libraries */,
 				454B884A21E941A900DF190F /* BuyerVCs */,
 				D275706521E92CB90047A2D6 /* Models */,
@@ -152,6 +159,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D2C4751321E97D3900428E67 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D2C4751421E97E4500428E67 /* UIViewController+UIViewControllerCategory.h */,
+				D2C4751521E97E4500428E67 /* UIViewController+UIViewControllerCategory.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D2D1514221E7F753009B3087 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +187,8 @@
 		D2E09F3021E7F60000F14D43 /* Signup & Login */ = {
 			isa = PBXGroup;
 			children = (
+				D2C4751021E97B9F00428E67 /* SignUpViewController.h */,
+				D2C4751121E97B9F00428E67 /* SignUpViewController.m */,
 				D2E09F2C21E7F43F00F14D43 /* LoginViewController.h */,
 				D2E09F2D21E7F43F00F14D43 /* LoginViewController.m */,
 			);
@@ -275,8 +293,10 @@
 			files = (
 				43A2495A21E959AA00E828E3 /* SWRevealViewController.m in Sources */,
 				D2E09F2E21E7F43F00F14D43 /* LoginViewController.m in Sources */,
+				D2C4751221E97B9F00428E67 /* SignUpViewController.m in Sources */,
 				B9F3A6A421E9119E00E5EA8A /* APIParser.m in Sources */,
 				D27142DF21E7E2BE00F127A0 /* main.m in Sources */,
+				D2C4751621E97E4500428E67 /* UIViewController+UIViewControllerCategory.m in Sources */,
 				454B885521E941AA00DF190F /* MyOrderViewController.m in Sources */,
 				454B885621E941AA00DF190F /* UserProfileViewController.m in Sources */,
 				454B885721E941AA00DF190F /* MenuViewController.m in Sources */,

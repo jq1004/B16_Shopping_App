@@ -29,15 +29,19 @@
     return instance;
 }
 
-- (UserInfo *)loginParser:(NSData *)userDetail andError:(NSError *)error {
+- (UserInfo *)loginParser:(NSData *)userDetail andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError))block {
     UserInfo *userInfo = nil;
     NSArray *userInfoJson = [NSJSONSerialization JSONObjectWithData: userDetail options: NSJSONReadingMutableContainers error: &error];
 
     if (!userInfoJson || error) {
         NSLog(@"Error parsing JSON: %@", error);
+        block(true);
     } else {
         NSLog(@"%@", userInfoJson[0][@"id"]); 
         userInfo = [[UserInfo alloc] initWithInfo:userInfoJson[0][@"id"] andFirstName:userInfoJson[0][@"firstname"] andLastName:userInfoJson[0][@"lastname"] andEmail:userInfoJson[0][@"email"] andMobile:userInfoJson[0][@"mobile"] andAppApiKey:userInfoJson[0][@"appapikey "]];
+        [[NSUserDefaults standardUserDefaults] setValue:userInfoJson[0][@"id"] forKey:@"userId"];
+        [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"isLoggedIn"];
+        block(false);
     }
     return userInfo;
 }

@@ -15,8 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITextField *phoneText;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *goToSignUpPageBtn;
 
 - (IBAction)login:(id)sender;
+- (IBAction)goToSignUpPageBtnTapped:(id)sender;
+- (IBAction)forgotPwdBtnTapped:(id)sender;
 
 @end
 

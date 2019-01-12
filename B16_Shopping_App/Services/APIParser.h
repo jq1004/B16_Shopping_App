@@ -13,6 +13,6 @@
 
 +(instancetype)sharedInstance;
 
-- (UserInfo *)loginParser:(NSData *)userDetail andError:(NSError *)error;
+- (UserInfo *)loginParser:(NSData *)userDetail andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError))block;
 
 @end
