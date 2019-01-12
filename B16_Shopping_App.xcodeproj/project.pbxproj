@@ -78,13 +78,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		43A2495621E958EA00E828E3 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Libraries;
-			sourceTree = "<group>";
-		};
 		454B884A21E941A900DF190F /* BuyerVCs */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				D27142CE21E7E2BC00F127A0 /* B16_Shopping_App */,
+				B9BAEEB921EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld */,
 				D27142CD21E7E2BC00F127A0 /* Products */,
 				4AFD5D99957B13E0A37071C6 /* Pods */,
 				BE78D32CAF14B57D2D239172 /* Frameworks */,
@@ -161,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				D2C4751321E97D3900428E67 /* Extensions */,
-				43A2495621E958EA00E828E3 /* Libraries */,
 				454B884A21E941A900DF190F /* BuyerVCs */,
 				D275706521E92CB90047A2D6 /* Models */,
 				B9F3A6A521E911BE00E5EA8A /* Utilities */,
@@ -243,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				D27142DD21E7E2BE00F127A0 /* Info.plist */,
-				B9BAEEB921EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

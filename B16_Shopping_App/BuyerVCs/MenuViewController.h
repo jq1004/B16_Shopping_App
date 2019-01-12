@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MenuViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *profileImgView;
 @property (weak, nonatomic) IBOutlet UITableView *tbv;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLbl;
 
 
 @end

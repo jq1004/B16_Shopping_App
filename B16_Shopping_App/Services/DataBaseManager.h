@@ -8,13 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "UserInfo.h"
 
 @interface DataBaseManager : NSObject
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
+- (NSPersistentContainer *)persistentContainer;
+
 + (instancetype)sharedInstance;
 
 - (void)saveContext;
+
+- (void)saveUserWithUser :(UserInfo *)user;
+
+- (Boolean)doesExistWithId :(NSString *)Id;
+
+- (UserInfo*)fetchUserInfoWithId :(NSString *)Id;
 
 @end

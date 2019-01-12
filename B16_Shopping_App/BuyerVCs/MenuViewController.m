@@ -9,8 +9,13 @@
 #import "MenuViewController.h"
 #import "SWRevealViewController.h"
 #import "LoginViewController.h"
+#import "DataBaseManager.h"
+#import "UserInfo.h"
+
 @interface MenuViewController ()<UITableViewDataSource,UITableViewDelegate>{
-     NSArray *menuItems;
+    NSArray *menuItems;
+    NSString *userId;
+    UserInfo *user;
 }
 
 @end
@@ -19,11 +24,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    menuItems = @[@"profile", @"shop", @"myOrder", @"logout"];
-//    [UIImage imageNamed:@"return_journey_denoter.png"];
     
-   
-//    _profileImgView.image = [UIImage imageNamed:@"harry-kane"];
+    menuItems = @[@"profile", @"shop", @"myOrder", @"logout"];
+    
+    userId = [[NSUserDefaults standardUserDefaults] valueForKey:@"userId"];
+    user = [[DataBaseManager sharedInstance] fetchUserInfoWithId:userId];
+    
+    _userNameLbl.text = [NSString stringWithFormat:@"%@ %@", [user valueForKey:@"firstName"][0], [user valueForKey:@"lastName"][0]];
+ 
     _profileImgView.layer.borderWidth = 2;
     _profileImgView.layer.borderColor = [UIColor colorWithRed:1.00 green:0.23 blue:0.82 alpha:1.0].CGColor;
     _profileImgView.layer.cornerRadius = _profileImgView.frame.size.width / 2;
@@ -52,6 +60,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = [indexPath row];
     if (row == 3){
+        [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"isLoggedIn"];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
         [[UIApplication sharedApplication].keyWindow setRootViewController:loginVC];

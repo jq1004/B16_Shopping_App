@@ -33,10 +33,6 @@
 
 @synthesize persistentContainer = _persistentContainer;
 
-//- (NSFetchedResultsController *)fetchedResultsControllerUser {
-//    
-//}
-
 - (NSPersistentContainer *)persistentContainer {
     @synchronized (self) {
         if (_persistentContainer == nil) {
@@ -64,5 +60,55 @@
         abort();
     }
 }
+
+#pragma mark - core Data Access Methods
+
+- (void)saveUserWithUser :(UserInfo *)user
+{
+    NSManagedObject *userEntity = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.persistentContainer.viewContext];
+    [userEntity setValue: user.userId forKey:@"id"];
+    [userEntity setValue: user.firstName forKey:@"firstname"];
+    [userEntity setValue: user.lastName forKey:@"lastname"];
+    [userEntity setValue: user.email forKey:@"email"];
+    [userEntity setValue: user.mobile forKey:@"mobile"];
+    [userEntity setValue: user.appapikey forKey:@"appapikey"];
+    [self saveContext];
+}
+
+- (Boolean)doesExistWithId :(NSString *)Id
+{
+    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@",Id]];
+    
+    NSArray *result = [context executeFetchRequest:request error:nil];
+    
+    if (result.count == 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+- (UserInfo*)fetchUserInfoWithId :(NSString *)Id
+{
+    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+    UserInfo *user;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@",Id]];
+    
+    NSArray *result = [context executeFetchRequest:request error:nil];
+    
+    if (result.count == 1) {
+         user = [[UserInfo alloc] initWithInfo:[result valueForKey:@"id"] andFirstName:[result valueForKey:@"firstname"] andLastName:[result valueForKey:@"lastname"] andEmail:[result valueForKey:@"email"] andMobile:[result valueForKey:@"mobile"] andAppApiKey:[result valueForKey:@"appapikey"]];
+    }
+    
+    
+    return user;
+}
+
+
 
 @end

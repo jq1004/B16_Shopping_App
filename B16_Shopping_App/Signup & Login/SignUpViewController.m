@@ -19,12 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTxtF;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTxtF;
 @property (weak, nonatomic) IBOutlet UITextField *cpwdTxtF;
-@property (weak, nonatomic) IBOutlet UIButton *buyerBtn;
-@property (weak, nonatomic) IBOutlet UIButton *sellerBtn;
-@property (weak, nonatomic) IBOutlet UITextField *taxIdTxtF;
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
-
-@property NSString *UserType;
 
 @end
 
@@ -36,28 +31,11 @@
     
     self.backBtn.layer.borderWidth = 1;
     self.backBtn.layer.borderColor = [UIColor colorWithRed:1.00 green:0.23 blue:0.82 alpha:1.0].CGColor;
-    self.taxIdTxtF.hidden = true;
-    self.sellerBtn.imageView.image = [UIImage imageNamed:@"radioE"];
-    self.UserType = @"Buyer";
-}
-
-- (IBAction)buyerBtnClicked:(UIButton *)sender {
-    self.UserType = @"Buyer";
-    self.buyerBtn.imageView.image = [UIImage imageNamed:@"radioF"];
-    self.sellerBtn.imageView.image = [UIImage imageNamed:@"radioE"];
-    self.taxIdTxtF.hidden = true;
-}
-
-- (IBAction)sellerBtnClicked:(UIButton *)sender {
-    self.UserType = @"Seller";
-    self.buyerBtn.imageView.image = [UIImage imageNamed:@"radioE"];
-    self.sellerBtn.imageView.image = [UIImage imageNamed:@"radioF"];
-    self.taxIdTxtF.hidden = false;
 }
 
 - (IBAction)signUpBtnClicked:(UIButton *)sender {
     
-    if (![self.fnameTxtF.text  isEqual: @""] && ![self.lnameTxtF.text  isEqual: @""] && ![self.mobileTxtF.text  isEqual: @""] && ![self.addressTxtF.text  isEqual: @""] && ![self.emailTxtF.text  isEqual: @""] && ![self.pwdTxtF.text  isEqual: @""] && ![self.cpwdTxtF.text  isEqual: @""] && ![self.UserType  isEqual: @""]) {
+    if (![self.fnameTxtF.text  isEqual: @""] && ![self.lnameTxtF.text  isEqual: @""] && ![self.mobileTxtF.text  isEqual: @""] && ![self.addressTxtF.text  isEqual: @""] && ![self.emailTxtF.text  isEqual: @""] && ![self.pwdTxtF.text  isEqual: @""] && ![self.cpwdTxtF.text  isEqual: @""]) {
         
         if ([self.pwdTxtF.text isEqual: self.cpwdTxtF.text]) {
             
