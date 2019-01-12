@@ -33,20 +33,25 @@
 - (IBAction)login:(id)sender {
     NSString *phone = _phoneText.text;
     NSString *pwd = _password.text;
-    [[APIHandler sharedInstance] loginApiCall:phone password:pwd withCompletion:^(NSData* result, NSError* error) {
-        [[APIParser sharedInstance] loginParser:result andError:error withCompletion:^(Boolean *hasError) {
-            if (hasError) {
-
-            } else {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                    SWRevealViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"SWRevealVC"];
-                    
-                    [self presentViewController:controller animated:true completion:nil];
-                });
-            }
+    
+    if (![phone isEqual:@""] && ![pwd isEqual:@""]) {
+        [[APIHandler sharedInstance] loginApiCall:phone password:pwd withCompletion:^(NSData* result, NSError* error) {
+            [[APIParser sharedInstance] loginParser:result andError:error withCompletion:^(Boolean *hasError) {
+                if (hasError) {
+                    [self showAlert:@"Login Failed" andMsg:@"Please try again later."];
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                        SWRevealViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"SWRevealVC"];
+                        
+                        [self presentViewController:controller animated:true completion:nil];
+                    });
+                }
+            }];
         }];
-    }];
+    } else {
+        [self showAlert:@"Oops" andMsg:@"Please fill in all reauired fields."];
+    }
 }
 
 - (IBAction)goToSignUpPageBtnTapped:(id)sender {
@@ -60,9 +65,9 @@
     NSString *phone = _phoneText.text;
     [[APIHandler sharedInstance] forgetPwdApiCall:phone withCompletion:^(NSError *error) {
         if (error == nil) {
-            
+            [self showAlert:@"Success" andMsg:@"We have sent an password reset email for you."];
         } else {
-            
+            [self showAlert:@"Failed" andMsg:@"Something went wrong, please try again later."];
         }
     }];
 }

@@ -21,13 +21,11 @@
     // Override point for customization after application launch.
     
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLoggedIn"]) {
-            SWRevealViewController *sWRevealVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SWRevealVC"]; //or the homeController
-//            UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:sWRevealVC];
+            SWRevealViewController *sWRevealVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SWRevealVC"];
             self.window.rootViewController = sWRevealVC;
         } else {
-            LoginViewController *loginController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginVC"]; //or the homeController
-            UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:loginController];
-            self.window.rootViewController = navController;
+            LoginViewController *loginController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginVC"];
+            self.window.rootViewController = loginController;
         }
     
     return YES;

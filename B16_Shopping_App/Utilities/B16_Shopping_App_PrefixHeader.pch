@@ -10,5 +10,6 @@
 #define B16_Shopping_App_PrefixHeader_pch
 
 #import "B16_Shopping_App_Constants.h"
+#import "UIViewController+UIViewControllerCategory.h"
 
 #endif /* B16_Shopping_App_PrefixHeader_pch */

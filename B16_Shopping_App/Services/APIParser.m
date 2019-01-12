@@ -16,7 +16,6 @@
 
 @implementation APIParser
 
-
 + (instancetype)sharedInstance
 {
     
@@ -34,7 +33,7 @@
     UserInfo *userInfo = nil;
     NSArray *userInfoJson = [NSJSONSerialization JSONObjectWithData: userDetail options: NSJSONReadingMutableContainers error: &error];
 
-    if (!userInfoJson || error) {
+    if (!userInfoJson || ![userInfoJson[0][@"msg"] isEqual: @"success"] || error) {
         
         NSLog(@"Error parsing JSON: %@", error);
         block(true);
