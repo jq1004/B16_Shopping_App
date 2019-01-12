@@ -32,7 +32,7 @@
 - (void)signUpUserWithFirstName:(NSString *)fname lastName:(NSString *)lname address:(NSString *)address password:(NSString *)password email:(NSString *)email mobile:(NSString *)mobile completionHandler:(void (^) (NSString *response))completionHandler
 {
     
-    NSString *urlstring = [NSString stringWithFormat:@"http://rjtmobile.com/aamir/e-commerce/ios-app/shop_reg.php?fname=%@&lname=%@&address=%@&email=%@&mobile=%@&password=%@",fname,lname,address,email,mobile,password];
+    NSString *urlstring = [NSString stringWithFormat:@"%@fname=%@&lname=%@&address=%@&email=%@&mobile=%@&password=%@",KSIGNUPAPI,fname,lname,address,email,mobile,password];
 
     
     NSURL *serviceUrl = [NSURL URLWithString: urlstring];
@@ -56,7 +56,7 @@
 - (void)updateProfileUserWithFirstName:(NSString *)fname lastName:(NSString *)lname address:(NSString *)address email:(NSString *)email mobile:(NSString *)mobile completionHandler:(void (^) (NSString *response))completionHandler
 {
     
-    NSString *urlstring = [NSString stringWithFormat:@"http://rjtmobile.com/aamir/e-commerce/ios-app/edit_profile.php?fname=%@&lname=%@&address=%@&email=%@&mobile=%@",fname,lname,address,email,mobile];
+    NSString *urlstring = [NSString stringWithFormat:@"%@fname=%@&lname=%@&address=%@&email=%@&mobile=%@",KUPDATEPROFILEAPI,fname,lname,address,email,mobile];
     
     
     NSURL *serviceUrl = [NSURL URLWithString: urlstring];
@@ -100,6 +100,30 @@
         block(error);
     }];
     [dataTask resume];
+}
+
+- (void)resetUserPasswordWithMobile: (NSString *)mobile oldPassword:(NSString *)oldPassword newPassword:(NSString *)newPassword completionHandler:(void (^) (NSString *response))completionHandler
+{
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@mobile=%@&password=%@&newpassword=%@",KRESETPASSWORDAPI,mobile,oldPassword,newPassword];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error == nil && data != nil) {
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSArray *arr = json[@"msg"];
+            NSString *msg = arr[0];
+            completionHandler(msg);
+        }
+    }];
+    
+    [dataTask resume];
+    
 }
 
 @end

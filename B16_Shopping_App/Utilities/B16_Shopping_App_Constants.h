@@ -11,5 +11,8 @@
 
 #define kLOGINAPI @"http://rjtmobile.com/aamir/e-commerce/ios-app/shop_login.php?"
 #define kFORGETPWDAPI @"http://rjtmobile.com/aamir/e-commerce/ios-app/forgot_pass_email.php?"
+#define KSIGNUPAPI @"http://rjtmobile.com/aamir/e-commerce/ios-app/shop_reg.php?"
+#define KUPDATEPROFILEAPI @"http://rjtmobile.com/aamir/e-commerce/ios-app/edit_profile.php?"
+#define KRESETPASSWORDAPI @"http://rjtmobile.com/aamir/e-commerce/ios-app/shop_reset_pass.php?"
 
 #endif /* B16_Shopping_App_Constants_h */

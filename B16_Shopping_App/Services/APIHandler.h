@@ -20,4 +20,6 @@
 
 - (void)forgetPwdApiCall:(NSString *)email withCompletion:(void (^)(NSError *error))block;
 
+- (void)resetUserPasswordWithMobile: (NSString *)mobile oldPassword:(NSString *)oldPassword newPassword:(NSString *)newPassword completionHandler:(void (^) (NSString *response))completionHandler;
+
 @end
