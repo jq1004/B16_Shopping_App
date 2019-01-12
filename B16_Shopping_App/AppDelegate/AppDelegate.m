@@ -20,31 +20,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-//    self.window = UIWindow(frame: UIScreen.main.bounds)
-//    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//    if let user = Auth.auth().currentUser {
-//        WebService.shared.fetchUserInfo(usrID: user.uid) { (value) in
-//            userInfo = value
-//            NotificationCenter.default.post(name: NSNotification.Name("UserInfoIsReady"), object: nil)
-//        }
-//        let initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarVC") as! UITabBarController
-//        self.window?.rootViewController = initialViewController
-//    } else {
-//        let initialViewController = storyboard.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpViewController
-//        self.window?.rootViewController = initialViewController
-//    }
-//    self.window?.makeKeyAndVisible()
-    
-//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLoggedIn"]) {
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        SWRevealViewController *sWRevealVC = [storyboard instantiateViewControllerWithIdentifier:@"SWRevealVC"];
-//        [[UIApplication sharedApplication].keyWindow setRootViewController:sWRevealVC];
-//    } else {
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        UIViewController *signinVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
-//        [[UIApplication sharedApplication].keyWindow setRootViewController:signinVC];
-//    }
-    
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLoggedIn"]) {
             SWRevealViewController *sWRevealVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SWRevealVC"]; //or the homeController
 //            UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:sWRevealVC];
