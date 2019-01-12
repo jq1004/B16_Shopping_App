@@ -47,8 +47,8 @@
     
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLoggedIn"]) {
             SWRevealViewController *sWRevealVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SWRevealVC"]; //or the homeController
-            UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:sWRevealVC];
-            self.window.rootViewController = navController;
+//            UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:sWRevealVC];
+            self.window.rootViewController = sWRevealVC;
         } else {
             LoginViewController *loginController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginVC"]; //or the homeController
             UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:loginController];
