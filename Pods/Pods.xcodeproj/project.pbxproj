@@ -1,0 +1,520 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		51C52C6E926C9993EEE378602CA06F6F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176EB6424F2DB28364CAC3970473AE0F /* SWRevealViewController.m */; };
+		ABD27505B0D3C37E92993C2402035A55 /* SWRevealViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C627A50DD7EE3D55D81A86BEEDB78237 /* SWRevealViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B607CF8E001E1C13BF2240A3E3D4ABAC /* Pods-B16_Shopping_App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E54097E85760555DBFBAE8EB202ECD1 /* Pods-B16_Shopping_App-dummy.m */; };
+		C039637C2B4ED354EC90D56C13CB2D0C /* SWRevealViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A10499EC7CB9348742E799D3FC78A48 /* SWRevealViewController-dummy.m */; };
+		F3C02BFD10D958164CBF56DBA8396F12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140FD12E4CE47A07D510ADDFDAE69AC1 /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC12169770DE4FB99023EA5D29D8B8BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D2E91A06EAE879D57371BB5B0FFC377;
+			remoteInfo = SWRevealViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		140FD12E4CE47A07D510ADDFDAE69AC1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		176EB6424F2DB28364CAC3970473AE0F /* SWRevealViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		2025D1BA2EDDF87C2643121BBD184805 /* Pods-B16_Shopping_App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-B16_Shopping_App-acknowledgements.plist"; sourceTree = "<group>"; };
+		33D25FB531104B73F19484602E317E4A /* SWRevealViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWRevealViewController-prefix.pch"; sourceTree = "<group>"; };
+		3FB0F063793454C0623876C6D7F84C25 /* Pods-B16_Shopping_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-B16_Shopping_App.debug.xcconfig"; sourceTree = "<group>"; };
+		6EFC18C24406329AC95CFAC6650C7A7F /* Pods-B16_Shopping_App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-B16_Shopping_App-acknowledgements.markdown"; sourceTree = "<group>"; };
+		72ACA8148DDE3507E04C5B7F0618B184 /* libSWRevealViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSWRevealViewController.a; path = libSWRevealViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A10499EC7CB9348742E799D3FC78A48 /* SWRevealViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWRevealViewController-dummy.m"; sourceTree = "<group>"; };
+		7A47EF9A6B6D89EDB3725DF53680E0D8 /* Pods-B16_Shopping_App-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-B16_Shopping_App-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E54097E85760555DBFBAE8EB202ECD1 /* Pods-B16_Shopping_App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-B16_Shopping_App-dummy.m"; sourceTree = "<group>"; };
+		A659EF3D6282FDBDF41130FBFD22977B /* SWRevealViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWRevealViewController.xcconfig; sourceTree = "<group>"; };
+		C627A50DD7EE3D55D81A86BEEDB78237 /* SWRevealViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		C6CA39173FBB1CCA18B4FB0F04306F9C /* libPods-B16_Shopping_App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-B16_Shopping_App.a"; path = "libPods-B16_Shopping_App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBBF267326F0A701AD7AC7069A5A527F /* Pods-B16_Shopping_App-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-B16_Shopping_App-resources.sh"; sourceTree = "<group>"; };
+		E17D3EFFEBA20F65EA5B28B8434D1019 /* Pods-B16_Shopping_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-B16_Shopping_App.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D04DBB1D6C73DC4FE38B61C0E9E113E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78BFB407F11E99B749433B97F4490752 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3C02BFD10D958164CBF56DBA8396F12 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		154AC9F8EAF65DC84316F000CF26A5B7 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F91B598678B2384B200F10331F22893A /* Pods-B16_Shopping_App */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2878D047E478869C5B35FAAD65BE48F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6CA39173FBB1CCA18B4FB0F04306F9C /* libPods-B16_Shopping_App.a */,
+				72ACA8148DDE3507E04C5B7F0618B184 /* libSWRevealViewController.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3562727AF3A7D793D526A2B1BD22C923 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C627A50DD7EE3D55D81A86BEEDB78237 /* SWRevealViewController.h */,
+				176EB6424F2DB28364CAC3970473AE0F /* SWRevealViewController.m */,
+				86F3B8C3D81AEEDB0F703EC4AEEE2C10 /* Support Files */,
+			);
+			name = SWRevealViewController;
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				EF919DCAD7230EFA1F7FA3DC5EA3DDED /* Pods */,
+				2878D047E478869C5B35FAAD65BE48F1 /* Products */,
+				154AC9F8EAF65DC84316F000CF26A5B7 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		86F3B8C3D81AEEDB0F703EC4AEEE2C10 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A659EF3D6282FDBDF41130FBFD22977B /* SWRevealViewController.xcconfig */,
+				7A10499EC7CB9348742E799D3FC78A48 /* SWRevealViewController-dummy.m */,
+				33D25FB531104B73F19484602E317E4A /* SWRevealViewController-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SWRevealViewController";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D10BD20BCB6CEA401E6435328B672515 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D10BD20BCB6CEA401E6435328B672515 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				140FD12E4CE47A07D510ADDFDAE69AC1 /* CoreGraphics.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		EF919DCAD7230EFA1F7FA3DC5EA3DDED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3562727AF3A7D793D526A2B1BD22C923 /* SWRevealViewController */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F91B598678B2384B200F10331F22893A /* Pods-B16_Shopping_App */ = {
+			isa = PBXGroup;
+			children = (
+				6EFC18C24406329AC95CFAC6650C7A7F /* Pods-B16_Shopping_App-acknowledgements.markdown */,
+				2025D1BA2EDDF87C2643121BBD184805 /* Pods-B16_Shopping_App-acknowledgements.plist */,
+				9E54097E85760555DBFBAE8EB202ECD1 /* Pods-B16_Shopping_App-dummy.m */,
+				7A47EF9A6B6D89EDB3725DF53680E0D8 /* Pods-B16_Shopping_App-frameworks.sh */,
+				CBBF267326F0A701AD7AC7069A5A527F /* Pods-B16_Shopping_App-resources.sh */,
+				3FB0F063793454C0623876C6D7F84C25 /* Pods-B16_Shopping_App.debug.xcconfig */,
+				E17D3EFFEBA20F65EA5B28B8434D1019 /* Pods-B16_Shopping_App.release.xcconfig */,
+			);
+			name = "Pods-B16_Shopping_App";
+			path = "Target Support Files/Pods-B16_Shopping_App";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A54C9B6B2FACE22D546CA1B0672D3A21 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A45CE03B0CCF3861C962A1E98F1741 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD27505B0D3C37E92993C2402035A55 /* SWRevealViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6D2E91A06EAE879D57371BB5B0FFC377 /* SWRevealViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC7199458A1FD97C5760CE32EE861836 /* Build configuration list for PBXNativeTarget "SWRevealViewController" */;
+			buildPhases = (
+				C7A45CE03B0CCF3861C962A1E98F1741 /* Headers */,
+				34FFF06125F7A6476636E7DC8CDE0AC6 /* Sources */,
+				78BFB407F11E99B749433B97F4490752 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SWRevealViewController;
+			productName = SWRevealViewController;
+			productReference = 72ACA8148DDE3507E04C5B7F0618B184 /* libSWRevealViewController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8B6B8DCC123900DF73EF83168FFAED3F /* Pods-B16_Shopping_App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99AA65EA1E2E16FBFFC3930102A6D895 /* Build configuration list for PBXNativeTarget "Pods-B16_Shopping_App" */;
+			buildPhases = (
+				A54C9B6B2FACE22D546CA1B0672D3A21 /* Headers */,
+				E57252D8C2B2BE022DD0B73276E96213 /* Sources */,
+				5D04DBB1D6C73DC4FE38B61C0E9E113E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBFDED797510C4D09D309BE655D92797 /* PBXTargetDependency */,
+			);
+			name = "Pods-B16_Shopping_App";
+			productName = "Pods-B16_Shopping_App";
+			productReference = C6CA39173FBB1CCA18B4FB0F04306F9C /* libPods-B16_Shopping_App.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 2878D047E478869C5B35FAAD65BE48F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B6B8DCC123900DF73EF83168FFAED3F /* Pods-B16_Shopping_App */,
+				6D2E91A06EAE879D57371BB5B0FFC377 /* SWRevealViewController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		34FFF06125F7A6476636E7DC8CDE0AC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C039637C2B4ED354EC90D56C13CB2D0C /* SWRevealViewController-dummy.m in Sources */,
+				51C52C6E926C9993EEE378602CA06F6F /* SWRevealViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E57252D8C2B2BE022DD0B73276E96213 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B607CF8E001E1C13BF2240A3E3D4ABAC /* Pods-B16_Shopping_App-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBFDED797510C4D09D309BE655D92797 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SWRevealViewController;
+			target = 6D2E91A06EAE879D57371BB5B0FFC377 /* SWRevealViewController */;
+			targetProxy = FC12169770DE4FB99023EA5D29D8B8BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3CA081C167AB06C3C27789A7398F1C55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A659EF3D6282FDBDF41130FBFD22977B /* SWRevealViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SWRevealViewController/SWRevealViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SWRevealViewController;
+				PRODUCT_NAME = SWRevealViewController;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40E4EBD7BC864AE1D41B02E46EE1FC87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FB0F063793454C0623876C6D7F84C25 /* Pods-B16_Shopping_App.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49C620BD7BABFD0FB6B79AC7418C7751 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E17D3EFFEBA20F65EA5B28B8434D1019 /* Pods-B16_Shopping_App.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		98E98810EEEB96C99CB95CB91F4ADE0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		ADEA9A79996904B6A899C11BE286DF4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A659EF3D6282FDBDF41130FBFD22977B /* SWRevealViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SWRevealViewController/SWRevealViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SWRevealViewController;
+				PRODUCT_NAME = SWRevealViewController;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B97A7F6ACE1216BB5A2307CA83FC93C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98E98810EEEB96C99CB95CB91F4ADE0A /* Debug */,
+				B97A7F6ACE1216BB5A2307CA83FC93C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99AA65EA1E2E16FBFFC3930102A6D895 /* Build configuration list for PBXNativeTarget "Pods-B16_Shopping_App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40E4EBD7BC864AE1D41B02E46EE1FC87 /* Debug */,
+				49C620BD7BABFD0FB6B79AC7418C7751 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC7199458A1FD97C5760CE32EE861836 /* Build configuration list for PBXNativeTarget "SWRevealViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADEA9A79996904B6A899C11BE286DF4D /* Debug */,
+				3CA081C167AB06C3C27789A7398F1C55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

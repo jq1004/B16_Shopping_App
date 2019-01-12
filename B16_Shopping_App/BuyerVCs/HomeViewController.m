@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 @interface HomeViewController ()
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBtn;
 
 @end
 
@@ -17,8 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _menubarBtn.target = self.revealViewController;
-    _menubarBtn.action = @selector(revealToggle:);
+    _menuBtn.target = self.revealViewController;
+    _menuBtn.action = @selector(revealToggle:);
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
