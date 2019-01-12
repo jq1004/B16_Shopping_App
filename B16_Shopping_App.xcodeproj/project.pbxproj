@@ -84,13 +84,13 @@
 			isa = PBXGroup;
 			children = (
 				454B884B21E941A900DF190F /* UserProfileViewController.h */,
+				454B885021E941A900DF190F /* UserProfileViewController.m */,
+				454B884F21E941A900DF190F /* HomeViewController.h */,
 				454B884C21E941A900DF190F /* HomeViewController.m */,
 				454B884D21E941A900DF190F /* MenuViewController.h */,
-				454B884E21E941A900DF190F /* MyOrderViewController.m */,
-				454B884F21E941A900DF190F /* HomeViewController.h */,
-				454B885021E941A900DF190F /* UserProfileViewController.m */,
 				454B885121E941A900DF190F /* MenuViewController.m */,
 				454B885221E941A900DF190F /* MyOrderViewController.h */,
+				454B884E21E941A900DF190F /* MyOrderViewController.m */,
 			);
 			path = BuyerVCs;
 			sourceTree = "<group>";
