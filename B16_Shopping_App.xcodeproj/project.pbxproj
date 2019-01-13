@@ -20,6 +20,7 @@
 		45D1A9A321EBDFA4006016D8 /* CheckoutProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D1A9A221EBDFA4006016D8 /* CheckoutProductCell.m */; };
 		B9BAEEBB21EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9BAEEB921EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld */; };
 		B9BAEEBE21EA5A7C009D2C7C /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BAEEBD21EA5A7C009D2C7C /* DataBaseManager.m */; };
+		B9EFD29521EBE8EA00574DCC /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EFD29421EBE8EA00574DCC /* ResetPasswordViewController.m */; };
 		B9F3A6A321E9119E00E5EA8A /* APIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3A6A021E9119D00E5EA8A /* APIHandler.m */; };
 		B9F3A6A421E9119E00E5EA8A /* APIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3A6A121E9119D00E5EA8A /* APIParser.m */; };
 		D20796E921EACE88008AB7EF /* CategoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D20796E821EACE88008AB7EF /* CategoryInfo.m */; };
@@ -61,6 +62,8 @@
 		B9BAEEBA21EA5A24009D2C7C /* B16_Shopping_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = B16_Shopping_App.xcdatamodel; sourceTree = "<group>"; };
 		B9BAEEBC21EA5A71009D2C7C /* DataBaseManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBaseManager.h; sourceTree = "<group>"; };
 		B9BAEEBD21EA5A7C009D2C7C /* DataBaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
+		B9EFD29321EBE8DB00574DCC /* ResetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
+		B9EFD29421EBE8EA00574DCC /* ResetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
 		B9F3A69F21E9119D00E5EA8A /* APIParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIParser.h; sourceTree = "<group>"; };
 		B9F3A6A021E9119D00E5EA8A /* APIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIHandler.m; sourceTree = "<group>"; };
 		B9F3A6A121E9119D00E5EA8A /* APIParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIParser.m; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				454B885121E941A900DF190F /* MenuViewController.m */,
 				454B885221E941A900DF190F /* MyOrderViewController.h */,
 				454B884E21E941A900DF190F /* MyOrderViewController.m */,
+				B9EFD29321EBE8DB00574DCC /* ResetPasswordViewController.h */,
+				B9EFD29421EBE8EA00574DCC /* ResetPasswordViewController.m */,
 			);
 			path = BuyerVCs;
 			sourceTree = "<group>";
@@ -195,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				D27142CE21E7E2BC00F127A0 /* B16_Shopping_App */,
-				B9BAEEB921EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld */,
 				D27142CD21E7E2BC00F127A0 /* Products */,
 				4AFD5D99957B13E0A37071C6 /* Pods */,
 				BE78D32CAF14B57D2D239172 /* Frameworks */,
@@ -299,6 +303,7 @@
 		D2E09F3321E7F69300F14D43 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B9BAEEB921EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld */,
 				D27142DD21E7E2BE00F127A0 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -431,6 +436,7 @@
 				B9F3A6A421E9119E00E5EA8A /* APIParser.m in Sources */,
 				45D1A9A021EBCE43006016D8 /* CheckOutViewController.m in Sources */,
 				D27142DF21E7E2BE00F127A0 /* main.m in Sources */,
+				B9EFD29521EBE8EA00574DCC /* ResetPasswordViewController.m in Sources */,
 				45723DA921EB4E280009B90A /* ProductDetailViewController.m in Sources */,
 				B9BAEEBB21EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld in Sources */,
 				D2C4751621E97E4500428E67 /* UIViewController+UIViewControllerCategory.m in Sources */,

@@ -14,7 +14,7 @@
 
 - (void)signUpUserWithFirstName:(NSString *)fname lastName:(NSString *)lname address:(NSString *)address password:(NSString *)password email:(NSString *)email mobile:(NSString *)mobile completionHandler:(void (^) (NSString *response))completionHandler;
 
-- (void)updateProfileUserWithFirstName:(NSString *)fname lastName:(NSString *)lname address:(NSString *)address email:(NSString *)email mobile:(NSString *)mobile completionHandler:(void (^) (NSString *response))completionHandler;
+- (void)updateProfileUserWithFirstName:(NSString *)fname lastName:(NSString *)lname email:(NSString *)email mobile:(NSString *)mobile completionHandler:(void (^) (NSString *response))completionHandler;
 
 - (void)loginApiCall:(NSString *)phoneNumber password:(NSString *)pwd withCompletion:(void (^)(NSData *result, NSError *error))block;
 

@@ -53,10 +53,10 @@
     
 }
 
-- (void)updateProfileUserWithFirstName:(NSString *)fname lastName:(NSString *)lname address:(NSString *)address email:(NSString *)email mobile:(NSString *)mobile completionHandler:(void (^) (NSString *response))completionHandler
+- (void)updateProfileUserWithFirstName:(NSString *)fname lastName:(NSString *)lname email:(NSString *)email mobile:(NSString *)mobile completionHandler:(void (^) (NSString *response))completionHandler
 {
     
-    NSString *urlstring = [NSString stringWithFormat:@"%@fname=%@&lname=%@&address=%@&email=%@&mobile=%@",KUPDATEPROFILEAPI,fname,lname,address,email,mobile];
+    NSString *urlstring = [NSString stringWithFormat:@"%@fname=%@&lname=%@&address=address&email=%@&mobile=%@",KUPDATEPROFILEAPI,fname,lname,email,mobile];
     
     
     NSURL *serviceUrl = [NSURL URLWithString: urlstring];

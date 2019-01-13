@@ -26,4 +26,6 @@
 
 - (UserInfo*)fetchUserInfoWithId :(NSString *)Id;
 
+- (void)updateUserWithUser :(UserInfo *)user;
+
 @end

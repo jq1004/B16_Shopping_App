@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UserProfileViewController : UIViewController
+@interface UserProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 - (void)manageTxtFieldsWithChoice :(Boolean *)choice;
 
 @end
