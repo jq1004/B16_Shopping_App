@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "UserInfo.h"
+#import "CategoryInfo.h"
+#import "TopSellerInfo.h"
 
 @interface APIParser : NSObject
 
 +(instancetype)sharedInstance;
 
 - (UserInfo *)loginParser:(NSData *)userDetail andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError))block;
+
+- (void)categoryParser:(NSData *)categoryInfoList andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSMutableArray<CategoryInfo *> *result))block;
+
+- (void)topSellerParser:(NSData *)topSellerInfoList andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSMutableArray<TopSellerInfo *> *result))block;
 
 @end

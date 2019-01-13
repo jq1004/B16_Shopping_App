@@ -12,7 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeViewController : UIViewController
 
-
+@property NSMutableArray *categories;
+@property NSMutableArray *topSellers;
 
 @end
 

@@ -22,4 +22,10 @@
 
 - (void)resetUserPasswordWithMobile: (NSString *)mobile oldPassword:(NSString *)oldPassword newPassword:(NSString *)newPassword completionHandler:(void (^) (NSString *response))completionHandler;
 
+- (void)categoryApiCall:(NSString *)apiKey andUserId:(NSString *)userId withCompletion:(void (^)(NSData *result, NSError *error))block;
+
+- (void)topSellersApiCall:(void (^)(NSData *result, NSError *error))block;
+
+- (UIImage *)downloadImg:(NSString *)imgUrl;
+
 @end

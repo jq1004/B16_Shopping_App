@@ -31,7 +31,7 @@
 
 - (UserInfo *)loginParser:(NSData *)userDetail andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError))block {
     UserInfo *userInfo = nil;
-    NSArray *userInfoJson = [NSJSONSerialization JSONObjectWithData: userDetail options: NSJSONReadingMutableContainers error: &error];
+    NSArray *userInfoJson = [NSJSONSerialization JSONObjectWithData: userDetail options:NSJSONReadingMutableContainers error: &error];
 
     if (!userInfoJson || ![userInfoJson[0][@"msg"] isEqual: @"success"] || error) {
         
@@ -54,6 +54,42 @@
         block(false);
     }
     return userInfo;
+}
+
+- (void)categoryParser:(NSData *)categoryInfoList andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSMutableArray<CategoryInfo *> *result))block {
+    NSMutableArray<CategoryInfo *> *arr = [[NSMutableArray alloc] init];
+    NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:categoryInfoList options:NSJSONReadingMutableContainers error:&error];
+    
+    if (!jsonData || error) {
+        NSLog(@"Error parsing JSON: %@", error);
+        block(true, arr);
+    } else {
+        NSArray *categories = jsonData[@"category"];
+        for (int i = 0; i < categories.count; i++) {
+            NSDictionary *category = categories[i];
+            CategoryInfo *categoryItem = [[CategoryInfo alloc] initWithInfo:category[@"cid"] andCategoryName:category[@"cname"] andCategoryDiscription:category[@"cdiscription"] andCategoryImageUrl:category[@"cimagerl"]];
+            [arr addObject:categoryItem];
+        }
+        block(false, arr);
+    }
+}
+
+- (void)topSellerParser:(NSData *)topSellerInfoList andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSMutableArray<TopSellerInfo *> *result))block {
+    NSMutableArray<TopSellerInfo *> *arr = [[NSMutableArray alloc] init];
+    NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:topSellerInfoList options:NSJSONReadingMutableContainers error:&error];
+    
+    if (!jsonData || error) {
+        NSLog(@"Error parsing JSON: %@", error);
+        block(true, arr);
+    } else {
+        NSArray *topSellers = jsonData[@"Top sellers"];
+        for (int i = 0; i < topSellers.count; i++) {
+            NSDictionary *topSeller = topSellers[i];
+            TopSellerInfo *topSellerItem = [[TopSellerInfo alloc] initWithInfo:topSeller[@"id"] andSellerName:topSeller[@"sellername"] andSellerDeal:topSeller[@"sellerdeal"] andSellerRating:topSeller[@"sellerrating"] andSellerLogo:topSeller[@"sellerlogo"]];
+            [arr addObject:topSellerItem];
+        }
+        block(false, arr);
+    }
 }
 
 @end

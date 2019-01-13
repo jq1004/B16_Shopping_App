@@ -16,5 +16,5 @@
 @property NSString* mobile;
 @property NSString* appapikey;
 
--(instancetype) initWithInfo:(NSString *)userId andFirstName: (NSString *)firstName andLastName:(NSString *)lastName andEmail:(NSString *)email andMobile: (NSString*)mobile andAppApiKey:(NSString*) appapikey;
+- (instancetype)initWithInfo:(NSString *)userId andFirstName:(NSString *)firstName andLastName:(NSString *)lastName andEmail:(NSString *)email andMobile: (NSString*)mobile andAppApiKey:(NSString*)appapikey;
 @end

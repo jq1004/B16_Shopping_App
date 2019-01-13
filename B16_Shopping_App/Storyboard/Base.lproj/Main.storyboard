@@ -118,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3686" y="-310"/>
+            <point key="canvasLocation" x="-3658" y="-310"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="vbA-ng-Xv0">
@@ -303,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w71-0y-68e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2911.1999999999998" y="-310.34482758620692"/>
+            <point key="canvasLocation" x="-2876" y="-310"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="0f3-en-eYn">
@@ -324,7 +324,7 @@
             </objects>
             <point key="canvasLocation" x="-1145" y="-309"/>
         </scene>
-        <!--Shop-->
+        <!--Home-->
         <scene sceneID="sbc-0v-Yab">
             <objects>
                 <viewController id="u91-pr-Qlw" customClass="HomeViewController" sceneMemberID="viewController">
@@ -334,10 +334,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HXg-HA-w2N"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Shop" id="m8Z-tc-DKF">
+                    <navigationItem key="navigationItem" title="Home" id="m8Z-tc-DKF">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="rWb-ta-7WD">
                             <color key="tintColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="searchIcon" id="NpX-SE-BGG">
+                                <color key="tintColor" red="1" green="0.22814836860000001" blue="0.82545080719999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="cartIcon" id="LQH-Pu-xmd">
+                                <color key="tintColor" red="1" green="0.22745098039215686" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="menuBtn" destination="rWb-ta-7WD" id="Zwd-js-WEg"/>
@@ -693,11 +701,11 @@
             <objects>
                 <navigationController storyboardIdentifier="RootVC" automaticallyAdjustsScrollViewInsets="NO" id="PBS-ay-yZS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LeI-VZ-dLQ">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LeI-VZ-dLQ">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="1" green="0.22814836860000001" blue="0.82545080719999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -742,7 +750,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8a-K8-tf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2710" y="-1694"/>
+            <point key="canvasLocation" x="2545" y="-1694"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aRS-hk-c1A">
@@ -784,15 +792,17 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FvB-EO-cDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1782" y="-804"/>
+            <point key="canvasLocation" x="1577" y="-805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="cartIcon" width="26" height="26"/>
         <image name="ic_logout" width="80" height="80"/>
         <image name="ic_myorder" width="64" height="64"/>
         <image name="ic_profile" width="100" height="100"/>
         <image name="ic_shop" width="48" height="48"/>
         <image name="menu" width="16" height="16"/>
+        <image name="searchIcon" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vJy-hh-39w"/>

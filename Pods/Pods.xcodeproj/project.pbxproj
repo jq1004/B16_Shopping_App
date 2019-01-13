@@ -7,61 +7,118 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		51C52C6E926C9993EEE378602CA06F6F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176EB6424F2DB28364CAC3970473AE0F /* SWRevealViewController.m */; };
-		ABD27505B0D3C37E92993C2402035A55 /* SWRevealViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C627A50DD7EE3D55D81A86BEEDB78237 /* SWRevealViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B607CF8E001E1C13BF2240A3E3D4ABAC /* Pods-B16_Shopping_App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E54097E85760555DBFBAE8EB202ECD1 /* Pods-B16_Shopping_App-dummy.m */; };
-		C039637C2B4ED354EC90D56C13CB2D0C /* SWRevealViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A10499EC7CB9348742E799D3FC78A48 /* SWRevealViewController-dummy.m */; };
-		F3C02BFD10D958164CBF56DBA8396F12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140FD12E4CE47A07D510ADDFDAE69AC1 /* CoreGraphics.framework */; };
+		1061B7483E027DE3312187AAE487C2F8 /* Pods-B16_Shopping_App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E54097E85760555DBFBAE8EB202ECD1 /* Pods-B16_Shopping_App-dummy.m */; };
+		139A92B97BE1C1E02FE48A46E52812A4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E366988B4987C3BC20B32DB26257635D /* SWRevealViewController.m */; };
+		196F73677C8DEEB59462C08FB9FA9E8B /* SWRevealViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0BE9087DF3B990D88863E0081D7B46 /* SWRevealViewController-dummy.m */; };
+		3395AAB85109A84BF731358BCF3CBC44 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CF812AAD00F73539BCBDE0E322E2CF9 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		44DD488245C9BA1C5401D055B8127876 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C9393F5E39B17EC67B978E4A7CFD2D /* SVRadialGradientLayer.m */; };
+		49031B16F0C00A09E10789A5107683E1 /* SWRevealViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 605F6B76DC550BE89D6143F8C00FD03D /* SWRevealViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5EEDB95D5DA52C9BF6FD94473F9CC3A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796A6E12307A3E9F7926822529F58F1F /* CoreGraphics.framework */; };
+		6F13AB67A337A315FFC87AC71B3CAABC /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD49156103B11D0A1240BC31FD6AA71 /* SVProgressHUD-dummy.m */; };
+		791B5CA2CC55A0BAB28E2F2DD7CFC243 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F7C7A8EFCC0271E0C25A6911CEFA5F /* QuartzCore.framework */; };
+		8E5D17D310DCEB44676C12CA5BDE2763 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4836E5576395A61F8CBDFD2AA1A85E9 /* SVProgressAnimatedView.m */; };
+		B4E82B4CA92E482D250D5FB2B6891C8E /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B06B133C17459E9A5AB1F62F85CFEA9E /* SVIndefiniteAnimatedView.m */; };
+		C1083CC6F2FEF25AFC618402D8327933 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = A197C02257F17C25D6121A6C4FA3C57D /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D2C85C62B4B9367D400624BD568B4B60 /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF867BF1DBBDC9CF049A467EDE828E2 /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DF1224145F57B9E06280B1C2714278B4 /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835009283F689CC7981D874DF800A45 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F9D252E95C814FD0D920A1B8629AB0CD /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A563F3B31D6C90E8017D79C2A7DD360 /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FC12169770DE4FB99023EA5D29D8B8BD /* PBXContainerItemProxy */ = {
+		07CACCB15B7C79EE103C26BB5D68906B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6D2E91A06EAE879D57371BB5B0FFC377;
+			remoteGlobalIDString = 15844BE0BD0EA4F6BC616DCBB073EC17;
 			remoteInfo = SWRevealViewController;
+		};
+		8A3369A1DC278F3BEE1841E4B7F01621 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A31C6A6C23B22CE384AED4834FADC65;
+			remoteInfo = SVProgressHUD;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		140FD12E4CE47A07D510ADDFDAE69AC1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		176EB6424F2DB28364CAC3970473AE0F /* SWRevealViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		0269C24FC8D1F36D7C3C0A26C7AB3FE4 /* SWRevealViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWRevealViewController.xcconfig; sourceTree = "<group>"; };
+		16B1EFE48B1FF2E5BCBB3950E09C2F30 /* libSWRevealViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSWRevealViewController.a; path = libSWRevealViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CF812AAD00F73539BCBDE0E322E2CF9 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		2025D1BA2EDDF87C2643121BBD184805 /* Pods-B16_Shopping_App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-B16_Shopping_App-acknowledgements.plist"; sourceTree = "<group>"; };
-		33D25FB531104B73F19484602E317E4A /* SWRevealViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWRevealViewController-prefix.pch"; sourceTree = "<group>"; };
+		22F7C7A8EFCC0271E0C25A6911CEFA5F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		269BD9850C84B89C3EDDA52A11CBC5A5 /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
+		30C9393F5E39B17EC67B978E4A7CFD2D /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		3585506452E3BD2E789518D8AAF98E51 /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSVProgressHUD.a; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB0F063793454C0623876C6D7F84C25 /* Pods-B16_Shopping_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-B16_Shopping_App.debug.xcconfig"; sourceTree = "<group>"; };
+		3FC8D2AFC690625AFAEE4FCD2264C329 /* SWRevealViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWRevealViewController-prefix.pch"; sourceTree = "<group>"; };
+		4D0BE9087DF3B990D88863E0081D7B46 /* SWRevealViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWRevealViewController-dummy.m"; sourceTree = "<group>"; };
+		605F6B76DC550BE89D6143F8C00FD03D /* SWRevealViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		6A563F3B31D6C90E8017D79C2A7DD360 /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
 		6EFC18C24406329AC95CFAC6650C7A7F /* Pods-B16_Shopping_App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-B16_Shopping_App-acknowledgements.markdown"; sourceTree = "<group>"; };
-		72ACA8148DDE3507E04C5B7F0618B184 /* libSWRevealViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSWRevealViewController.a; path = libSWRevealViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A10499EC7CB9348742E799D3FC78A48 /* SWRevealViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWRevealViewController-dummy.m"; sourceTree = "<group>"; };
+		7835009283F689CC7981D874DF800A45 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		796A6E12307A3E9F7926822529F58F1F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		7A47EF9A6B6D89EDB3725DF53680E0D8 /* Pods-B16_Shopping_App-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-B16_Shopping_App-frameworks.sh"; sourceTree = "<group>"; };
+		7CD49156103B11D0A1240BC31FD6AA71 /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96AD3C770964C09D640608F37E97A881 /* libPods-B16_Shopping_App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-B16_Shopping_App.a"; path = "libPods-B16_Shopping_App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E54097E85760555DBFBAE8EB202ECD1 /* Pods-B16_Shopping_App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-B16_Shopping_App-dummy.m"; sourceTree = "<group>"; };
-		A659EF3D6282FDBDF41130FBFD22977B /* SWRevealViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWRevealViewController.xcconfig; sourceTree = "<group>"; };
-		C627A50DD7EE3D55D81A86BEEDB78237 /* SWRevealViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
-		C6CA39173FBB1CCA18B4FB0F04306F9C /* libPods-B16_Shopping_App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-B16_Shopping_App.a"; path = "libPods-B16_Shopping_App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A197C02257F17C25D6121A6C4FA3C57D /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		A8C1E6DB3A144E726930C66A73D1EF57 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		B06B133C17459E9A5AB1F62F85CFEA9E /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		CBBF267326F0A701AD7AC7069A5A527F /* Pods-B16_Shopping_App-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-B16_Shopping_App-resources.sh"; sourceTree = "<group>"; };
+		D0D405B88A56A72B121684BF73ED6ABA /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
 		E17D3EFFEBA20F65EA5B28B8434D1019 /* Pods-B16_Shopping_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-B16_Shopping_App.release.xcconfig"; sourceTree = "<group>"; };
+		E366988B4987C3BC20B32DB26257635D /* SWRevealViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		E4836E5576395A61F8CBDFD2AA1A85E9 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		EDF867BF1DBBDC9CF049A467EDE828E2 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5D04DBB1D6C73DC4FE38B61C0E9E113E /* Frameworks */ = {
+		52A222237740CAEA2CDE9D1B9E84A47E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		78BFB407F11E99B749433B97F4490752 /* Frameworks */ = {
+		54F38EFC498731879E10537498704CA2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3C02BFD10D958164CBF56DBA8396F12 /* CoreGraphics.framework in Frameworks */,
+				5EEDB95D5DA52C9BF6FD94473F9CC3A0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6724E165F4ADCF175A1DD7F1CC9AAD87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				791B5CA2CC55A0BAB28E2F2DD7CFC243 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0132F1744D9C7A343147C13F0B736B17 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				796A6E12307A3E9F7926822529F58F1F /* CoreGraphics.framework */,
+				22F7C7A8EFCC0271E0C25A6911CEFA5F /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		102B90DB40DABA4A01605EEB248E99AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33D018C3570632DA2AEC39F91B8B1E0C /* SVProgressHUD */,
+				9A681DABA28920B16C08C006590BF4B9 /* SWRevealViewController */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		154AC9F8EAF65DC84316F000CF26A5B7 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,70 +127,92 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		2878D047E478869C5B35FAAD65BE48F1 /* Products */ = {
+		1AB1288A27EE36C08A4A65368EBFC7F3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C6CA39173FBB1CCA18B4FB0F04306F9C /* libPods-B16_Shopping_App.a */,
-				72ACA8148DDE3507E04C5B7F0618B184 /* libSWRevealViewController.a */,
+				96AD3C770964C09D640608F37E97A881 /* libPods-B16_Shopping_App.a */,
+				3585506452E3BD2E789518D8AAF98E51 /* libSVProgressHUD.a */,
+				16B1EFE48B1FF2E5BCBB3950E09C2F30 /* libSWRevealViewController.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3562727AF3A7D793D526A2B1BD22C923 /* SWRevealViewController */ = {
+		2793D263F2C916A54381984B64E7F669 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C627A50DD7EE3D55D81A86BEEDB78237 /* SWRevealViewController.h */,
-				176EB6424F2DB28364CAC3970473AE0F /* SWRevealViewController.m */,
-				86F3B8C3D81AEEDB0F703EC4AEEE2C10 /* Support Files */,
+				269BD9850C84B89C3EDDA52A11CBC5A5 /* SVProgressHUD.xcconfig */,
+				7CD49156103B11D0A1240BC31FD6AA71 /* SVProgressHUD-dummy.m */,
+				A8C1E6DB3A144E726930C66A73D1EF57 /* SVProgressHUD-prefix.pch */,
 			);
-			name = SWRevealViewController;
-			path = SWRevealViewController;
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
+			sourceTree = "<group>";
+		};
+		33D018C3570632DA2AEC39F91B8B1E0C /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				1CF812AAD00F73539BCBDE0E322E2CF9 /* SVIndefiniteAnimatedView.h */,
+				B06B133C17459E9A5AB1F62F85CFEA9E /* SVIndefiniteAnimatedView.m */,
+				EDF867BF1DBBDC9CF049A467EDE828E2 /* SVProgressAnimatedView.h */,
+				E4836E5576395A61F8CBDFD2AA1A85E9 /* SVProgressAnimatedView.m */,
+				A197C02257F17C25D6121A6C4FA3C57D /* SVProgressHUD.h */,
+				6A563F3B31D6C90E8017D79C2A7DD360 /* SVProgressHUD.m */,
+				7835009283F689CC7981D874DF800A45 /* SVRadialGradientLayer.h */,
+				30C9393F5E39B17EC67B978E4A7CFD2D /* SVRadialGradientLayer.m */,
+				5F7616110155B80AB2BDD845FB87B67B /* Resources */,
+				2793D263F2C916A54381984B64E7F669 /* Support Files */,
+			);
+			name = SVProgressHUD;
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		3EE22E54A20B4A1E9D70934CED903DDC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0269C24FC8D1F36D7C3C0A26C7AB3FE4 /* SWRevealViewController.xcconfig */,
+				4D0BE9087DF3B990D88863E0081D7B46 /* SWRevealViewController-dummy.m */,
+				3FC8D2AFC690625AFAEE4FCD2264C329 /* SWRevealViewController-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SWRevealViewController";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0132F1744D9C7A343147C13F0B736B17 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F7616110155B80AB2BDD845FB87B67B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D0D405B88A56A72B121684BF73ED6ABA /* SVProgressHUD.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				EF919DCAD7230EFA1F7FA3DC5EA3DDED /* Pods */,
-				2878D047E478869C5B35FAAD65BE48F1 /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				102B90DB40DABA4A01605EEB248E99AC /* Pods */,
+				1AB1288A27EE36C08A4A65368EBFC7F3 /* Products */,
 				154AC9F8EAF65DC84316F000CF26A5B7 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		86F3B8C3D81AEEDB0F703EC4AEEE2C10 /* Support Files */ = {
+		9A681DABA28920B16C08C006590BF4B9 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A659EF3D6282FDBDF41130FBFD22977B /* SWRevealViewController.xcconfig */,
-				7A10499EC7CB9348742E799D3FC78A48 /* SWRevealViewController-dummy.m */,
-				33D25FB531104B73F19484602E317E4A /* SWRevealViewController-prefix.pch */,
+				605F6B76DC550BE89D6143F8C00FD03D /* SWRevealViewController.h */,
+				E366988B4987C3BC20B32DB26257635D /* SWRevealViewController.m */,
+				3EE22E54A20B4A1E9D70934CED903DDC /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SWRevealViewController";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D10BD20BCB6CEA401E6435328B672515 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D10BD20BCB6CEA401E6435328B672515 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				140FD12E4CE47A07D510ADDFDAE69AC1 /* CoreGraphics.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		EF919DCAD7230EFA1F7FA3DC5EA3DDED /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3562727AF3A7D793D526A2B1BD22C923 /* SWRevealViewController */,
-			);
-			name = Pods;
+			name = SWRevealViewController;
+			path = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		F91B598678B2384B200F10331F22893A /* Pods-B16_Shopping_App */ = {
@@ -154,31 +233,61 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A54C9B6B2FACE22D546CA1B0672D3A21 /* Headers */ = {
+		A980A509B57600BFCEDA0DEA9658981B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3395AAB85109A84BF731358BCF3CBC44 /* SVIndefiniteAnimatedView.h in Headers */,
+				D2C85C62B4B9367D400624BD568B4B60 /* SVProgressAnimatedView.h in Headers */,
+				C1083CC6F2FEF25AFC618402D8327933 /* SVProgressHUD.h in Headers */,
+				DF1224145F57B9E06280B1C2714278B4 /* SVRadialGradientLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD6C7F6C58330900A432F3E4FEECF67A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C7A45CE03B0CCF3861C962A1E98F1741 /* Headers */ = {
+		BC7A81D7C74BDA197A1F65173B5546BD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABD27505B0D3C37E92993C2402035A55 /* SWRevealViewController.h in Headers */,
+				49031B16F0C00A09E10789A5107683E1 /* SWRevealViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6D2E91A06EAE879D57371BB5B0FFC377 /* SWRevealViewController */ = {
+		049741187F1D28C4FAB10BE7970D64AE /* Pods-B16_Shopping_App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC7199458A1FD97C5760CE32EE861836 /* Build configuration list for PBXNativeTarget "SWRevealViewController" */;
+			buildConfigurationList = 4D69124FA4AF8A469A3B462D7EDD3030 /* Build configuration list for PBXNativeTarget "Pods-B16_Shopping_App" */;
 			buildPhases = (
-				C7A45CE03B0CCF3861C962A1E98F1741 /* Headers */,
-				34FFF06125F7A6476636E7DC8CDE0AC6 /* Sources */,
-				78BFB407F11E99B749433B97F4490752 /* Frameworks */,
+				AD6C7F6C58330900A432F3E4FEECF67A /* Headers */,
+				0AF4BBEE7D4E4F77694280B55B4B2209 /* Sources */,
+				52A222237740CAEA2CDE9D1B9E84A47E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76471F48CCCA40B1526411854B651F2F /* PBXTargetDependency */,
+				B6ADE3E28CF275A309FFE700672F1498 /* PBXTargetDependency */,
+			);
+			name = "Pods-B16_Shopping_App";
+			productName = "Pods-B16_Shopping_App";
+			productReference = 96AD3C770964C09D640608F37E97A881 /* libPods-B16_Shopping_App.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		15844BE0BD0EA4F6BC616DCBB073EC17 /* SWRevealViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FE217A9FA5FBAB8E32EBD96AEA2F350 /* Build configuration list for PBXNativeTarget "SWRevealViewController" */;
+			buildPhases = (
+				BC7A81D7C74BDA197A1F65173B5546BD /* Headers */,
+				F773DC8914D669D0E164C4CB9B8CE0F9 /* Sources */,
+				54F38EFC498731879E10537498704CA2 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,25 +295,24 @@
 			);
 			name = SWRevealViewController;
 			productName = SWRevealViewController;
-			productReference = 72ACA8148DDE3507E04C5B7F0618B184 /* libSWRevealViewController.a */;
+			productReference = 16B1EFE48B1FF2E5BCBB3950E09C2F30 /* libSWRevealViewController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		8B6B8DCC123900DF73EF83168FFAED3F /* Pods-B16_Shopping_App */ = {
+		6A31C6A6C23B22CE384AED4834FADC65 /* SVProgressHUD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 99AA65EA1E2E16FBFFC3930102A6D895 /* Build configuration list for PBXNativeTarget "Pods-B16_Shopping_App" */;
+			buildConfigurationList = 7BF9EFCB35F5894DFFF17AECC779FA25 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
 			buildPhases = (
-				A54C9B6B2FACE22D546CA1B0672D3A21 /* Headers */,
-				E57252D8C2B2BE022DD0B73276E96213 /* Sources */,
-				5D04DBB1D6C73DC4FE38B61C0E9E113E /* Frameworks */,
+				A980A509B57600BFCEDA0DEA9658981B /* Headers */,
+				C697C34FE8EF7AFA703CB300CAD9B2CD /* Sources */,
+				6724E165F4ADCF175A1DD7F1CC9AAD87 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FBFDED797510C4D09D309BE655D92797 /* PBXTargetDependency */,
 			);
-			name = "Pods-B16_Shopping_App";
-			productName = "Pods-B16_Shopping_App";
-			productReference = C6CA39173FBB1CCA18B4FB0F04306F9C /* libPods-B16_Shopping_App.a */;
+			name = SVProgressHUD;
+			productName = SVProgressHUD;
+			productReference = 3585506452E3BD2E789518D8AAF98E51 /* libSVProgressHUD.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -224,49 +332,91 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 2878D047E478869C5B35FAAD65BE48F1 /* Products */;
+			productRefGroup = 1AB1288A27EE36C08A4A65368EBFC7F3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8B6B8DCC123900DF73EF83168FFAED3F /* Pods-B16_Shopping_App */,
-				6D2E91A06EAE879D57371BB5B0FFC377 /* SWRevealViewController */,
+				049741187F1D28C4FAB10BE7970D64AE /* Pods-B16_Shopping_App */,
+				6A31C6A6C23B22CE384AED4834FADC65 /* SVProgressHUD */,
+				15844BE0BD0EA4F6BC616DCBB073EC17 /* SWRevealViewController */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		34FFF06125F7A6476636E7DC8CDE0AC6 /* Sources */ = {
+		0AF4BBEE7D4E4F77694280B55B4B2209 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C039637C2B4ED354EC90D56C13CB2D0C /* SWRevealViewController-dummy.m in Sources */,
-				51C52C6E926C9993EEE378602CA06F6F /* SWRevealViewController.m in Sources */,
+				1061B7483E027DE3312187AAE487C2F8 /* Pods-B16_Shopping_App-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E57252D8C2B2BE022DD0B73276E96213 /* Sources */ = {
+		C697C34FE8EF7AFA703CB300CAD9B2CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B607CF8E001E1C13BF2240A3E3D4ABAC /* Pods-B16_Shopping_App-dummy.m in Sources */,
+				B4E82B4CA92E482D250D5FB2B6891C8E /* SVIndefiniteAnimatedView.m in Sources */,
+				8E5D17D310DCEB44676C12CA5BDE2763 /* SVProgressAnimatedView.m in Sources */,
+				6F13AB67A337A315FFC87AC71B3CAABC /* SVProgressHUD-dummy.m in Sources */,
+				F9D252E95C814FD0D920A1B8629AB0CD /* SVProgressHUD.m in Sources */,
+				44DD488245C9BA1C5401D055B8127876 /* SVRadialGradientLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F773DC8914D669D0E164C4CB9B8CE0F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				196F73677C8DEEB59462C08FB9FA9E8B /* SWRevealViewController-dummy.m in Sources */,
+				139A92B97BE1C1E02FE48A46E52812A4 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FBFDED797510C4D09D309BE655D92797 /* PBXTargetDependency */ = {
+		76471F48CCCA40B1526411854B651F2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVProgressHUD;
+			target = 6A31C6A6C23B22CE384AED4834FADC65 /* SVProgressHUD */;
+			targetProxy = 8A3369A1DC278F3BEE1841E4B7F01621 /* PBXContainerItemProxy */;
+		};
+		B6ADE3E28CF275A309FFE700672F1498 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SWRevealViewController;
-			target = 6D2E91A06EAE879D57371BB5B0FFC377 /* SWRevealViewController */;
-			targetProxy = FC12169770DE4FB99023EA5D29D8B8BD /* PBXContainerItemProxy */;
+			target = 15844BE0BD0EA4F6BC616DCBB073EC17 /* SWRevealViewController */;
+			targetProxy = 07CACCB15B7C79EE103C26BB5D68906B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3CA081C167AB06C3C27789A7398F1C55 /* Release */ = {
+		04DF69377FB3F11914F1D77C569A8325 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A659EF3D6282FDBDF41130FBFD22977B /* SWRevealViewController.xcconfig */;
+			baseConfigurationReference = E17D3EFFEBA20F65EA5B28B8434D1019 /* Pods-B16_Shopping_App.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		229880CD965DB1750180DEF2EAEC7278 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0269C24FC8D1F36D7C3C0A26C7AB3FE4 /* SWRevealViewController.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -288,7 +438,31 @@
 			};
 			name = Release;
 		};
-		40E4EBD7BC864AE1D41B02E46EE1FC87 /* Debug */ = {
+		69B0922E758B122ADDE7F50471730AB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 269BD9850C84B89C3EDDA52A11CBC5A5 /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SVProgressHUD;
+				PRODUCT_NAME = SVProgressHUD;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		81F87D70C003692F2A08454FB22D7174 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3FB0F063793454C0623876C6D7F84C25 /* Pods-B16_Shopping_App.debug.xcconfig */;
 			buildSettings = {
@@ -298,7 +472,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -310,30 +484,7 @@
 			};
 			name = Debug;
 		};
-		49C620BD7BABFD0FB6B79AC7418C7751 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E17D3EFFEBA20F65EA5B28B8434D1019 /* Pods-B16_Shopping_App.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		98E98810EEEB96C99CB95CB91F4ADE0A /* Debug */ = {
+		8DDFA5FA8D4131BFD96E5E26F3672644 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -386,7 +537,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -399,9 +550,9 @@
 			};
 			name = Debug;
 		};
-		ADEA9A79996904B6A899C11BE286DF4D /* Debug */ = {
+		95C489C902207C0A4A370CF9D014FFB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A659EF3D6282FDBDF41130FBFD22977B /* SWRevealViewController.xcconfig */;
+			baseConfigurationReference = 0269C24FC8D1F36D7C3C0A26C7AB3FE4 /* SWRevealViewController.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -422,7 +573,30 @@
 			};
 			name = Debug;
 		};
-		B97A7F6ACE1216BB5A2307CA83FC93C5 /* Release */ = {
+		B3151D109D87BFDC120BEBC49901657A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 269BD9850C84B89C3EDDA52A11CBC5A5 /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SVProgressHUD;
+				PRODUCT_NAME = SVProgressHUD;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5F759C82752B2EB010DB3CD3D69707C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -472,7 +646,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -490,26 +664,35 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				98E98810EEEB96C99CB95CB91F4ADE0A /* Debug */,
-				B97A7F6ACE1216BB5A2307CA83FC93C5 /* Release */,
+				8DDFA5FA8D4131BFD96E5E26F3672644 /* Debug */,
+				D5F759C82752B2EB010DB3CD3D69707C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		99AA65EA1E2E16FBFFC3930102A6D895 /* Build configuration list for PBXNativeTarget "Pods-B16_Shopping_App" */ = {
+		2FE217A9FA5FBAB8E32EBD96AEA2F350 /* Build configuration list for PBXNativeTarget "SWRevealViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				40E4EBD7BC864AE1D41B02E46EE1FC87 /* Debug */,
-				49C620BD7BABFD0FB6B79AC7418C7751 /* Release */,
+				95C489C902207C0A4A370CF9D014FFB1 /* Debug */,
+				229880CD965DB1750180DEF2EAEC7278 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC7199458A1FD97C5760CE32EE861836 /* Build configuration list for PBXNativeTarget "SWRevealViewController" */ = {
+		4D69124FA4AF8A469A3B462D7EDD3030 /* Build configuration list for PBXNativeTarget "Pods-B16_Shopping_App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ADEA9A79996904B6A899C11BE286DF4D /* Debug */,
-				3CA081C167AB06C3C27789A7398F1C55 /* Release */,
+				81F87D70C003692F2A08454FB22D7174 /* Debug */,
+				04DF69377FB3F11914F1D77C569A8325 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7BF9EFCB35F5894DFFF17AECC779FA25 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3151D109D87BFDC120BEBC49901657A /* Debug */,
+				69B0922E758B122ADDE7F50471730AB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

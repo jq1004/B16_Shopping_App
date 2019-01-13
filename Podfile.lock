@@ -1,16 +1,20 @@
 PODS:
+  - SVProgressHUD (2.2.5)
   - SWRevealViewController (2.3.0)
 
 DEPENDENCIES:
+  - SVProgressHUD (~> 2.2)
   - SWRevealViewController (~> 2.3)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - SVProgressHUD
     - SWRevealViewController
 
 SPEC CHECKSUMS:
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
 
-PODFILE CHECKSUM: fbcbbf0d3954bcf60eb0cff86d2e884b638dfc3a
+PODFILE CHECKSUM: a08c649d01f536e2984af39ed72289c1a682bee3
 
 COCOAPODS: 1.5.3
