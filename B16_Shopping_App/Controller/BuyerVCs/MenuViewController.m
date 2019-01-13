@@ -35,6 +35,14 @@
     _profileImgView.layer.borderWidth = 2;
     _profileImgView.layer.borderColor = [UIColor colorWithRed:1.00 green:0.23 blue:0.82 alpha:1.0].CGColor;
     _profileImgView.layer.cornerRadius = _profileImgView.frame.size.width / 2;
+    _profileImgView.clipsToBounds = true;
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0]; //Get the docs directory
+    NSString *filePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@.png",[user valueForKey:@"mobile"][0]]];
+    NSData *pngData = [NSData dataWithContentsOfFile:filePath];
+    UIImage *image = [UIImage imageWithData:pngData];
+    _profileImgView.image = image;
     
     self.revealViewController.rearViewRevealWidth =  self.view.frame.size.width-105;
 

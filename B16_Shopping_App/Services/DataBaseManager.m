@@ -109,4 +109,23 @@
     return user;
 }
 
+- (void)updateUserWithUser :(UserInfo *)user
+{
+    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@",[user valueForKey:@"userId"]]];
+    
+    NSArray *result = [context executeFetchRequest:request error:nil];
+    
+    if (result.count == 1) {
+        [result setValue:[user valueForKey:@"firstName"] forKey:@"firstname"];
+        [result setValue:[user valueForKey:@"lastName"] forKey:@"lastname"];
+        [result setValue:[user valueForKey:@"email"] forKey:@"email"];
+        [result setValue:[user valueForKey:@"mobile"] forKey:@"mobile"];
+        [self saveContext];
+    }
+    
+}
+
 @end
