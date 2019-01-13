@@ -7,7 +7,7 @@
 //
 
 #import "ProductListViewController.h"
-
+#import "ProductListCell.h"
 @interface ProductListViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSArray *productItems;
     }
@@ -31,9 +31,9 @@
     //    return productArray.count;
     return 5;
 }
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return 200;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 280;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     //product = productArray[indexPath.row];

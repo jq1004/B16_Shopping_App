@@ -13,6 +13,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    _productImgView.clipsToBounds = YES;
+    _productImgView.layer.cornerRadius = 10;
+    _containView.clipsToBounds = YES;
+    _containView.layer.cornerRadius = 10;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

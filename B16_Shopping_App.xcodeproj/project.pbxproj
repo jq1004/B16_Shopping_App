@@ -13,6 +13,9 @@
 		454B885521E941AA00DF190F /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B884E21E941A900DF190F /* MyOrderViewController.m */; };
 		454B885621E941AA00DF190F /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B885021E941A900DF190F /* UserProfileViewController.m */; };
 		454B885721E941AA00DF190F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B885121E941A900DF190F /* MenuViewController.m */; };
+		45723DA121EB3AA80009B90A /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45723DA021EB3AA80009B90A /* ProductListViewController.m */; };
+		45723DA621EB3E230009B90A /* ProductListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45723DA521EB3E230009B90A /* ProductListCell.m */; };
+		45723DA921EB4E280009B90A /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45723DA821EB4E280009B90A /* ProductDetailViewController.m */; };
 		B9BAEEBB21EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9BAEEB921EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld */; };
 		B9BAEEBE21EA5A7C009D2C7C /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BAEEBD21EA5A7C009D2C7C /* DataBaseManager.m */; };
 		B9F3A6A321E9119E00E5EA8A /* APIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3A6A021E9119D00E5EA8A /* APIHandler.m */; };
@@ -42,6 +45,12 @@
 		454B885021E941A900DF190F /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 		454B885121E941A900DF190F /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		454B885221E941A900DF190F /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
+		45723D9F21EB3AA80009B90A /* ProductListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductListViewController.h; sourceTree = "<group>"; };
+		45723DA021EB3AA80009B90A /* ProductListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductListViewController.m; sourceTree = "<group>"; };
+		45723DA421EB3E230009B90A /* ProductListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductListCell.h; sourceTree = "<group>"; };
+		45723DA521EB3E230009B90A /* ProductListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductListCell.m; sourceTree = "<group>"; };
+		45723DA721EB4E280009B90A /* ProductDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
+		45723DA821EB4E280009B90A /* ProductDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		B9BAEEBA21EA5A24009D2C7C /* B16_Shopping_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = B16_Shopping_App.xcdatamodel; sourceTree = "<group>"; };
 		B9BAEEBC21EA5A71009D2C7C /* DataBaseManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBaseManager.h; sourceTree = "<group>"; };
 		B9BAEEBD21EA5A7C009D2C7C /* DataBaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
@@ -87,16 +96,45 @@
 		454B884A21E941A900DF190F /* BuyerVCs */ = {
 			isa = PBXGroup;
 			children = (
+				45723D9E21EB3A530009B90A /* Home */,
 				454B884B21E941A900DF190F /* UserProfileViewController.h */,
 				454B885021E941A900DF190F /* UserProfileViewController.m */,
-				454B884F21E941A900DF190F /* HomeViewController.h */,
-				454B884C21E941A900DF190F /* HomeViewController.m */,
 				454B884D21E941A900DF190F /* MenuViewController.h */,
 				454B885121E941A900DF190F /* MenuViewController.m */,
 				454B885221E941A900DF190F /* MyOrderViewController.h */,
 				454B884E21E941A900DF190F /* MyOrderViewController.m */,
 			);
 			path = BuyerVCs;
+			sourceTree = "<group>";
+		};
+		45723D9E21EB3A530009B90A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				454B884C21E941A900DF190F /* HomeViewController.m */,
+				454B884F21E941A900DF190F /* HomeViewController.h */,
+				45723D9F21EB3AA80009B90A /* ProductListViewController.h */,
+				45723DA021EB3AA80009B90A /* ProductListViewController.m */,
+				45723DA721EB4E280009B90A /* ProductDetailViewController.h */,
+				45723DA821EB4E280009B90A /* ProductDetailViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		45723DA221EB3CDD0009B90A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				454B884A21E941A900DF190F /* BuyerVCs */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		45723DA321EB3D630009B90A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				45723DA421EB3E230009B90A /* ProductListCell.h */,
+				45723DA521EB3E230009B90A /* ProductListCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		4AFD5D99957B13E0A37071C6 /* Pods */ = {
@@ -160,9 +198,10 @@
 		D27142CE21E7E2BC00F127A0 /* B16_Shopping_App */ = {
 			isa = PBXGroup;
 			children = (
+				45723DA321EB3D630009B90A /* View */,
+				45723DA221EB3CDD0009B90A /* Controller */,
 				D2C4751321E97D3900428E67 /* Extensions */,
-				454B884A21E941A900DF190F /* BuyerVCs */,
-				D275706521E92CB90047A2D6 /* Models */,
+				D275706521E92CB90047A2D6 /* Model */,
 				B9F3A6A521E911BE00E5EA8A /* Utilities */,
 				B9F3A69E21E9119D00E5EA8A /* Services */,
 				D2D1514321E7F765009B3087 /* Main */,
@@ -175,7 +214,7 @@
 			path = B16_Shopping_App;
 			sourceTree = "<group>";
 		};
-		D275706521E92CB90047A2D6 /* Models */ = {
+		D275706521E92CB90047A2D6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				D275706621E92CD20047A2D6 /* UserInfo.h */,
@@ -185,7 +224,7 @@
 				D20796EA21EACEC3008AB7EF /* TopSellerInfo.h */,
 				D20796EB21EACEC3008AB7EF /* TopSellerInfo.m */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D2C4751321E97D3900428E67 /* Extensions */ = {
@@ -370,13 +409,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D20796EC21EACEC3008AB7EF /* TopSellerInfo.m in Sources */,
+				45723DA121EB3AA80009B90A /* ProductListViewController.m in Sources */,
 				D2E09F2E21E7F43F00F14D43 /* LoginViewController.m in Sources */,
 				D20796E921EACE88008AB7EF /* CategoryInfo.m in Sources */,
 				D2C4751221E97B9F00428E67 /* SignUpViewController.m in Sources */,
 				B9F3A6A421E9119E00E5EA8A /* APIParser.m in Sources */,
 				D27142DF21E7E2BE00F127A0 /* main.m in Sources */,
+				45723DA921EB4E280009B90A /* ProductDetailViewController.m in Sources */,
 				B9BAEEBB21EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld in Sources */,
 				D2C4751621E97E4500428E67 /* UIViewController+UIViewControllerCategory.m in Sources */,
+				45723DA621EB3E230009B90A /* ProductListCell.m in Sources */,
 				454B885521E941AA00DF190F /* MyOrderViewController.m in Sources */,
 				454B885621E941AA00DF190F /* UserProfileViewController.m in Sources */,
 				454B885721E941AA00DF190F /* MenuViewController.m in Sources */,

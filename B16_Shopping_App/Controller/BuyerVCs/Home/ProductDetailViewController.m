@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _addToCart.layer.cornerRadius = 12;
+    _productImgView.clipsToBounds = YES;
+    _productImgView.layer.cornerRadius = 12;
 }
 
 /*

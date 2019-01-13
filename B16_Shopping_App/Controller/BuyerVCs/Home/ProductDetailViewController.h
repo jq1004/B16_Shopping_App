@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ProductDetailViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *productImgView;
+@property (weak, nonatomic) IBOutlet UIButton *addToCart;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
