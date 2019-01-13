@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeViewController : UIViewController <UIScrollViewDelegate>
+@interface HomeViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property NSMutableArray<CategoryInfo *> *categories;
 @property NSMutableArray<TopSellerInfo *> *topSellers;

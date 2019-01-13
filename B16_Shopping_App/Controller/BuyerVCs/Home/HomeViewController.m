@@ -10,12 +10,14 @@
 #import "SWRevealViewController.h"
 #import "APIHandler.h"
 #import "APIParser.h"
+#import "CategoryCell.h"
 
 @interface HomeViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBtn;
 @property (weak, nonatomic) IBOutlet UIScrollView *topSellerScroller;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageCtrl;
+@property (weak, nonatomic) IBOutlet UITableView *tbView;
 
 @end
 
@@ -36,6 +38,10 @@
     
     self.categoryImgs = [[NSMutableArray alloc] init];
     self.topSellerImgs = [[NSMutableArray alloc] init];
+    
+    _tbView.delegate = self;
+    _tbView.dataSource = self;
+    _tbView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)fetchCategoryInfo {
@@ -63,6 +69,7 @@
                 dispatch_group_leave(groupC);
             });
             dispatch_group_notify(groupC, dispatch_get_main_queue(), ^{
+                [self.tbView reloadData];
                 [SVProgressHUD dismiss];
             });
         }];
@@ -116,6 +123,25 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     int pageNumber = _topSellerScroller.contentOffset.x / _topSellerScroller.frame.size.width;
     _pageCtrl.currentPage = pageNumber;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _categoryImgs.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryCell" forIndexPath:indexPath];
+    cell.img.image = self.categoryImgs[indexPath.row];
+    cell.categoryTitle.text = self.categories[indexPath.row].cName;
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 180;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tbView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

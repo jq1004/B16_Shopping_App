@@ -342,6 +342,49 @@
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.2274509804" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m9F-wc-VlG">
+                                <rect key="frame" x="0.0" y="360" width="375" height="418"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoryCell" rowHeight="181" id="t6x-55-AUS" customClass="CategoryCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="181"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t6x-55-AUS" id="mYh-b9-grK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="180.66666666666666"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Drl-xi-9MI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="180.66666666666666"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGx-Wn-VBu">
+                                                    <rect key="frame" x="0.0" y="144.66666666666666" width="375" height="36"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.72121147260273977" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36" id="cDA-xn-Pvo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" red="1" green="0.2274509804" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Drl-xi-9MI" firstAttribute="leading" secondItem="mYh-b9-grK" secondAttribute="leading" id="380-Od-eyd"/>
+                                                <constraint firstItem="Drl-xi-9MI" firstAttribute="top" secondItem="mYh-b9-grK" secondAttribute="top" id="FVa-8U-4Zp"/>
+                                                <constraint firstAttribute="bottom" secondItem="Drl-xi-9MI" secondAttribute="bottom" id="KhL-dj-ds0"/>
+                                                <constraint firstAttribute="trailing" secondItem="JGx-Wn-VBu" secondAttribute="trailing" id="Pdk-sp-WY1"/>
+                                                <constraint firstItem="JGx-Wn-VBu" firstAttribute="leading" secondItem="mYh-b9-grK" secondAttribute="leading" id="qAf-hN-cjQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Drl-xi-9MI" secondAttribute="trailing" id="tPe-2k-WaU"/>
+                                                <constraint firstAttribute="bottom" secondItem="JGx-Wn-VBu" secondAttribute="bottom" id="w2d-qz-CMJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryTitle" destination="JGx-Wn-VBu" id="m53-Px-kaM"/>
+                                            <outlet property="img" destination="Drl-xi-9MI" id="BFf-cm-zw6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HXg-HA-w2N"/>
@@ -362,6 +405,7 @@
                     <connections>
                         <outlet property="menuBtn" destination="rWb-ta-7WD" id="Zwd-js-WEg"/>
                         <outlet property="pageCtrl" destination="PaU-0q-APH" id="IEm-kn-uYy"/>
+                        <outlet property="tbView" destination="m9F-wc-VlG" id="GFr-LR-fSS"/>
                         <outlet property="topSellerScroller" destination="Nvk-0V-E9H" id="Pha-4M-Jbq"/>
                     </connections>
                 </viewController>
