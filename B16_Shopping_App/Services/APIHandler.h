@@ -26,6 +26,6 @@
 
 - (void)topSellersApiCall:(void (^)(NSData *result, NSError *error))block;
 
-- (UIImage *)downloadImg:(NSString *)imgUrl;
+- (void)downloadImg:(NSString *)imgUrl withCompletion:(void (^)(UIImage *img))block;
 
 @end

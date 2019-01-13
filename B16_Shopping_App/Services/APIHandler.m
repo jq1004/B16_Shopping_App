@@ -138,7 +138,7 @@
     [dataTask resume];
 }
 
-- (void)topSellersApiCall:(void (^)(NSData *, NSError *))block {
+- (void)topSellersApiCall:(void (^)(NSData *result, NSError *error))block {
     NSString *strURL = kTOPSELLERSAPI;
     NSURL *url = [NSURL URLWithString:strURL];
     
@@ -151,18 +151,17 @@
     [dataTask resume];
 }
 
-- (UIImage *)downloadImg:(NSString *)imgUrl {
+- (void)downloadImg:(NSString *)imgUrl withCompletion:(void (^)(UIImage *img))block {
     NSURL *url = [NSURL URLWithString:imgUrl];
     UIImage *img = nil;
     
     @try {
         NSData *imgData = [NSData dataWithContentsOfURL:url];
         img = [UIImage imageWithData:imgData];
-        NSLog(@"Data");
+        block(img);
     } @catch (NSException *exception) {
         NSLog(@"Error");
     } @finally {
-        return img;
     }
 }
 
