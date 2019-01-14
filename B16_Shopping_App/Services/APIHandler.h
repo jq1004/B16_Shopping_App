@@ -30,4 +30,6 @@
 
 - (void)productApiCall:(NSString *)apiKey andUserId:(NSString *)userId andCategoryId:(NSString *) cid andSubCategoryId:(NSString *) scid withCompletion:(void (^)(NSData *result, NSError *error))block;
 
+- (void)subCategoryApiCall:(NSString *)apiKey andCatId:(NSString *)categoryId andUserId:(NSString *)userId withCompletion:(void (^)(NSData *result, NSError *error))completionHandler;
+
 @end

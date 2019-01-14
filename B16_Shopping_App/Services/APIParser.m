@@ -75,6 +75,24 @@
     }
 }
 
+- (void)subCategoryParser:(NSData *)subCategoryInfoList andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSMutableArray<SubCategoryInfo *> *result))completionHandler {
+    NSMutableArray<SubCategoryInfo *> *arr = [[NSMutableArray alloc] init];
+    NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:subCategoryInfoList options:NSJSONReadingMutableContainers error:&error];
+    
+    if (!jsonData || error) {
+        NSLog(@"Error parsing JSON: %@", error);
+        completionHandler(true, arr);
+    } else {
+        NSArray *scategories = jsonData[@"subcategory"];
+        for (int i = 0; i < scategories.count; i++) {
+            NSDictionary *scategory = scategories[i];
+            SubCategoryInfo *scategoryItem = [[SubCategoryInfo alloc] initWithSCid:scategory[@"scid"] andSCategoryName:scategory[@"scname"] andSCategoryDiscription:scategory[@"scdiscription"] andSCategoryImageUrl:scategory[@"scimageurl"]];
+            [arr addObject:scategoryItem];
+        }
+        completionHandler(false, arr);
+    }
+}
+
 - (void)topSellerParser:(NSData *)topSellerInfoList andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSMutableArray<TopSellerInfo *> *result))block {
     NSMutableArray<TopSellerInfo *> *arr = [[NSMutableArray alloc] init];
     NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:topSellerInfoList options:NSJSONReadingMutableContainers error:&error];

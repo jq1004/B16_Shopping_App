@@ -32,8 +32,8 @@
 }
 - (void)fetchProductInfo {
     NSString *userId = [[NSUserDefaults standardUserDefaults] valueForKey: @"userId"];
-//    NSString *userapikey = [[NSUserDefaults standardUserDefaults] valueForKey: @"appapikey"];
-    NSString *userapikey = @"c6020622f9ce6f2e0547272d6334c260";
+    NSString *userapikey = [[NSUserDefaults standardUserDefaults] valueForKey: @"appapikey"];
+
     [SVProgressHUD show];
     dispatch_group_t groupC = dispatch_group_create();
     dispatch_group_enter(groupC);
@@ -77,7 +77,6 @@
     NSLog(@"print img array %lu",(unsigned long)_productImgs.count);
     return _products.count;
     
-//    return _productImgs.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 280;
@@ -86,21 +85,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellIdentifier = @"cell";
     ProductListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-//    UIImage * img = [UIImage imageNamed:@"ua_shoe"];
     cell.productImgView.image = _productImgs[indexPath.row];
     cell.productName.text = _products[indexPath.row].pName;
     cell.productPrice.text = _products[indexPath.row].pPrice;
     cell.productQuantity.text = _products[indexPath.row].pQuantity;
     return cell;
 }
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

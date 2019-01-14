@@ -138,6 +138,20 @@
     [dataTask resume];
 }
 
+- (void)subCategoryApiCall:(NSString *)apiKey andCatId:(NSString *)categoryId andUserId:(NSString *)userId withCompletion:(void (^)(NSData *result, NSError *error))completionHandler {
+    
+    NSString *strURL = [NSString stringWithFormat:@"%@Id=%@&api_key=%@&user_id=%@", kSUBCATEGORYAPI, categoryId, apiKey, userId];
+    NSURL *url = [NSURL URLWithString:strURL];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        completionHandler(data, error);
+    }];
+    [dataTask resume];
+}
+
 - (void)topSellersApiCall:(void (^)(NSData *result, NSError *error))block {
     NSString *strURL = kTOPSELLERSAPI;
     NSURL *url = [NSURL URLWithString:strURL];

@@ -11,6 +11,8 @@
 #import "CategoryInfo.h"
 #import "TopSellerInfo.h"
 #import "ProductInfo.h"
+#import "SubCategoryInfo.h"
+
 @interface APIParser : NSObject
 
 +(instancetype)sharedInstance;
@@ -22,5 +24,7 @@
 - (void)topSellerParser:(NSData *)topSellerInfoList andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSMutableArray<TopSellerInfo *> *result))block;
 
 - (void)productParser:(NSData *)productInfoList andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSMutableArray<ProductInfo *> *result))block;
+
+- (void)subCategoryParser:(NSData *)subCategoryInfoList andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSMutableArray<SubCategoryInfo *> *result))completionHandler;
 
 @end

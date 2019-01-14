@@ -17,5 +17,6 @@
 #define kCATEGORYAPI @"http://rjtmobile.com/ansari/shopingcart/ios-ssl/cust_category.php?"
 #define kTOPSELLERSAPI @"http://rjtmobile.com/aamir/e-commerce/ios-app/shop_top_sellers.php?"
 #define kPRODUCTAPI @"http://rjtmobile.com/ansari/shopingcart/ios-ssl/product_details.php?"
+#define kSUBCATEGORYAPI @"http://rjtmobile.com/ansari/shopingcart/ios-ssl/cust_sub_category.php?"
 
 #endif /* B16_Shopping_App_Constants_h */

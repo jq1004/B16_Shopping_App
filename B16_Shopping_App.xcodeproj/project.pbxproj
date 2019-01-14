@@ -22,6 +22,8 @@
 		B9BAEEBB21EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9BAEEB921EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld */; };
 		B9BAEEBE21EA5A7C009D2C7C /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BAEEBD21EA5A7C009D2C7C /* DataBaseManager.m */; };
 		B9EFD29521EBE8EA00574DCC /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EFD29421EBE8EA00574DCC /* ResetPasswordViewController.m */; };
+		B9EFD29821ED1EA700574DCC /* SubCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EFD29721ED1EA700574DCC /* SubCategoryViewController.m */; };
+		B9EFD29B21ED1F6A00574DCC /* SubCategoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EFD29A21ED1F6A00574DCC /* SubCategoryInfo.m */; };
 		B9F3A6A321E9119E00E5EA8A /* APIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3A6A021E9119D00E5EA8A /* APIHandler.m */; };
 		B9F3A6A421E9119E00E5EA8A /* APIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3A6A121E9119D00E5EA8A /* APIParser.m */; };
 		D20796E921EACE88008AB7EF /* CategoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D20796E821EACE88008AB7EF /* CategoryInfo.m */; };
@@ -67,6 +69,10 @@
 		B9BAEEBD21EA5A7C009D2C7C /* DataBaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
 		B9EFD29321EBE8DB00574DCC /* ResetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
 		B9EFD29421EBE8EA00574DCC /* ResetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
+		B9EFD29621ED1E8D00574DCC /* SubCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubCategoryViewController.h; sourceTree = "<group>"; };
+		B9EFD29721ED1EA700574DCC /* SubCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubCategoryViewController.m; sourceTree = "<group>"; };
+		B9EFD29921ED1F4F00574DCC /* SubCategoryInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubCategoryInfo.h; sourceTree = "<group>"; };
+		B9EFD29A21ED1F6A00574DCC /* SubCategoryInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubCategoryInfo.m; sourceTree = "<group>"; };
 		B9F3A69F21E9119D00E5EA8A /* APIParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIParser.h; sourceTree = "<group>"; };
 		B9F3A6A021E9119D00E5EA8A /* APIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIHandler.m; sourceTree = "<group>"; };
 		B9F3A6A121E9119D00E5EA8A /* APIParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIParser.m; sourceTree = "<group>"; };
@@ -135,6 +141,8 @@
 				45723DA821EB4E280009B90A /* ProductDetailViewController.m */,
 				45D1A99E21EBCE43006016D8 /* CheckOutViewController.h */,
 				45D1A99F21EBCE43006016D8 /* CheckOutViewController.m */,
+				B9EFD29621ED1E8D00574DCC /* SubCategoryViewController.h */,
+				B9EFD29721ED1EA700574DCC /* SubCategoryViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -247,6 +255,8 @@
 				D20796EB21EACEC3008AB7EF /* TopSellerInfo.m */,
 				45D1A9A421ECB9AB006016D8 /* ProductInfo.h */,
 				45D1A9A521ECB9AB006016D8 /* ProductInfo.m */,
+				B9EFD29921ED1F4F00574DCC /* SubCategoryInfo.h */,
+				B9EFD29A21ED1F6A00574DCC /* SubCategoryInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -453,10 +463,12 @@
 				454B885621E941AA00DF190F /* UserProfileViewController.m in Sources */,
 				454B885721E941AA00DF190F /* MenuViewController.m in Sources */,
 				D27142D121E7E2BC00F127A0 /* AppDelegate.m in Sources */,
+				B9EFD29B21ED1F6A00574DCC /* SubCategoryInfo.m in Sources */,
 				454B885421E941AA00DF190F /* HomeViewController.m in Sources */,
 				D275706821E92CD20047A2D6 /* UserInfo.m in Sources */,
 				B9F3A6A321E9119E00E5EA8A /* APIHandler.m in Sources */,
 				B9BAEEBE21EA5A7C009D2C7C /* DataBaseManager.m in Sources */,
+				B9EFD29821ED1EA700574DCC /* SubCategoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
