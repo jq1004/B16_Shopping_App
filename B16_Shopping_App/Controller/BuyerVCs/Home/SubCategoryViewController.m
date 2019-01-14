@@ -12,6 +12,8 @@
 #import "APIParser.h"
 
 @interface SubCategoryViewController()
+@property (weak, nonatomic) IBOutlet UIPageControl *pageCtrl;
+@property (weak, nonatomic) IBOutlet UIScrollView *topSellerScroller;
 
 @end
 
@@ -94,27 +96,27 @@
                 dispatch_group_leave(groupT);
             });
             dispatch_group_notify(groupT, dispatch_get_main_queue(), ^{
-//                self.pageCtrl.numberOfPages = result.count;
-//                CGRect frame = CGRectMake(0.0, 0.0, 0.0, 0.0);
-//                for (int i = 0; i < result.count; i++) {
-//                    frame.origin.x = self.topSellerScroller.frame.size.width * (CGFloat)i;
-//                    frame.size = self.topSellerScroller.frame.size;
-//
-//                    UIImageView *imgView = [[UIImageView alloc] initWithFrame:frame];
-//                    imgView.image = self.topSellerImgs[i];
-//                    [self.topSellerScroller addSubview:imgView];
-//                }
-//                self.topSellerScroller.contentSize = CGSizeMake(self.topSellerScroller.frame.size.width * (CGFloat)result.count, self.topSellerScroller.frame.size.height);
-//                self.topSellerScroller.delegate = self;
-//                [SVProgressHUD dismiss];
+                self.pageCtrl.numberOfPages = result.count;
+                CGRect frame = CGRectMake(0.0, 0.0, 0.0, 0.0);
+                for (int i = 0; i < result.count; i++) {
+                    frame.origin.x = self.topSellerScroller.frame.size.width * (CGFloat)i;
+                    frame.size = self.topSellerScroller.frame.size;
+
+                    UIImageView *imgView = [[UIImageView alloc] initWithFrame:frame];
+                    imgView.image = self.topSellerImgs[i];
+                    [self.topSellerScroller addSubview:imgView];
+                }
+                self.topSellerScroller.contentSize = CGSizeMake(self.topSellerScroller.frame.size.width * (CGFloat)result.count, self.topSellerScroller.frame.size.height);
+                self.topSellerScroller.delegate = self;
+                [SVProgressHUD dismiss];
             });
         }];
     }];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-//    int pageNumber = _topSellerScroller.contentOffset.x / _topSellerScroller.frame.size.width;
-//    _pageCtrl.currentPage = pageNumber;
+    int pageNumber = _topSellerScroller.contentOffset.x / _topSellerScroller.frame.size.width;
+    _pageCtrl.currentPage = pageNumber;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

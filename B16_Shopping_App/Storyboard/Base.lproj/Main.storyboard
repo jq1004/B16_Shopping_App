@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V2a-JB-E7h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UCu-sq-p7r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -332,7 +332,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nvk-0V-E9H">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nvk-0V-E9H">
                                 <rect key="frame" x="0.0" y="88" width="375" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="2nk-QT-3sd"/>
@@ -427,6 +427,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hwe-dU-d3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1576.8" y="266.74876847290642"/>
+        </scene>
+        <!--Sub Category View Controller-->
+        <scene sceneID="yyg-F9-IOb">
+            <objects>
+                <viewController storyboardIdentifier="SubCategoryViewController" id="NQa-Jb-p5S" customClass="SubCategoryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PuV-gO-mb5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YJu-Z6-JNb">
+                                <rect key="frame" x="16" y="106" width="343" height="221"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="qjR-et-xhI"/>
+                                </constraints>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="3Vo-Da-pW0">
+                                <rect key="frame" x="20" y="348" width="335" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="5Av-Zn-dh9"/>
+                                </constraints>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YJu-Z6-JNb" firstAttribute="top" secondItem="YAN-dw-xIT" secondAttribute="top" constant="20" id="BUH-fj-fCT"/>
+                            <constraint firstItem="YAN-dw-xIT" firstAttribute="trailing" secondItem="YJu-Z6-JNb" secondAttribute="trailing" constant="20" id="IaY-Iv-HvY"/>
+                            <constraint firstItem="3Vo-Da-pW0" firstAttribute="top" secondItem="YJu-Z6-JNb" secondAttribute="bottom" id="Kss-UT-2mr"/>
+                            <constraint firstItem="3Vo-Da-pW0" firstAttribute="trailing" secondItem="YJu-Z6-JNb" secondAttribute="trailing" id="ekS-Vz-TFZ"/>
+                            <constraint firstItem="3Vo-Da-pW0" firstAttribute="leading" secondItem="YJu-Z6-JNb" secondAttribute="leading" id="s1d-gE-xDk"/>
+                            <constraint firstItem="YJu-Z6-JNb" firstAttribute="leading" secondItem="YAN-dw-xIT" secondAttribute="leading" constant="20" id="w1e-UG-tSg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YAN-dw-xIT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5RC-Q8-96Z"/>
+                    <connections>
+                        <outlet property="pageCtrl" destination="3Vo-Da-pW0" id="hiR-Ul-EW6"/>
+                        <outlet property="topSellerScroller" destination="YJu-Z6-JNb" id="PgM-UU-k0X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NwO-8L-6yd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576.8" y="987.93103448275861"/>
         </scene>
         <!--Product List View Controller-->
         <scene sceneID="nBH-6k-Zv8">
@@ -1467,6 +1509,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FvB-EO-cDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1577" y="-805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="e8f-gD-qlJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UCu-sq-p7r" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DL6-id-W5e">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NQa-Jb-p5S" kind="relationship" relationship="rootViewController" id="ucC-YM-Gfn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BNY-8a-vKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="329" y="988"/>
         </scene>
     </scenes>
     <resources>
