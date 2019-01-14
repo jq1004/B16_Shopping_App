@@ -16,6 +16,8 @@
 		45723DA121EB3AA80009B90A /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45723DA021EB3AA80009B90A /* ProductListViewController.m */; };
 		45723DA621EB3E230009B90A /* ProductListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45723DA521EB3E230009B90A /* ProductListCell.m */; };
 		45723DA921EB4E280009B90A /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45723DA821EB4E280009B90A /* ProductDetailViewController.m */; };
+		45D1A9A021EBCE43006016D8 /* CheckOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D1A99F21EBCE43006016D8 /* CheckOutViewController.m */; };
+		45D1A9A321EBDFA4006016D8 /* CheckoutProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D1A9A221EBDFA4006016D8 /* CheckoutProductCell.m */; };
 		B9BAEEBB21EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9BAEEB921EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld */; };
 		B9BAEEBE21EA5A7C009D2C7C /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BAEEBD21EA5A7C009D2C7C /* DataBaseManager.m */; };
 		B9EFD29521EBE8EA00574DCC /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EFD29421EBE8EA00574DCC /* ResetPasswordViewController.m */; };
@@ -53,6 +55,10 @@
 		45723DA521EB3E230009B90A /* ProductListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductListCell.m; sourceTree = "<group>"; };
 		45723DA721EB4E280009B90A /* ProductDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
 		45723DA821EB4E280009B90A /* ProductDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
+		45D1A99E21EBCE43006016D8 /* CheckOutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckOutViewController.h; sourceTree = "<group>"; };
+		45D1A99F21EBCE43006016D8 /* CheckOutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckOutViewController.m; sourceTree = "<group>"; };
+		45D1A9A121EBDFA4006016D8 /* CheckoutProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutProductCell.h; sourceTree = "<group>"; };
+		45D1A9A221EBDFA4006016D8 /* CheckoutProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckoutProductCell.m; sourceTree = "<group>"; };
 		B9BAEEBA21EA5A24009D2C7C /* B16_Shopping_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = B16_Shopping_App.xcdatamodel; sourceTree = "<group>"; };
 		B9BAEEBC21EA5A71009D2C7C /* DataBaseManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBaseManager.h; sourceTree = "<group>"; };
 		B9BAEEBD21EA5A7C009D2C7C /* DataBaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
@@ -124,6 +130,8 @@
 				45723DA021EB3AA80009B90A /* ProductListViewController.m */,
 				45723DA721EB4E280009B90A /* ProductDetailViewController.h */,
 				45723DA821EB4E280009B90A /* ProductDetailViewController.m */,
+				45D1A99E21EBCE43006016D8 /* CheckOutViewController.h */,
+				45D1A99F21EBCE43006016D8 /* CheckOutViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -143,6 +151,8 @@
 				45723DA521EB3E230009B90A /* ProductListCell.m */,
 				D28CF1E921EBB11D009D66A4 /* CategoryCell.h */,
 				D28CF1EA21EBB11D009D66A4 /* CategoryCell.m */,
+				45D1A9A121EBDFA4006016D8 /* CheckoutProductCell.h */,
+				45D1A9A221EBDFA4006016D8 /* CheckoutProductCell.m */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -424,6 +434,7 @@
 				D20796E921EACE88008AB7EF /* CategoryInfo.m in Sources */,
 				D2C4751221E97B9F00428E67 /* SignUpViewController.m in Sources */,
 				B9F3A6A421E9119E00E5EA8A /* APIParser.m in Sources */,
+				45D1A9A021EBCE43006016D8 /* CheckOutViewController.m in Sources */,
 				D27142DF21E7E2BE00F127A0 /* main.m in Sources */,
 				B9EFD29521EBE8EA00574DCC /* ResetPasswordViewController.m in Sources */,
 				45723DA921EB4E280009B90A /* ProductDetailViewController.m in Sources */,
@@ -431,6 +442,7 @@
 				D2C4751621E97E4500428E67 /* UIViewController+UIViewControllerCategory.m in Sources */,
 				45723DA621EB3E230009B90A /* ProductListCell.m in Sources */,
 				D28CF1EB21EBB11D009D66A4 /* CategoryCell.m in Sources */,
+				45D1A9A321EBDFA4006016D8 /* CheckoutProductCell.m in Sources */,
 				454B885521E941AA00DF190F /* MyOrderViewController.m in Sources */,
 				454B885621E941AA00DF190F /* UserProfileViewController.m in Sources */,
 				454B885721E941AA00DF190F /* MenuViewController.m in Sources */,
