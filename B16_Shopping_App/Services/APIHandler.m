@@ -161,8 +161,22 @@
         block(img);
     } @catch (NSException *exception) {
         NSLog(@"Error");
+        block(img);
     } @finally {
     }
+}
+
+- (void)productApiCall:(NSString *)apiKey andUserId:(NSString *)userId andCategoryId:(NSString *) cid andSubCategoryId:(NSString *) scid withCompletion:(void (^)(NSData *result, NSError *error))block{
+    NSString *strURL = [NSString stringWithFormat:@"%@cid=%@&scid=%@&api_key=%@&user_id=%@", kPRODUCTAPI, cid, scid, apiKey, userId];
+    NSURL *url = [NSURL URLWithString:strURL];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        block(data, error);
+    }];
+    [dataTask resume];
 }
 
 @end

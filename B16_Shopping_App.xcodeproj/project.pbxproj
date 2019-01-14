@@ -18,6 +18,7 @@
 		45723DA921EB4E280009B90A /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45723DA821EB4E280009B90A /* ProductDetailViewController.m */; };
 		45D1A9A021EBCE43006016D8 /* CheckOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D1A99F21EBCE43006016D8 /* CheckOutViewController.m */; };
 		45D1A9A321EBDFA4006016D8 /* CheckoutProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D1A9A221EBDFA4006016D8 /* CheckoutProductCell.m */; };
+		45D1A9A621ECB9AB006016D8 /* ProductInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D1A9A521ECB9AB006016D8 /* ProductInfo.m */; };
 		B9BAEEBB21EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9BAEEB921EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld */; };
 		B9BAEEBE21EA5A7C009D2C7C /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BAEEBD21EA5A7C009D2C7C /* DataBaseManager.m */; };
 		B9EFD29521EBE8EA00574DCC /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EFD29421EBE8EA00574DCC /* ResetPasswordViewController.m */; };
@@ -59,6 +60,8 @@
 		45D1A99F21EBCE43006016D8 /* CheckOutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckOutViewController.m; sourceTree = "<group>"; };
 		45D1A9A121EBDFA4006016D8 /* CheckoutProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutProductCell.h; sourceTree = "<group>"; };
 		45D1A9A221EBDFA4006016D8 /* CheckoutProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckoutProductCell.m; sourceTree = "<group>"; };
+		45D1A9A421ECB9AB006016D8 /* ProductInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductInfo.h; sourceTree = "<group>"; };
+		45D1A9A521ECB9AB006016D8 /* ProductInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductInfo.m; sourceTree = "<group>"; };
 		B9BAEEBA21EA5A24009D2C7C /* B16_Shopping_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = B16_Shopping_App.xcdatamodel; sourceTree = "<group>"; };
 		B9BAEEBC21EA5A71009D2C7C /* DataBaseManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBaseManager.h; sourceTree = "<group>"; };
 		B9BAEEBD21EA5A7C009D2C7C /* DataBaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
@@ -242,6 +245,8 @@
 				D20796E821EACE88008AB7EF /* CategoryInfo.m */,
 				D20796EA21EACEC3008AB7EF /* TopSellerInfo.h */,
 				D20796EB21EACEC3008AB7EF /* TopSellerInfo.m */,
+				45D1A9A421ECB9AB006016D8 /* ProductInfo.h */,
+				45D1A9A521ECB9AB006016D8 /* ProductInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -433,6 +438,7 @@
 				D2E09F2E21E7F43F00F14D43 /* LoginViewController.m in Sources */,
 				D20796E921EACE88008AB7EF /* CategoryInfo.m in Sources */,
 				D2C4751221E97B9F00428E67 /* SignUpViewController.m in Sources */,
+				45D1A9A621ECB9AB006016D8 /* ProductInfo.m in Sources */,
 				B9F3A6A421E9119E00E5EA8A /* APIParser.m in Sources */,
 				45D1A9A021EBCE43006016D8 /* CheckOutViewController.m in Sources */,
 				D27142DF21E7E2BE00F127A0 /* main.m in Sources */,

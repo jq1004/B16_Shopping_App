@@ -28,4 +28,6 @@
 
 - (void)downloadImg:(NSString *)imgUrl withCompletion:(void (^)(UIImage *img))block;
 
+- (void)productApiCall:(NSString *)apiKey andUserId:(NSString *)userId andCategoryId:(NSString *) cid andSubCategoryId:(NSString *) scid withCompletion:(void (^)(NSData *result, NSError *error))block;
+
 @end

@@ -2,4 +2,69 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "B16_Shopping_App/Controller/BuyerVCs/Home/ProductListViewController.m"
+            timestampString = "569179320.302408"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-fetchProductInfo"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductListViewController fetchProductInfo]"
+                  moduleName = "B16_Shopping_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/colin1004/Downloads/B16_Shopping_App/B16_Shopping_App/Controller/BuyerVCs/Home/ProductListViewController.m"
+                  timestampString = "569175492.946836"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "281">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[ProductListViewController fetchProductInfo]_block_invoke"
+                  moduleName = "B16_Shopping_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/colin1004/Downloads/B16_Shopping_App/B16_Shopping_App/Controller/BuyerVCs/Home/ProductListViewController.m"
+                  timestampString = "569175492.950503"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.82"
+                  moduleName = "B16_Shopping_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/colin1004/Downloads/B16_Shopping_App/B16_Shopping_App/Controller/BuyerVCs/Home/ProductListViewController.m"
+                  timestampString = "569175492.95383"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

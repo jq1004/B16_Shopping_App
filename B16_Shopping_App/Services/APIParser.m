@@ -92,4 +92,25 @@
     }
 }
 
+- (void)productParser:(NSData *)productInfoList andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSMutableArray<ProductInfo *> *result))block;{
+    
+    NSMutableArray<ProductInfo *> *arr = [[NSMutableArray alloc] init];
+    NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:productInfoList options:NSJSONReadingMutableContainers error:&error];
+    
+    if (!jsonData || error) {
+        NSLog(@"Error parsing JSON: %@", error);
+        block(true, arr);
+    } else {
+        NSArray *products = jsonData[@"products"];
+        NSLog(@"check api parse nsarray %@",products);
+        for (int i = 0; i < products.count; i++) {
+            NSDictionary *product = products[i];
+            ProductInfo *productItem = [[ProductInfo alloc] initWithInfo:product[@"id"] andProductName:product[@"pname"] andProductpQuantity:product[@"quantity"] andProductPrice:product[@"prize"] andProductDiscription:product[@"discription"] andProductImageUrl:product[@"image"]];
+            [arr addObject:productItem];
+        }
+        block(false, arr);
+    }
+    
+}
+
 @end
