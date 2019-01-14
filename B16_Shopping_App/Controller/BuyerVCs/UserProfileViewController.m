@@ -65,15 +65,11 @@
     NSString *filePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@.png",_mobileTxtF.text]];
     NSData *pngData = [NSData dataWithContentsOfFile:filePath];
     UIImage *image = [UIImage imageWithData:pngData];
-<<<<<<< HEAD
     if (image != nil) {
         _userProfileImgView.image = image;
     } else {
         _userProfileImgView.image = [UIImage imageNamed:@"profileImage"];
     }
-=======
-    self.userProfileImgView.image = image;
->>>>>>> 415da0dad1070527485973ff60d7e5dc90745fd5
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
