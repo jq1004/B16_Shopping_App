@@ -24,11 +24,16 @@
     [super viewDidLoad];
     self.products = [[NSMutableArray alloc] init];
     self.productImgs = [[NSMutableArray alloc] init];
+    
+    self.tbv.delegate = self;
+    self.tbv.dataSource = self;
+    
     [self fetchProductInfo];
 }
 - (void)fetchProductInfo {
     NSString *userId = [[NSUserDefaults standardUserDefaults] valueForKey: @"userId"];
-    NSString *userapikey = [[NSUserDefaults standardUserDefaults] valueForKey: @"appapikey"];
+//    NSString *userapikey = [[NSUserDefaults standardUserDefaults] valueForKey: @"appapikey"];
+    NSString *userapikey = @"c6020622f9ce6f2e0547272d6334c260";
     [SVProgressHUD show];
     dispatch_group_t groupC = dispatch_group_create();
     dispatch_group_enter(groupC);
