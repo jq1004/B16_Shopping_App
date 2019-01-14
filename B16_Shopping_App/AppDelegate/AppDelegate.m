@@ -19,7 +19,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLoggedIn"]) {
             SWRevealViewController *sWRevealVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SWRevealVC"];
             self.window.rootViewController = sWRevealVC;

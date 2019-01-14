@@ -10,7 +10,7 @@
 #import "UserInfo.h"
 #import "CategoryInfo.h"
 #import "TopSellerInfo.h"
-
+#import "ProductInfo.h"
 @interface APIParser : NSObject
 
 +(instancetype)sharedInstance;
@@ -20,5 +20,7 @@
 - (void)categoryParser:(NSData *)categoryInfoList andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSMutableArray<CategoryInfo *> *result))block;
 
 - (void)topSellerParser:(NSData *)topSellerInfoList andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSMutableArray<TopSellerInfo *> *result))block;
+
+- (void)productParser:(NSData *)productInfoList andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSMutableArray<ProductInfo *> *result))block;
 
 @end
