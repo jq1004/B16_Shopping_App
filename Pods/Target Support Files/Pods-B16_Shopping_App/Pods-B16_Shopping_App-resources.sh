@@ -92,10 +92,24 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/BraintreeDropIn/Braintree-UIKit-Localization.bundle"
   install_resource "${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
+  install_resource "${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-error.png"
+  install_resource "${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-error@2x.png"
+  install_resource "${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-info.png"
+  install_resource "${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-info@2x.png"
+  install_resource "${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-success.png"
+  install_resource "${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-success@2x.png"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/BraintreeDropIn/Braintree-UIKit-Localization.bundle"
   install_resource "${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
+  install_resource "${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-error.png"
+  install_resource "${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-error@2x.png"
+  install_resource "${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-info.png"
+  install_resource "${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-info@2x.png"
+  install_resource "${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-success.png"
+  install_resource "${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-success@2x.png"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

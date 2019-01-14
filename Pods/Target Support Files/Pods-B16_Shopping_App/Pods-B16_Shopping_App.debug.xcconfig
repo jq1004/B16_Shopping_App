@@ -1,8 +1,8 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/SVProgressHUD" "${PODS_ROOT}/Headers/Public/SWRevealViewController"
-LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/SWRevealViewController"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/SVProgressHUD" -isystem "${PODS_ROOT}/Headers/Public/SWRevealViewController"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"SVProgressHUD" -l"SWRevealViewController" -framework "CoreGraphics" -framework "QuartzCore"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Braintree" "${PODS_ROOT}/Headers/Public/BraintreeDropIn" "${PODS_ROOT}/Headers/Public/SVProgressHUD" "${PODS_ROOT}/Headers/Public/SWRevealViewController" "${PODS_ROOT}/Headers/Public/TWMessageBarManager"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Braintree" "${PODS_CONFIGURATION_BUILD_DIR}/BraintreeDropIn" "${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/SWRevealViewController" "${PODS_CONFIGURATION_BUILD_DIR}/TWMessageBarManager" "${PODS_ROOT}/Braintree/BraintreePayPal/PayPalDataCollector/Risk"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Braintree" -isystem "${PODS_ROOT}/Headers/Public/BraintreeDropIn" -isystem "${PODS_ROOT}/Headers/Public/SVProgressHUD" -isystem "${PODS_ROOT}/Headers/Public/SWRevealViewController" -isystem "${PODS_ROOT}/Headers/Public/TWMessageBarManager"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Braintree" -l"BraintreeDropIn" -l"PPRiskMagnesOC" -l"SVProgressHUD" -l"SWRevealViewController" -l"TWMessageBarManager" -l"c++" -framework "AddressBook" -framework "CoreGraphics" -framework "CoreLocation" -framework "MessageUI" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit" -weak_framework "Contacts" -weak_framework "SafariServices"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
