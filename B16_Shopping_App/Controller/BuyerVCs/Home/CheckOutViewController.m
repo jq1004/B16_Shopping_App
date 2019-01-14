@@ -77,6 +77,7 @@
             // result.paymentIcon
             // result.paymentDescription
         }
+        [controller dismissViewControllerAnimated:true completion:nil];
     }];
     [self presentViewController:dropIn animated:YES completion:nil];
 }
