@@ -19,13 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLoggedIn"]) {
-//            SWRevealViewController *sWRevealVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SWRevealVC"];
-//            self.window.rootViewController = sWRevealVC;
-//        } else {
-//            LoginViewController *loginController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginVC"];
-//            self.window.rootViewController = loginController;
-//        }
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLoggedIn"]) {
+            SWRevealViewController *sWRevealVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SWRevealVC"];
+            self.window.rootViewController = sWRevealVC;
+        } else {
+            LoginViewController *loginController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginVC"];
+            self.window.rootViewController = loginController;
+        }
     
     return YES;
 }
