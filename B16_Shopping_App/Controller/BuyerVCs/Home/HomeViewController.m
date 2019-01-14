@@ -49,7 +49,7 @@
     dispatch_group_t groupC = dispatch_group_create();
     dispatch_group_enter(groupC);
     dispatch_group_t imgGroupC = dispatch_group_create();
-    [[APIHandler sharedInstance] categoryApiCall:@"9e3202fb547a9b6ba9d591505cd5f704" andUserId:@"1513" withCompletion:^(NSData *result, NSError *error) {
+    [[APIHandler sharedInstance] categoryApiCall:[[NSUserDefaults standardUserDefaults] stringForKey:@"appapikey"] andUserId:[[NSUserDefaults standardUserDefaults] stringForKey:@"userId"] withCompletion:^(NSData *result, NSError *error) {
         [[APIParser sharedInstance] categoryParser:result andError:error withCompletion:^(Boolean *hasError, NSMutableArray<CategoryInfo *> *result) {
             if (hasError) {
                 dispatch_async(dispatch_get_main_queue(), ^{

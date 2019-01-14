@@ -29,24 +29,34 @@
     
     userId = [[NSUserDefaults standardUserDefaults] valueForKey:@"userId"];
     user = [[DataBaseManager sharedInstance] fetchUserInfoWithId:userId];
-    
-    _userNameLbl.text = [NSString stringWithFormat:@"%@ %@", [user valueForKey:@"firstName"][0], [user valueForKey:@"lastName"][0]];
  
     _profileImgView.layer.borderWidth = 2;
     _profileImgView.layer.borderColor = [UIColor colorWithRed:1.00 green:0.23 blue:0.82 alpha:1.0].CGColor;
     _profileImgView.layer.cornerRadius = _profileImgView.frame.size.width / 2;
     _profileImgView.clipsToBounds = true;
     
+    self.revealViewController.rearViewRevealWidth =  self.view.frame.size.width-105;
+
+    // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    _userNameLbl.text = [NSString stringWithFormat:@"%@ %@", [user valueForKey:@"firstName"][0], [user valueForKey:@"lastName"][0]];
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsPath = [paths objectAtIndex:0]; //Get the docs directory
     NSString *filePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@.png",[user valueForKey:@"mobile"][0]]];
     NSData *pngData = [NSData dataWithContentsOfFile:filePath];
     UIImage *image = [UIImage imageWithData:pngData];
-    _profileImgView.image = image;
+    if (image != nil) {
+        _profileImgView.image = image;
+    } else {
+        _profileImgView.image = [UIImage imageNamed:@"profileImage"];
+    }
     
-    self.revealViewController.rearViewRevealWidth =  self.view.frame.size.width-105;
-
-    // Do any additional setup after loading the view.
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

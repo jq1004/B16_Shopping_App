@@ -51,6 +51,7 @@
         
         [[NSUserDefaults standardUserDefaults] setValue:userInfoJson[0][@"id"] forKey:@"userId"];
         [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"isLoggedIn"];
+        [[NSUserDefaults standardUserDefaults] setValue:userInfoJson[0][@"appapikey "] forKey:@"appapikey"];
         block(false);
     }
     return userInfo;
