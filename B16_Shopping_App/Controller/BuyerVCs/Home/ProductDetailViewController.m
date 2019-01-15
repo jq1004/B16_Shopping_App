@@ -7,8 +7,11 @@
 //
 
 #import "ProductDetailViewController.h"
+#import "DataBaseManager.h"
 
 @interface ProductDetailViewController ()
+
+@property NSString *userId;
 
 @end
 
@@ -20,16 +23,25 @@
     _addToCart.layer.cornerRadius = 12;
     _productImgView.clipsToBounds = YES;
     _productImgView.layer.cornerRadius = 12;
+    
+    _userId = [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"];
+    
+    [self setUpDetailView];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setUpDetailView
+{
+    _priceLbl.text = _product.pPrice;
+    _quantityLbl.text = _product.pQuantity;
+    _descriptionTxtV.text = _product.pDiscription;
+    _productImgView.image = _productImg;
+    _titleLbl.text = _product.pName;
 }
-*/
+
+- (IBAction)addToCartBtn:(UIButton *)sender {
+    [[DataBaseManager sharedInstance] saveToCartWithProduc:_product andUserId:_userId];
+    //show alert success
+}
+
 
 @end

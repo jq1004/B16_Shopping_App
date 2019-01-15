@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductInfo.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CheckoutProductCell : UITableViewCell
+
+@property ProductInfo *product;
 
 @property (weak, nonatomic) IBOutlet UIImageView *productImgView;
 
@@ -21,7 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIView *productView;
 @property (weak, nonatomic) IBOutlet UIView *addDeleteView;
-
+@property (weak, nonatomic) IBOutlet UIButton *minusBtn;
+@property (weak, nonatomic) IBOutlet UIButton *plusBtn;
+@property (weak, nonatomic) IBOutlet UITextField *qtyTxtF;
 
 
 @end

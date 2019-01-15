@@ -24,6 +24,8 @@
 		B9EFD29521EBE8EA00574DCC /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EFD29421EBE8EA00574DCC /* ResetPasswordViewController.m */; };
 		B9EFD29821ED1EA700574DCC /* SubCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EFD29721ED1EA700574DCC /* SubCategoryViewController.m */; };
 		B9EFD29B21ED1F6A00574DCC /* SubCategoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EFD29A21ED1F6A00574DCC /* SubCategoryInfo.m */; };
+		B9EFD29E21ED4A7800574DCC /* SubCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EFD29D21ED4A7800574DCC /* SubCategoryCell.m */; };
+		B9EFD2A121ED844500574DCC /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EFD2A021ED844500574DCC /* CartViewController.m */; };
 		B9F3A6A321E9119E00E5EA8A /* APIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3A6A021E9119D00E5EA8A /* APIHandler.m */; };
 		B9F3A6A421E9119E00E5EA8A /* APIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3A6A121E9119D00E5EA8A /* APIParser.m */; };
 		D20796E921EACE88008AB7EF /* CategoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D20796E821EACE88008AB7EF /* CategoryInfo.m */; };
@@ -73,6 +75,10 @@
 		B9EFD29721ED1EA700574DCC /* SubCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubCategoryViewController.m; sourceTree = "<group>"; };
 		B9EFD29921ED1F4F00574DCC /* SubCategoryInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubCategoryInfo.h; sourceTree = "<group>"; };
 		B9EFD29A21ED1F6A00574DCC /* SubCategoryInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubCategoryInfo.m; sourceTree = "<group>"; };
+		B9EFD29C21ED4A6200574DCC /* SubCategoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubCategoryCell.h; sourceTree = "<group>"; };
+		B9EFD29D21ED4A7800574DCC /* SubCategoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubCategoryCell.m; sourceTree = "<group>"; };
+		B9EFD29F21ED843700574DCC /* CartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
+		B9EFD2A021ED844500574DCC /* CartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
 		B9F3A69F21E9119D00E5EA8A /* APIParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIParser.h; sourceTree = "<group>"; };
 		B9F3A6A021E9119D00E5EA8A /* APIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIHandler.m; sourceTree = "<group>"; };
 		B9F3A6A121E9119D00E5EA8A /* APIParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIParser.m; sourceTree = "<group>"; };
@@ -143,6 +149,8 @@
 				45D1A99F21EBCE43006016D8 /* CheckOutViewController.m */,
 				B9EFD29621ED1E8D00574DCC /* SubCategoryViewController.h */,
 				B9EFD29721ED1EA700574DCC /* SubCategoryViewController.m */,
+				B9EFD29F21ED843700574DCC /* CartViewController.h */,
+				B9EFD2A021ED844500574DCC /* CartViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -164,6 +172,8 @@
 				D28CF1EA21EBB11D009D66A4 /* CategoryCell.m */,
 				45D1A9A121EBDFA4006016D8 /* CheckoutProductCell.h */,
 				45D1A9A221EBDFA4006016D8 /* CheckoutProductCell.m */,
+				B9EFD29C21ED4A6200574DCC /* SubCategoryCell.h */,
+				B9EFD29D21ED4A7800574DCC /* SubCategoryCell.m */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -469,6 +479,7 @@
 				B9EFD29521EBE8EA00574DCC /* ResetPasswordViewController.m in Sources */,
 				45723DA921EB4E280009B90A /* ProductDetailViewController.m in Sources */,
 				B9BAEEBB21EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld in Sources */,
+				B9EFD2A121ED844500574DCC /* CartViewController.m in Sources */,
 				D2C4751621E97E4500428E67 /* UIViewController+UIViewControllerCategory.m in Sources */,
 				45723DA621EB3E230009B90A /* ProductListCell.m in Sources */,
 				D28CF1EB21EBB11D009D66A4 /* CategoryCell.m in Sources */,
@@ -482,6 +493,7 @@
 				D275706821E92CD20047A2D6 /* UserInfo.m in Sources */,
 				B9F3A6A321E9119E00E5EA8A /* APIHandler.m in Sources */,
 				B9BAEEBE21EA5A7C009D2C7C /* DataBaseManager.m in Sources */,
+				B9EFD29E21ED4A7800574DCC /* SubCategoryCell.m in Sources */,
 				B9EFD29821ED1EA700574DCC /* SubCategoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

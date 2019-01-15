@@ -10,6 +10,7 @@
 #import "ProductListCell.h"
 #import "APIHandler.h"
 #import "APIParser.h"
+#import "ProductDetailViewController.h"
 
 @interface ProductListViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSArray *productItems;
@@ -38,7 +39,7 @@
     dispatch_group_t groupC = dispatch_group_create();
     dispatch_group_enter(groupC);
     dispatch_group_t imgGroupC = dispatch_group_create();
-    [[APIHandler sharedInstance] productApiCall: userapikey andUserId:userId andCategoryId:@"107" andSubCategoryId:@"205" withCompletion:^(NSData *result, NSError *error) {
+    [[APIHandler sharedInstance] productApiCall: userapikey andUserId:userId andCategoryId:_cid andSubCategoryId:_scid withCompletion:^(NSData *result, NSError *error) {
         [[APIParser sharedInstance] productParser:result andError:error withCompletion:^(Boolean *hasError, NSMutableArray<ProductInfo *> *result) {
             if (hasError) {
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -74,7 +75,6 @@
     return 7;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSLog(@"print img array %lu",(unsigned long)_productImgs.count);
     return _products.count;
     
 }
@@ -90,6 +90,16 @@
     cell.productPrice.text = _products[indexPath.row].pPrice;
     cell.productQuantity.text = _products[indexPath.row].pQuantity;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tbv deselectRowAtIndexPath:indexPath animated:YES];
+    
+    ProductDetailViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
+    ctrl.product = [[ProductInfo alloc] initWithInfo:_products[indexPath.row].pId andProductName:_products[indexPath.row].pName andProductpQuantity:_products[indexPath.row].pQuantity andProductPrice:_products[indexPath.row].pPrice andProductDiscription:_products[indexPath.row].pDiscription andProductImageUrl:_products[indexPath.row].pImageUrl];
+    ctrl.productImg = _productImgs[indexPath.row];
+    [[self navigationController] pushViewController:ctrl animated:true];
 }
 
 @end

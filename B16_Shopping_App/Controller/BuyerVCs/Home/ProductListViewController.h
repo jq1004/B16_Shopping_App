@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ProductListViewController : UIViewController
 
+@property NSString *cid;
+@property NSString *scid;
 @property NSMutableArray<ProductInfo*> *products;
 @property NSMutableArray<UIImage *> *productImgs;
 

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "UserInfo.h"
+#import "ProductInfo.h"
 
 @interface DataBaseManager : NSObject
 
@@ -27,5 +28,9 @@
 - (UserInfo*)fetchUserInfoWithId :(NSString *)Id;
 
 - (void)updateUserWithUser :(UserInfo *)user;
+
+- (void)saveToCartWithProduc : (ProductInfo *)product andUserId:(NSString *)userId;
+
+- (NSArray<ProductInfo *> *)fetchcartWithUserId :(NSString *)userId;
 
 @end

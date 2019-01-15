@@ -8,9 +8,11 @@
 
 #import "HomeViewController.h"
 #import "SWRevealViewController.h"
+#import "SubCategoryViewController.h"
 #import "APIHandler.h"
 #import "APIParser.h"
 #import "CategoryCell.h"
+#import "CartViewController.h"
 
 @interface HomeViewController ()
 
@@ -142,6 +144,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tbView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    SubCategoryViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SubCategoryViewController"];
+    ctrl.cId = self.categories[indexPath.row].cId;
+    [[self navigationController] pushViewController:ctrl animated:true];
 }
+
+- (IBAction)cartBtn:(UIBarButtonItem *)sender {
+    CartViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CartViewController"];
+    [[self navigationController] pushViewController:ctrl animated:true];
+}
+
 
 @end

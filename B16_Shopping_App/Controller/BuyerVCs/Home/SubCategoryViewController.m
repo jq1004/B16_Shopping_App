@@ -10,10 +10,14 @@
 #import "SWRevealViewController.h"
 #import "APIHandler.h"
 #import "APIParser.h"
+#import "SubCategoryCell.h"
+#import "ProductListViewController.h"
 
 @interface SubCategoryViewController()
 @property (weak, nonatomic) IBOutlet UIPageControl *pageCtrl;
 @property (weak, nonatomic) IBOutlet UIScrollView *topSellerScroller;
+@property (weak, nonatomic) IBOutlet UITableView *tbView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBtn;
 
 @end
 
@@ -21,22 +25,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //self.cId = @"107";
     [self setup];
+    [self fetchSubCategoryInfo];
+    [self fetchTopSellers];
     
 }
 
 - (void)setup {
-//    _menuBtn.target = self.revealViewController;
-//    _menuBtn.action = @selector(revealToggle:);
+    _menuBtn.target = self.revealViewController;
+    _menuBtn.action = @selector(revealToggle:);
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     self.subcategoryImgs = [[NSMutableArray alloc] init];
     self.topSellerImgs = [[NSMutableArray alloc] init];
     
-//    _tbView.delegate = self;
-//    _tbView.dataSource = self;
-//    _tbView.tableFooterView = [[UIView alloc] init];
+    _tbView.delegate = self;
+    _tbView.dataSource = self;
+    _tbView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)fetchSubCategoryInfo {
@@ -55,7 +62,11 @@
                 for (int i = 0; i < result.count; i++) {
                     dispatch_group_enter(imgGroupC);
                     [[APIHandler sharedInstance] downloadImg:result[i].scImageUrl withCompletion:^(UIImage *img) {
-                        [self.subcategoryImgs addObject:img];
+                        if (img != nil){
+                            [self.subcategoryImgs addObject:img];
+                        } else {
+                            [self.subcategoryImgs addObject:[UIImage imageNamed:@"not_found"]];
+                        }
                         dispatch_group_leave(imgGroupC);
                     }];
                 }
@@ -64,7 +75,7 @@
                 dispatch_group_leave(groupC);
             });
             dispatch_group_notify(groupC, dispatch_get_main_queue(), ^{
-                //[self.tbView reloadData];
+                [self.tbView reloadData];
                 [SVProgressHUD dismiss];
             });
         }];
@@ -87,7 +98,11 @@
                 for (int i = 0; i < result.count; i++) {
                     dispatch_group_enter(imgGroupT);
                     [[APIHandler sharedInstance] downloadImg:result[i].sellerLogo withCompletion:^(UIImage *img) {
-                        [self.topSellerImgs addObject:img];
+                        if (img != nil){
+                            [self.topSellerImgs addObject:img];
+                        } else {
+                            [self.topSellerImgs addObject:[UIImage imageNamed:@"not_found"]];
+                        }
                         dispatch_group_leave(imgGroupT);
                     }];
                 }
@@ -123,15 +138,31 @@
     return _subcategoryImgs.count;
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    CategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryCell" forIndexPath:indexPath];
-//    cell.img.image = self.categoryImgs[indexPath.row];
-//    cell.categoryTitle.text = self.categories[indexPath.row].cName;
-//    return cell;
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SubCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SubCategoryCell" forIndexPath:indexPath];
+
+    if (indexPath.row % 2 == 0) {
+        cell.rightImageView.image = _subcategoryImgs[indexPath.row];
+        cell.leftLabel.text = _subcategories[indexPath.row].scName;
+    } else {
+        cell.leftImgView.image = _subcategoryImgs[indexPath.row];
+        cell.rightLabel.text = _subcategories[indexPath.row].scName;
+    }
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 180;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //[self.tbView deselectRowAtIndexPath:indexPath animated:YES];
+    [self.tbView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    ProductListViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ProductListViewController"];
+    ctrl.cid = _cId;
+    ctrl.scid = _subcategories[indexPath.row].scId;
+    [[self navigationController] pushViewController:ctrl animated:true];
 }
 
 

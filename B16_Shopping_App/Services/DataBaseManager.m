@@ -128,4 +128,49 @@
     
 }
 
+- (void)saveToCartWithProduc : (ProductInfo *)product andUserId:(NSString *)userId
+{
+    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@",userId]];
+    
+    NSArray *result = [context executeFetchRequest:request error:nil];
+    
+    if (result.count == 1) {
+        NSObject *user = result[0];
+        NSManagedObject *cartEntity = [NSEntityDescription insertNewObjectForEntityForName:@"Cart" inManagedObjectContext:context];
+        [cartEntity setValue:product.pId forKey:@"productId"];
+        [cartEntity setValue:product.pName forKey:@"productName"];
+        [cartEntity setValue:product.pPrice forKey:@"productPrice"];
+        [cartEntity setValue:product.pQuantity forKey:@"productQty"];
+        [cartEntity setValue:product.pImageUrl forKey:@"productImgUrl"];
+        
+        [[user mutableSetValueForKey:@"products"] addObject:cartEntity];
+        [self saveContext];
+    }
+}
+
+- (NSArray<ProductInfo *> *)fetchcartWithUserId :(NSString *)userId
+{
+    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+    NSArray *products = [[NSArray alloc] init];
+    NSMutableArray<ProductInfo*> *cart = [[NSMutableArray alloc] init];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@",userId]];
+    
+    NSArray *result = [context executeFetchRequest:request error:nil];
+    
+    if (result.count == 1) {
+        NSObject *user = result[0];
+        products = [[user mutableSetValueForKey:@"products"] allObjects];
+    }
+    
+    for (int i=0; i<products.count;i++) {
+        [cart addObject:[[ProductInfo alloc] initWithInfo:[products[i] valueForKey:@"productId"] andProductName:[products[i] valueForKey:@"productName"] andProductpQuantity:[products[i] valueForKey:@"productQty"] andProductPrice:[products[i] valueForKey:@"productPrice"] andProductDiscription:@"" andProductImageUrl:[products[i] valueForKey:@"productImgUrl"]]];
+    }
+    
+    return cart;
+}
+
 @end
