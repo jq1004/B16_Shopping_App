@@ -37,7 +37,6 @@
     _applyCouponBtn.layer.cornerRadius = 12;
     _checkoutBtn.layer.cornerRadius = 12;
     _totalView.layer.cornerRadius = 12;
-    _demoPaymentApiKey =  @"eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiIyMjBmYmQxZmI0NWU0ZDdkOTk0MjIyZjE2ZTNkNzE2MWNjNzE1MzFjNGE4MWUwOWMzZGU2NTNiZTc4OGMwNDI3fGNyZWF0ZWRfYXQ9MjAxOS0wMS0xNFQyMDo1MjozNi40NDk2MDgwMzIrMDAwMFx1MDAyNm1lcmNoYW50X2lkPTM0OHBrOWNnZjNiZ3l3MmJcdTAwMjZwdWJsaWNfa2V5PTJuMjQ3ZHY4OWJxOXZtcHIiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvMzQ4cGs5Y2dmM2JneXcyYi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJncmFwaFFMIjp7InVybCI6Imh0dHBzOi8vcGF5bWVudHMuc2FuZGJveC5icmFpbnRyZWUtYXBpLmNvbS9ncmFwaHFsIiwiZGF0ZSI6IjIwMTgtMDUtMDgifSwiY2hhbGxlbmdlcyI6W10sImVudmlyb25tZW50Ijoic2FuZGJveCIsImNsaWVudEFwaVVybCI6Imh0dHBzOi8vYXBpLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb206NDQzL21lcmNoYW50cy8zNDhwazljZ2YzYmd5dzJiL2NsaWVudF9hcGkiLCJhc3NldHNVcmwiOiJodHRwczovL2Fzc2V0cy5icmFpbnRyZWVnYXRld2F5LmNvbSIsImF1dGhVcmwiOiJodHRwczovL2F1dGgudmVubW8uc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbSIsImFuYWx5dGljcyI6eyJ1cmwiOiJodHRwczovL29yaWdpbi1hbmFseXRpY3Mtc2FuZC5zYW5kYm94LmJyYWludHJlZS1hcGkuY29tLzM0OHBrOWNnZjNiZ3l3MmIifSwidGhyZWVEU2VjdXJlRW5hYmxlZCI6dHJ1ZSwicGF5cGFsRW5hYmxlZCI6dHJ1ZSwicGF5cGFsIjp7ImRpc3BsYXlOYW1lIjoiQWNtZSBXaWRnZXRzLCBMdGQuIChTYW5kYm94KSIsImNsaWVudElkIjpudWxsLCJwcml2YWN5VXJsIjoiaHR0cDovL2V4YW1wbGUuY29tL3BwIiwidXNlckFncmVlbWVudFVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS90b3MiLCJiYXNlVXJsIjoiaHR0cHM6Ly9hc3NldHMuYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhc3NldHNVcmwiOiJodHRwczovL2NoZWNrb3V0LnBheXBhbC5jb20iLCJkaXJlY3RCYXNlVXJsIjpudWxsLCJhbGxvd0h0dHAiOnRydWUsImVudmlyb25tZW50Tm9OZXR3b3JrIjp0cnVlLCJlbnZpcm9ubWVudCI6Im9mZmxpbmUiLCJ1bnZldHRlZE1lcmNoYW50IjpmYWxzZSwiYnJhaW50cmVlQ2xpZW50SWQiOiJtYXN0ZXJjbGllbnQzIiwiYmlsbGluZ0FncmVlbWVudHNFbmFibGVkIjp0cnVlLCJtZXJjaGFudEFjY291bnRJZCI6ImFjbWV3aWRnZXRzbHRkc2FuZGJveCIsImN1cnJlbmN5SXNvQ29kZSI6IlVTRCJ9LCJtZXJjaGFudElkIjoiMzQ4cGs5Y2dmM2JneXcyYiIsInZlbm1vIjoib2ZmIn0=";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -63,8 +62,23 @@
 }
 
 - (IBAction)checkOutBtnTapped:(id)sender {
+    // TODO: Switch this URL to your own authenticated API
+    NSURL *clientTokenURL = [NSURL URLWithString:@"http://localhost:4567/client_token"];
+    NSMutableURLRequest *clientTokenRequest = [NSMutableURLRequest requestWithURL:clientTokenURL];
+    [clientTokenRequest setValue:@"text/plain" forHTTPHeaderField:@"Accept"];
+    
+    [[[NSURLSession sharedSession] dataTaskWithRequest:clientTokenRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        // TODO: Handle errors
+        NSString *clientToken = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        [self showDropInUI:clientToken];
+        // As an example, you may wish to present Drop-in at this point.
+        // Continue to the next section to learn more...
+    }] resume];
+}
+
+- (void)showDropInUI:(NSString *)apiToken {
     BTDropInRequest *request = [[BTDropInRequest alloc] init];
-    BTDropInController *dropIn = [[BTDropInController alloc] initWithAuthorization:_demoPaymentApiKey request:request handler:^(BTDropInController * _Nonnull controller, BTDropInResult * _Nullable result, NSError * _Nullable error) {
+    BTDropInController *dropIn = [[BTDropInController alloc] initWithAuthorization:apiToken request:request handler:^(BTDropInController * _Nonnull controller, BTDropInResult * _Nullable result, NSError * _Nullable error) {
         
         if (error != nil) {
             NSLog(@"ERROR");
@@ -76,9 +90,23 @@
             // result.paymentMethod
             // result.paymentIcon
             // result.paymentDescription
+            [self postNonceToServer:@"fake-valid-nonce"];
         }
         [controller dismissViewControllerAnimated:true completion:nil];
     }];
     [self presentViewController:dropIn animated:YES completion:nil];
+}
+
+- (void)postNonceToServer:(NSString *)paymentMethodNonce {
+    // Update URL with your server
+    NSURL *paymentURL = [NSURL URLWithString:@"http://localhost:4567/checkouts"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:paymentURL];
+    request.HTTPBody = [[NSString stringWithFormat:@"payment_method_nonce=%@&amount=%@", paymentMethodNonce, @"18"] dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPMethod = @"POST";
+    
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        // TODO: Handle success and failure
+        NSLog(@"%@", data);
+    }] resume];
 }
 @end
