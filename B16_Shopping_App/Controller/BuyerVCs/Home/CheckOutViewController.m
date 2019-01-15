@@ -101,7 +101,7 @@
     // Update URL with your server
     NSURL *paymentURL = [NSURL URLWithString:@"http://localhost:4567/checkouts"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:paymentURL];
-    request.HTTPBody = [[NSString stringWithFormat:@"payment_method_nonce=%@", paymentMethodNonce] dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPBody = [[NSString stringWithFormat:@"payment_method_nonce=%@&amount=%@", paymentMethodNonce, @"18"] dataUsingEncoding:NSUTF8StringEncoding];
     request.HTTPMethod = @"POST";
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
