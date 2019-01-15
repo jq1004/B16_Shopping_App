@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 @property (weak, nonatomic) IBOutlet UIButton *goToSignUpPageBtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *forgetPasswrodBtn;
+
 - (IBAction)login:(id)sender;
 - (IBAction)goToSignUpPageBtnTapped:(id)sender;
 - (IBAction)forgotPwdBtnTapped:(id)sender;

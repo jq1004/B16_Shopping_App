@@ -24,20 +24,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    menuItems = @[@"profile", @"shop", @"myOrder", @"logout"];
+    [self setUp];
     
     userId = [[NSUserDefaults standardUserDefaults] valueForKey:@"userId"];
     user = [[DataBaseManager sharedInstance] fetchUserInfoWithId:userId];
- 
+}
+
+- (void) setUp {
+    menuItems = @[@"profile", @"shop", @"myOrder", @"logout"];
     _profileImgView.layer.borderWidth = 2;
-    _profileImgView.layer.borderColor = [UIColor colorWithRed:1.00 green:0.23 blue:0.82 alpha:1.0].CGColor;
+    _profileImgView.layer.borderColor = [UIColor whiteColor].CGColor;
     _profileImgView.layer.cornerRadius = _profileImgView.frame.size.width / 2;
     _profileImgView.clipsToBounds = true;
     
-    self.revealViewController.rearViewRevealWidth =  self.view.frame.size.width-105;
-
-    // Do any additional setup after loading the view.
+    _tbv.tableFooterView = [[UIView alloc] init];
+    
+    self.revealViewController.rearViewRevealWidth =  self.view.frame.size.width-68;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -76,6 +78,7 @@
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tbv deselectRowAtIndexPath:indexPath animated:YES];
     NSInteger row = [indexPath row];
     if (row == 3){
         [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"isLoggedIn"];
