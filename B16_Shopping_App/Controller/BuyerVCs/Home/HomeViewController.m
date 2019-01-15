@@ -31,6 +31,7 @@
 }
 
 - (void)setup {
+
     _menuBtn.target = self.revealViewController;
     _menuBtn.action = @selector(revealToggle:);
     

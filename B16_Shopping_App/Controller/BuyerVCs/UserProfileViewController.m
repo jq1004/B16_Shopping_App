@@ -42,7 +42,7 @@
     _menuBtn.action = @selector(revealToggle:);
     
     _userProfileImgView.layer.borderWidth = 2;
-    _userProfileImgView.layer.borderColor = [UIColor colorWithRed:1.00 green:0.23 blue:0.82 alpha:1.0].CGColor;
+    _userProfileImgView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     _userProfileImgView.layer.cornerRadius = _userProfileImgView.frame.size.width / 2;
     _userProfileImgView.clipsToBounds = true;
     _imgBtn.layer.cornerRadius = _imgBtn.frame.size.width / 2;

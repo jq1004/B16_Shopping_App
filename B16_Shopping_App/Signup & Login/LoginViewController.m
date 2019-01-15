@@ -26,8 +26,9 @@
 - (void)setupUI {
     _loginBtn.layer.cornerRadius = 5;
     _goToSignUpPageBtn.layer.cornerRadius = 5;
-    _goToSignUpPageBtn.layer.borderWidth = 1;
-    _goToSignUpPageBtn.layer.borderColor = [UIColor colorWithRed:1.00 green:0.23 blue:0.82 alpha:1.0].CGColor;
+    _forgetPasswrodBtn.layer.cornerRadius = 5;
+//    _goToSignUpPageBtn.layer.borderWidth = 1;
+//    _goToSignUpPageBtn.layer.borderColor = [UIColor colorWithRed:1.00 green:0.23 blue:0.82 alpha:1.0].CGColor;
 }
 
 - (IBAction)login:(id)sender {

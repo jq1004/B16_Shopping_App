@@ -30,7 +30,7 @@
     [super viewDidLoad];
     
     self.backBtn.layer.borderWidth = 1;
-    self.backBtn.layer.borderColor = [UIColor colorWithRed:1.00 green:0.23 blue:0.82 alpha:1.0].CGColor;
+    self.backBtn.layer.borderColor = [UIColor redColor].CGColor;
 }
 
 - (IBAction)signUpBtnClicked:(UIButton *)sender {

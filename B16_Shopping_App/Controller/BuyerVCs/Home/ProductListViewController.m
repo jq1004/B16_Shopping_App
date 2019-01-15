@@ -86,7 +86,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellIdentifier = @"cell";
     ProductListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-//    UIImage * img = [UIImage imageNamed:@"ua_shoe"];
     cell.productImgView.image = _productImgs[indexPath.row];
     cell.productName.text = _products[indexPath.row].pName;
     cell.productPrice.text = _products[indexPath.row].pPrice;
