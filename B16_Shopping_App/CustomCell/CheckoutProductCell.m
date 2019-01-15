@@ -25,6 +25,7 @@
     _addDeleteView.layer.cornerRadius = 12;
     // Configure the view for the selected state
     
+    _qty = @"1"; 
     _qtyTxtF.enabled = false;
     if ([_product.pQuantity isEqual:@"1"]) {
         _plusBtn.enabled = false;
@@ -69,6 +70,7 @@
     int qtyEntered = [_qtyTxtF.text doubleValue];
     int productQty = [_product.pQuantity doubleValue];
     _qtyTxtF.text = [NSString stringWithFormat:@"%d", qtyEntered+1];
+    _qty = _qtyTxtF.text;
     
     if (qtyEntered+1 >= productQty) {
         _plusBtn.enabled = false;
@@ -88,6 +90,7 @@
     int productQty = [_product.pQuantity doubleValue];
     int qtyEntered = [_qtyTxtF.text doubleValue];
     _qtyTxtF.text = [NSString stringWithFormat:@"%d", qtyEntered-1];
+    _qty = _qtyTxtF.text; 
     
     if (qtyEntered-1 < 1) {
         _minusBtn.enabled = false;

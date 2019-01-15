@@ -7,9 +7,11 @@
 //
 
 #import "CheckOutViewController.h"
-#import "CheckoutProductCell.h"
+#import "CheckoutCell.h"
 #import "BraintreeCore.h"
 #import "BraintreeDropIn.h"
+#import "APIHandler.h"
+#import "APIParser.h"
 
 @interface CheckOutViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -21,9 +23,13 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *checkoutBtn;
 
+@property (weak, nonatomic) IBOutlet UILabel *totalLbl;
+
 @property (weak, nonatomic) IBOutlet UIView *totalView;
 
 @property NSString *demoPaymentApiKey;
+
+- (IBAction)applyCouponBtnTapped:(id)sender;
 
 - (IBAction)checkOutBtnTapped:(id)sender;
 
@@ -37,28 +43,57 @@
     _applyCouponBtn.layer.cornerRadius = 12;
     _checkoutBtn.layer.cornerRadius = 12;
     _totalView.layer.cornerRadius = 12;
+    [_applyCouponBtn setTitle:@"Apply" forState:UIControlStateNormal];
+    [self computePrice];
+}
+
+- (void)computePrice {
+    int subtotal = 0;
+    for (int i = 0; i < _products.count; i++) {
+        subtotal += [_products[i].pPrice intValue] * [_qtys[_products[i].pId] intValue];
+    }
+    self.subTotalLbl.text = [NSString stringWithFormat:@"%d", subtotal];
+    self.totalLbl.text = [NSString stringWithFormat:@"%d", subtotal];
+    self.total = subtotal;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 7;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    //    return productArray.count;
-    return 5;
+    return _products.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 170;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    //product = productArray[indexPath.row];
-    //NSString *productName = product.productName;
-    static NSString *cellIdentifier = @"cell";
-    CheckoutProductCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    UIImage * img = [UIImage imageNamed:@"ua_shoe"];
-    cell.productImgView.image = img;
-    
+    CheckoutCell *cell = [tableView dequeueReusableCellWithIdentifier:@"checkoutCustomCell"];
+    cell.product = _products[indexPath.row];
+    cell.qtyTextField.text = _qtys[_products[indexPath.row].pId];
     return cell;
+}
+
+- (IBAction)applyCouponBtnTapped:(id)sender {
+    [[APIHandler sharedInstance] applyForCouponWithApiKey:[[NSUserDefaults standardUserDefaults] stringForKey:@"appapikey"] andUserId:[[NSUserDefaults standardUserDefaults] stringForKey:@"userId"] andCouponNo:@"2147483648" withCompletion:^(NSData *result, NSError *error) {
+        [[APIParser sharedInstance] couponParser:result andError:error withCompletion:^(Boolean *hasError, NSString *discountAmount) {
+            if (hasError) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self showAlert:@"Can't apply coupon" andMsg:@"Sorry, we can't recognize this coupon code, please try another one."];
+                });
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.discountAmount = discountAmount;
+                    self.applyCouponBtn.backgroundColor = [UIColor lightGrayColor];
+                    [self.applyCouponBtn setTitle:[NSString stringWithFormat:@"-%@$", discountAmount] forState:UIControlStateNormal];
+                    self.applyCouponBtn.enabled = false;
+                    
+                    int discount = [discountAmount intValue];
+                    self.totalLbl.text = [NSString stringWithFormat:@"%d", self.total - discount];
+                });
+            }
+        }];
+    }];
 }
 
 - (IBAction)checkOutBtnTapped:(id)sender {

@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CheckoutProductCell : UITableViewCell
 
 @property ProductInfo *product;
+@property NSString* qty; 
 
 @property (weak, nonatomic) IBOutlet UIImageView *productImgView;
 

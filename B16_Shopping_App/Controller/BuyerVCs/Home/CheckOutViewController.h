@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CheckOutViewController : UIViewController
+
+@property NSArray<ProductInfo *> *products;
+@property NSDictionary *qtys;
+@property NSString *discountAmount;
+@property int total; 
 
 @end
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sib-JN-C1r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -478,6 +478,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cartIcon" id="LQH-Pu-xmd">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="cartBtn:" destination="u91-pr-Qlw" id="QxN-Rn-46M"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -727,7 +730,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="d8H-Ta-N9L" firstAttribute="centerX" secondItem="LBr-11-XOo" secondAttribute="centerX" id="NvR-nK-nJ5"/>
                                     <constraint firstAttribute="height" constant="50" id="hWO-5l-AYw"/>
@@ -893,7 +896,7 @@
         <!--Check Out View Controller-->
         <scene sceneID="T67-wE-hXe">
             <objects>
-                <viewController id="V2a-JB-E7h" customClass="CheckOutViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckOutVC" id="V2a-JB-E7h" customClass="CheckOutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cc0-hF-ENn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -919,7 +922,7 @@
                                 <rect key="frame" x="0.0" y="102" width="375" height="400"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="142" id="TUs-cA-qm2" customClass="CheckoutProductCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="checkoutCustomCell" rowHeight="142" id="TUs-cA-qm2" customClass="CheckoutCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="142"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TUs-cA-qm2" id="Yhi-Ga-L1t">
@@ -957,25 +960,11 @@
                                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDg-7h-63L">
-                                                                    <rect key="frame" x="9" y="13" width="30" height="34"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                    <state key="normal" title="+"/>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hO8-tl-1Xo">
-                                                                    <rect key="frame" x="9" y="87" width="30" height="34"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                    <state key="normal" title="-"/>
-                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="hO8-tl-1Xo" firstAttribute="centerX" secondItem="6B8-ME-ylv" secondAttribute="centerX" id="0Jv-SI-Epl"/>
                                                                 <constraint firstItem="pdN-9W-vJg" firstAttribute="centerY" secondItem="6B8-ME-ylv" secondAttribute="centerY" id="53S-ug-qgS"/>
-                                                                <constraint firstItem="hO8-tl-1Xo" firstAttribute="top" secondItem="pdN-9W-vJg" secondAttribute="bottom" constant="5" id="6Mv-y6-LOt"/>
                                                                 <constraint firstAttribute="width" constant="48" id="Pgx-Mp-lz9"/>
-                                                                <constraint firstItem="pdN-9W-vJg" firstAttribute="top" secondItem="EDg-7h-63L" secondAttribute="bottom" constant="5" id="YaV-zN-eMy"/>
-                                                                <constraint firstItem="EDg-7h-63L" firstAttribute="centerX" secondItem="6B8-ME-ylv" secondAttribute="centerX" id="csy-5U-0xq"/>
                                                                 <constraint firstItem="pdN-9W-vJg" firstAttribute="centerX" secondItem="6B8-ME-ylv" secondAttribute="centerX" id="xQI-Pg-5fr"/>
                                                             </constraints>
                                                         </view>
@@ -1003,11 +992,11 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="addDeleteView" destination="6B8-ME-ylv" id="cgO-cb-9w1"/>
-                                            <outlet property="productImgView" destination="Lxn-hN-kdp" id="XA3-VF-mVJ"/>
-                                            <outlet property="productName" destination="QOJ-qR-AGz" id="8U2-Xe-VOS"/>
-                                            <outlet property="productPrice" destination="i59-f3-lfl" id="nUM-Ye-npw"/>
-                                            <outlet property="productView" destination="Kbm-Gh-FjM" id="9Rl-r5-64O"/>
+                                            <outlet property="cellSideView" destination="6B8-ME-ylv" id="mdP-ng-TZk"/>
+                                            <outlet property="productImg" destination="Lxn-hN-kdp" id="TvI-a0-ny5"/>
+                                            <outlet property="productName" destination="QOJ-qR-AGz" id="KTZ-3O-Vce"/>
+                                            <outlet property="productPrice" destination="i59-f3-lfl" id="CPk-h0-lkw"/>
+                                            <outlet property="qtyTextField" destination="pdN-9W-vJg" id="Uy6-Al-Lrn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1067,8 +1056,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dL-Qz-HYK">
-                                        <rect key="frame" x="315" y="54" width="30" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dL-Qz-HYK">
+                                        <rect key="frame" x="325" y="54" width="20" height="24"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1104,9 +1093,12 @@
                                             <constraint firstAttribute="width" constant="66" id="VSM-HB-KAM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                        <state key="normal" title="Apply">
+                                        <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="applyCouponBtnTapped:" destination="V2a-JB-E7h" eventType="touchUpInside" id="oSO-M7-lXi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1154,7 +1146,8 @@
                         <outlet property="checkoutBtn" destination="so1-iR-FGD" id="u6j-1Y-h8Y"/>
                         <outlet property="deliveryLbl" destination="6dL-Qz-HYK" id="f5Y-Wk-YQe"/>
                         <outlet property="subTotalLbl" destination="NGf-1P-LeS" id="1wf-le-0Bm"/>
-                        <outlet property="totalView" destination="jQ2-O5-bId" id="LVk-3j-iDB"/>
+                        <outlet property="totalLbl" destination="iwI-Lt-z9c" id="M0w-Ly-Fvk"/>
+                        <outlet property="totalView" destination="jQ2-O5-bId" id="h32-h7-wtq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTc-48-N1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1977,6 +1970,6 @@
         <image name="shop" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vJy-hh-39w"/>
+        <segue reference="FKI-DN-ply"/>
     </inferredMetricsTieBreakers>
 </document>

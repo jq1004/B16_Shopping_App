@@ -193,5 +193,18 @@
     [dataTask resume];
 }
 
+- (void)applyForCouponWithApiKey:(NSString *)apiKey andUserId:(NSString *)userId andCouponNo:(NSString *)couponNo withCompletion:(void (^)(NSData *, NSError *))block {
+    NSString *strURL = [NSString stringWithFormat:@"%@api_key=%@&user_id=%@&couponno=%@", kCOUPONAPI, apiKey, userId, couponNo];
+    NSURL *url = [NSURL URLWithString:strURL];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        block(data, error);
+    }];
+    [dataTask resume];
+}
+
 @end
 

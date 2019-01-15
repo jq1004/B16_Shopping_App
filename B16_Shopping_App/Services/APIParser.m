@@ -129,7 +129,18 @@
         }
         block(false, arr);
     }
+}
+
+- (void)couponParser:(NSData *)counponInfo andError:(NSError *)error withCompletion:(void (^)(Boolean *, NSString *))block {
+    NSDictionary *discountInfoJson = [NSJSONSerialization JSONObjectWithData: counponInfo options:NSJSONReadingMutableContainers error: &error];
     
+    if (!discountInfoJson || error) {
+        NSLog(@"Error parsing JSON: %@", error);
+        block(true, @"");
+    } else {
+        NSString *discountAmount = discountInfoJson[@"Coupon discount"][0][@"discount"];
+        block(false, discountAmount);
+    }
 }
 
 @end
