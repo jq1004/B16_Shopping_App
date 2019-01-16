@@ -52,8 +52,8 @@
     for (int i = 0; i < _products.count; i++) {
         subtotal += [_products[i].pPrice intValue] * [_qtys[_products[i].pId] intValue];
     }
-    self.subTotalLbl.text = [NSString stringWithFormat:@"%d", subtotal];
-    self.totalLbl.text = [NSString stringWithFormat:@"%d", subtotal];
+    self.subTotalLbl.text = [NSString stringWithFormat:@"%d$", subtotal];
+    self.totalLbl.text = [NSString stringWithFormat:@"%d$", subtotal];
     self.total = subtotal;
 }
 
@@ -89,7 +89,7 @@
                     self.applyCouponBtn.enabled = false;
                     
                     int discount = [discountAmount intValue];
-                    self.totalLbl.text = [NSString stringWithFormat:@"%d", self.total - discount];
+                    self.totalLbl.text = [NSString stringWithFormat:@"%d$", self.total - discount];
                 });
             }
         }];
@@ -136,7 +136,7 @@
     // Update URL with your server
     NSURL *paymentURL = [NSURL URLWithString:@"http://localhost:4567/checkouts"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:paymentURL];
-    request.HTTPBody = [[NSString stringWithFormat:@"payment_method_nonce=%@&amount=%@", paymentMethodNonce, @"18"] dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPBody = [[NSString stringWithFormat:@"payment_method_nonce=%@&amount=%d", paymentMethodNonce, self.total] dataUsingEncoding:NSUTF8StringEncoding];
     request.HTTPMethod = @"POST";
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
