@@ -10,15 +10,45 @@
 
 @interface OrderConfirmViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *orderId;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *placeDay;
+
+@property (weak, nonatomic) IBOutlet UILabel *deliveryAdd;
+
+@property (weak, nonatomic) IBOutlet UILabel *phoneNum;
+@property (weak, nonatomic) IBOutlet UILabel *totalPrice;
+@property (weak, nonatomic) IBOutlet UILabel *youPaid;
+@property (weak, nonatomic) IBOutlet UILabel *paymentType;
+
+@property (weak, nonatomic) IBOutlet UILabel *cardNum;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *trackBtn;
+
+
 @end
 
 @implementation OrderConfirmViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setup];
     // Do any additional setup after loading the view.
 }
 
+-(void) setup{
+    _orderId.layer.cornerRadius = 8;
+    _placeDay.layer.cornerRadius = 8;
+    _deliveryAdd.layer.cornerRadius = 8;
+    _phoneNum.layer.cornerRadius = 8;
+    _totalPrice.layer.cornerRadius = 8;
+    _youPaid.layer.cornerRadius = 8;
+    _paymentType.layer.cornerRadius = 8;
+    _cardNum.layer.cornerRadius = 8;
+    _trackBtn.layer.cornerRadius = 8;
+}
 /*
 #pragma mark - Navigation
 
