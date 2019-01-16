@@ -88,11 +88,5 @@
     }
 }
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-
-    NSIndexPath *indexPath = [self.tbv indexPathForSelectedRow];
-    UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
-
-}
 
 @end

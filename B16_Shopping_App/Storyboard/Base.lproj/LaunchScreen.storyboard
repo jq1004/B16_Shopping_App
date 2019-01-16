@@ -26,6 +26,19 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PXn-8x-AKw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apolis" translatesAutoresizingMaskIntoConstraints="NO" id="t7z-sM-rg7">
+                                            <rect key="frame" x="67.666666666666686" y="316" width="240" height="180"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="180" id="Qmi-Ah-fBY"/>
+                                                <constraint firstAttribute="width" constant="240" id="alP-yV-Wq7"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="t7z-sM-rg7" firstAttribute="centerY" secondItem="PXn-8x-AKw" secondAttribute="centerY" id="mpp-8G-xyy"/>
+                                        <constraint firstItem="t7z-sM-rg7" firstAttribute="centerX" secondItem="PXn-8x-AKw" secondAttribute="centerX" id="xX3-xM-WNS"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
@@ -51,5 +64,6 @@
     </scenes>
     <resources>
         <image name="LoginBackground" width="640" height="400"/>
+        <image name="apolis" width="200" height="200"/>
     </resources>
 </document>
