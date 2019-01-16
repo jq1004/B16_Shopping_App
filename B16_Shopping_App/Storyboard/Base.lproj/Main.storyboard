@@ -1248,6 +1248,7 @@
                         <outlet property="checkoutBtn" destination="so1-iR-FGD" id="u6j-1Y-h8Y"/>
                         <outlet property="deliveryLbl" destination="6dL-Qz-HYK" id="f5Y-Wk-YQe"/>
                         <outlet property="subTotalLbl" destination="NGf-1P-LeS" id="1wf-le-0Bm"/>
+                        <outlet property="subTotalView" destination="Xsn-JR-CAg" id="gLw-q1-txs"/>
                         <outlet property="totalLbl" destination="iwI-Lt-z9c" id="M0w-Ly-Fvk"/>
                         <outlet property="totalView" destination="jQ2-O5-bId" id="h32-h7-wtq"/>
                     </connections>
