@@ -27,8 +27,6 @@
     _loginBtn.layer.cornerRadius = 5;
     _goToSignUpPageBtn.layer.cornerRadius = 5;
     _forgetPasswrodBtn.layer.cornerRadius = 5;
-//    _goToSignUpPageBtn.layer.borderWidth = 1;
-//    _goToSignUpPageBtn.layer.borderColor = [UIColor colorWithRed:1.00 green:0.23 blue:0.82 alpha:1.0].CGColor;
 }
 
 - (IBAction)login:(id)sender {
@@ -40,8 +38,15 @@
             [[APIParser sharedInstance] loginParser:result andError:error withCompletion:^(Boolean *hasError) {
                 if (hasError) {
                     [self showAlert:@"Login Failed" andMsg:@"Please try again later."];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:@"Some problem occured. Please try again later!" type: TWMessageBarMessageTypeError duration:5];
+                    });
                 } else {
                     dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:@"Logged in successfully" type: TWMessageBarMessageTypeSuccess duration:5];
+                        
                         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                         SWRevealViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"SWRevealVC"];
                         
@@ -51,7 +56,7 @@
             }];
         }];
     } else {
-        [self showAlert:@"Oops" andMsg:@"Please fill in all reauired fields."];
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:@"Please fill in all required fields!" type: TWMessageBarMessageTypeError duration:5];
     }
 }
 
@@ -66,9 +71,9 @@
     NSString *phone = _phoneText.text;
     [[APIHandler sharedInstance] forgetPwdApiCall:phone withCompletion:^(NSError *error) {
         if (error == nil) {
-            [self showAlert:@"Success" andMsg:@"We have sent an password reset email for you."];
+            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:@"A password reset email have been sent successfully!" type: TWMessageBarMessageTypeSuccess duration:5];
         } else {
-            [self showAlert:@"Failed" andMsg:@"Something went wrong, please try again later."];
+            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:@"Something went wrong, Please try again later!" type: TWMessageBarMessageTypeError duration:5];
         }
     }];
 }

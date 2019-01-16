@@ -10,8 +10,6 @@
 
 @interface SubCategoryCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *leftImgView;
-@property (weak, nonatomic) IBOutlet UIImageView *rightImageView;
 @property (weak, nonatomic) IBOutlet UILabel *leftLabel;
-@property (weak, nonatomic) IBOutlet UILabel *rightLabel;
 
 @end

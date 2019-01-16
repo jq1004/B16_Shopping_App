@@ -12,6 +12,7 @@
 #import "APIParser.h"
 #import "SubCategoryCell.h"
 #import "ProductListViewController.h"
+#import "CartViewController.h"
 
 @interface SubCategoryViewController()
 @property (weak, nonatomic) IBOutlet UIPageControl *pageCtrl;
@@ -140,14 +141,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SubCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SubCategoryCell" forIndexPath:indexPath];
-
-    if (indexPath.row % 2 == 0) {
-        cell.rightImageView.image = _subcategoryImgs[indexPath.row];
         cell.leftLabel.text = _subcategories[indexPath.row].scName;
-    } else {
         cell.leftImgView.image = _subcategoryImgs[indexPath.row];
-        cell.rightLabel.text = _subcategories[indexPath.row].scName;
-    }
     
     return cell;
 }
@@ -162,6 +157,12 @@
     ProductListViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ProductListViewController"];
     ctrl.cid = _cId;
     ctrl.scid = _subcategories[indexPath.row].scId;
+    [[self navigationController] pushViewController:ctrl animated:true];
+}
+
+
+- (IBAction)cartBtn:(UIBarButtonItem *)sender {
+    CartViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CartViewController"];
     [[self navigationController] pushViewController:ctrl animated:true];
 }
 

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="mfE-as-kKj">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="mfE-as-kKj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fF8-cv-GqK">
@@ -26,6 +26,19 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PXn-8x-AKw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appIcon" translatesAutoresizingMaskIntoConstraints="NO" id="QHy-sG-4nz">
+                                            <rect key="frame" x="87.666666666666686" y="306" width="200" height="200"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="bTY-GI-EQb"/>
+                                                <constraint firstAttribute="width" constant="200" id="hov-Id-lzj"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QHy-sG-4nz" firstAttribute="centerY" secondItem="PXn-8x-AKw" secondAttribute="centerY" id="HYs-QZ-0eY"/>
+                                        <constraint firstItem="QHy-sG-4nz" firstAttribute="centerX" secondItem="PXn-8x-AKw" secondAttribute="centerX" id="WCL-Ky-cdf"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
@@ -50,6 +63,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LoginBackground" width="640" height="400"/>
+        <image name="appIcon" width="170" height="170"/>
+        <image name="background" width="360" height="640"/>
     </resources>
 </document>
