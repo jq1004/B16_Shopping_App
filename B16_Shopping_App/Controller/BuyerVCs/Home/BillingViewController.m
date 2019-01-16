@@ -23,22 +23,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _placeOrderBtn.layer.cornerRadius = 12;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+}
+
+- (void)dismissKeyboard {
+    [self.nameTextfield resignFirstResponder];
+    [self.deliveryAddress resignFirstResponder];
+    [self.billingAddress resignFirstResponder];
+    [self.mobileTextfield resignFirstResponder];
+    [self.emailTextfield resignFirstResponder];
 }
 
 - (IBAction)placeOrderBtnTapped:(id)sender {
-//    // TODO: Switch this URL to your own authenticated API
-//    NSURL *clientTokenURL = [NSURL URLWithString:@"http://localhost:4567/client_token"];
-//    NSMutableURLRequest *clientTokenRequest = [NSMutableURLRequest requestWithURL:clientTokenURL];
-//    [clientTokenRequest setValue:@"text/plain" forHTTPHeaderField:@"Accept"];
-//
-//    [[[NSURLSession sharedSession] dataTaskWithRequest:clientTokenRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        // TODO: Handle errors
-//        NSString *clientToken = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//        [self showDropInUI:clientToken];
-//        // As an example, you may wish to present Drop-in at this point.
-//        // Continue to the next section to learn more...
-//    }] resume];
-    [self generateOrder]; 
+    // TODO: Switch this URL to your own authenticated API
+    NSURL *clientTokenURL = [NSURL URLWithString:@"http://localhost:4567/client_token"];
+    NSMutableURLRequest *clientTokenRequest = [NSMutableURLRequest requestWithURL:clientTokenURL];
+    [clientTokenRequest setValue:@"text/plain" forHTTPHeaderField:@"Accept"];
+
+    [[[NSURLSession sharedSession] dataTaskWithRequest:clientTokenRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        // TODO: Handle errors
+        NSString *clientToken = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        [self showDropInUI:clientToken];
+        // As an example, you may wish to present Drop-in at this point.
+        // Continue to the next section to learn more...
+    }] resume];
 }
 
 - (void)showDropInUI:(NSString *)apiToken {

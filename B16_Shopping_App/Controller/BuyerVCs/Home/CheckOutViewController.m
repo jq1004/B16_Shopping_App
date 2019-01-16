@@ -91,6 +91,7 @@
                 } else {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         self.couponTextfield.enabled = false;
+                        self.couponTextfield.backgroundColor = [UIColor lightGrayColor]; 
                         self.discountAmount = discountAmount;
                         self.applyCouponBtn.backgroundColor = [UIColor lightGrayColor];
                         [self.applyCouponBtn setTitle:[NSString stringWithFormat:@"$-%@", discountAmount] forState:UIControlStateNormal];
