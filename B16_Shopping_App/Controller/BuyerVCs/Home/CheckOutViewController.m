@@ -13,6 +13,7 @@
 #import "APIHandler.h"
 #import "APIParser.h"
 #import "BillingViewController.h"
+#import "TWMessageBarManager.h"
 
 @interface CheckOutViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -58,8 +59,8 @@
     for (int i = 0; i < _products.count; i++) {
         subtotal += [_products[i].pPrice intValue] * [_qtys[_products[i].pId] intValue];
     }
-    self.subTotalLbl.text = [NSString stringWithFormat:@"%d$", subtotal];
-    self.totalLbl.text = [NSString stringWithFormat:@"%d$", subtotal];
+    self.subTotalLbl.text = [NSString stringWithFormat:@"$%d", subtotal];
+    self.totalLbl.text = [NSString stringWithFormat:@"$%d", subtotal];
     self.total = subtotal;
 }
 
@@ -78,25 +79,30 @@
 }
 
 - (IBAction)applyCouponBtnTapped:(id)sender {
-    [[APIHandler sharedInstance] applyForCouponWithApiKey:[[NSUserDefaults standardUserDefaults] stringForKey:@"appapikey"] andUserId:[[NSUserDefaults standardUserDefaults] stringForKey:@"userId"] andCouponNo:@"123" withCompletion:^(NSData *result, NSError *error) {
-        [[APIParser sharedInstance] couponParser:result andError:error withCompletion:^(Boolean *hasError, NSString *discountAmount) {
-            if (hasError) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self showAlert:@"Can't apply coupon" andMsg:@"Sorry, we can't recognize this coupon code, please try another one."];
-                });
-            } else {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.discountAmount = discountAmount;
-                    self.applyCouponBtn.backgroundColor = [UIColor lightGrayColor];
-                    [self.applyCouponBtn setTitle:[NSString stringWithFormat:@"-%@$", discountAmount] forState:UIControlStateNormal];
-                    self.applyCouponBtn.enabled = false;
-                    
-                    int discount = [discountAmount intValue];
-                    self.totalLbl.text = [NSString stringWithFormat:@"%d$", self.total - discount];
-                });
-            }
+    if ([self.couponTextfield.text isEqualToString:@""]) {
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Sorry" description:@"Please type in your coupon." type: TWMessageBarMessageTypeError duration:3];
+    } else {
+        [[APIHandler sharedInstance] applyForCouponWithApiKey:[[NSUserDefaults standardUserDefaults] stringForKey:@"appapikey"] andUserId:[[NSUserDefaults standardUserDefaults] stringForKey:@"userId"] andCouponNo:self.couponTextfield.text withCompletion:^(NSData *result, NSError *error) {
+            [[APIParser sharedInstance] couponParser:result andError:error withCompletion:^(Boolean *hasError, NSString *discountAmount) {
+                if (hasError) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Can't apply coupon" description:@"Sorry, we can't recognize this coupon code, please try another one." type: TWMessageBarMessageTypeError duration:3];
+                    });
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        self.couponTextfield.enabled = false;
+                        self.discountAmount = discountAmount;
+                        self.applyCouponBtn.backgroundColor = [UIColor lightGrayColor];
+                        [self.applyCouponBtn setTitle:[NSString stringWithFormat:@"$-%@", discountAmount] forState:UIControlStateNormal];
+                        self.applyCouponBtn.enabled = false;
+                        
+                        int discount = [discountAmount intValue];
+                        self.totalLbl.text = [NSString stringWithFormat:@"$%d", self.total - discount];
+                    });
+                }
+            }];
         }];
-    }];
+    }
 }
 
 - (IBAction)checkOutBtnTapped:(id)sender {
