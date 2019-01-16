@@ -19,5 +19,6 @@
 #define kPRODUCTAPI @"http://rjtmobile.com/ansari/shopingcart/ios-ssl/product_details.php?"
 #define kSUBCATEGORYAPI @"http://rjtmobile.com/ansari/shopingcart/ios-ssl/cust_sub_category.php?"
 #define kCOUPONAPI @"http://rjtmobile.com/aamir/e-commerce/ios-app/coupon.php?"
+#define kORDERAPI @"http://rjtmobile.com/aamir/e-commerce/ios-app/orders.php?"
 
 #endif /* B16_Shopping_App_Constants_h */
