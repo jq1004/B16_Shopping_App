@@ -32,4 +32,6 @@
 
 - (void)subCategoryApiCall:(NSString *)apiKey andCatId:(NSString *)categoryId andUserId:(NSString *)userId withCompletion:(void (^)(NSData *result, NSError *error))completionHandler;
 
+- (void)applyForCouponWithApiKey:(NSString *)apiKey andUserId:(NSString *)userId andCouponNo:(NSString *)couponNo withCompletion:(void (^)(NSData *result, NSError *error))block;
+
 @end

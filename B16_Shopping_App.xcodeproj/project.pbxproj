@@ -31,6 +31,7 @@
 		B9F3A6A421E9119E00E5EA8A /* APIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3A6A121E9119D00E5EA8A /* APIParser.m */; };
 		D20796E921EACE88008AB7EF /* CategoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D20796E821EACE88008AB7EF /* CategoryInfo.m */; };
 		D20796EC21EACEC3008AB7EF /* TopSellerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D20796EB21EACEC3008AB7EF /* TopSellerInfo.m */; };
+		D25A23AE21EE889B002997ED /* CheckoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D25A23AD21EE889B002997ED /* CheckoutCell.m */; };
 		D27142D121E7E2BC00F127A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D27142D021E7E2BC00F127A0 /* AppDelegate.m */; };
 		D27142D921E7E2BE00F127A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D27142D821E7E2BE00F127A0 /* Assets.xcassets */; };
 		D27142DC21E7E2BE00F127A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27142DA21E7E2BE00F127A0 /* LaunchScreen.storyboard */; };
@@ -92,6 +93,8 @@
 		D20796E821EACE88008AB7EF /* CategoryInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryInfo.m; sourceTree = "<group>"; };
 		D20796EA21EACEC3008AB7EF /* TopSellerInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopSellerInfo.h; sourceTree = "<group>"; };
 		D20796EB21EACEC3008AB7EF /* TopSellerInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopSellerInfo.m; sourceTree = "<group>"; };
+		D25A23AC21EE889B002997ED /* CheckoutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutCell.h; sourceTree = "<group>"; };
+		D25A23AD21EE889B002997ED /* CheckoutCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckoutCell.m; sourceTree = "<group>"; };
 		D27142CC21E7E2BC00F127A0 /* B16_Shopping_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = B16_Shopping_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27142CF21E7E2BC00F127A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D27142D021E7E2BC00F127A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 				45D1A9A221EBDFA4006016D8 /* CheckoutProductCell.m */,
 				B9EFD29C21ED4A6200574DCC /* SubCategoryCell.h */,
 				B9EFD29D21ED4A7800574DCC /* SubCategoryCell.m */,
+				D25A23AC21EE889B002997ED /* CheckoutCell.h */,
+				D25A23AD21EE889B002997ED /* CheckoutCell.m */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D20796EC21EACEC3008AB7EF /* TopSellerInfo.m in Sources */,
+				D25A23AE21EE889B002997ED /* CheckoutCell.m in Sources */,
 				45723DA121EB3AA80009B90A /* ProductListViewController.m in Sources */,
 				D2E09F2E21E7F43F00F14D43 /* LoginViewController.m in Sources */,
 				D20796E921EACE88008AB7EF /* CategoryInfo.m in Sources */,

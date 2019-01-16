@@ -27,4 +27,6 @@
 
 - (void)subCategoryParser:(NSData *)subCategoryInfoList andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSMutableArray<SubCategoryInfo *> *result))completionHandler;
 
+- (void)couponParser:(NSData *)counponInfo andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, NSString *discountAmount))block;
+
 @end

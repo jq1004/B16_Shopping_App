@@ -9,6 +9,7 @@
 #import "CartViewController.h"
 #import "DataBaseManager.h"
 #import "CheckoutProductCell.h"
+#import "CheckOutViewController.h"
 
 @interface CartViewController()
 
@@ -52,6 +53,18 @@
 }
 
 - (IBAction)checkOutBtn:(UIButton *)sender {
+    CheckOutViewController *checkoutVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CheckOutVC"];
+    
+    NSMutableDictionary *qtys = [[NSMutableDictionary alloc] init];
+    for (NSInteger i = 0; i < [_tblView numberOfRowsInSection:0]; ++i)
+    {
+        NSString *pId = [[[_tblView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] product] pId];
+        qtys[pId] = [[_tblView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] qty];
+    }
+    
+    checkoutVC.products = _products;
+    checkoutVC.qtys = qtys;
+    [[self navigationController] pushViewController:checkoutVC animated:true];
 }
 
 @end
