@@ -38,6 +38,7 @@
 		D27142DF21E7E2BE00F127A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D27142DE21E7E2BE00F127A0 /* main.m */; };
 		D275706821E92CD20047A2D6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D275706721E92CD20047A2D6 /* UserInfo.m */; };
 		D28CF1EB21EBB11D009D66A4 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28CF1EA21EBB11D009D66A4 /* CategoryCell.m */; };
+		D29F447821EED92E002C69AE /* BillingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D29F447721EED92E002C69AE /* BillingViewController.m */; };
 		D2C4751221E97B9F00428E67 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C4751121E97B9F00428E67 /* SignUpViewController.m */; };
 		D2C4751621E97E4500428E67 /* UIViewController+UIViewControllerCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C4751521E97E4500428E67 /* UIViewController+UIViewControllerCategory.m */; };
 		D2E09F2E21E7F43F00F14D43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E09F2D21E7F43F00F14D43 /* LoginViewController.m */; };
@@ -106,6 +107,8 @@
 		D275706721E92CD20047A2D6 /* UserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		D28CF1E921EBB11D009D66A4 /* CategoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
 		D28CF1EA21EBB11D009D66A4 /* CategoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
+		D29F447621EED92E002C69AE /* BillingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BillingViewController.h; sourceTree = "<group>"; };
+		D29F447721EED92E002C69AE /* BillingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BillingViewController.m; sourceTree = "<group>"; };
 		D2C4751021E97B9F00428E67 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		D2C4751121E97B9F00428E67 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		D2C4751421E97E4500428E67 /* UIViewController+UIViewControllerCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UIViewControllerCategory.h"; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				B9EFD29721ED1EA700574DCC /* SubCategoryViewController.m */,
 				B9EFD29F21ED843700574DCC /* CartViewController.h */,
 				B9EFD2A021ED844500574DCC /* CartViewController.m */,
+				D29F447621EED92E002C69AE /* BillingViewController.h */,
+				D29F447721EED92E002C69AE /* BillingViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				45723DA921EB4E280009B90A /* ProductDetailViewController.m in Sources */,
 				B9BAEEBB21EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld in Sources */,
 				B9EFD2A121ED844500574DCC /* CartViewController.m in Sources */,
+				D29F447821EED92E002C69AE /* BillingViewController.m in Sources */,
 				D2C4751621E97E4500428E67 /* UIViewController+UIViewControllerCategory.m in Sources */,
 				45723DA621EB3E230009B90A /* ProductListCell.m in Sources */,
 				D28CF1EB21EBB11D009D66A4 /* CategoryCell.m in Sources */,

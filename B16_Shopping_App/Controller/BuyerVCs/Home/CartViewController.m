@@ -59,6 +59,9 @@
     for (NSInteger i = 0; i < [_tblView numberOfRowsInSection:0]; ++i)
     {
         NSString *pId = [[[_tblView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] product] pId];
+        if (pId == nil) {
+            pId = @"nil"; 
+        }
         qtys[pId] = [[_tblView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] qty];
     }
     

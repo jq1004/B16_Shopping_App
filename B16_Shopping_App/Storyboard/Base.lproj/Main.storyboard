@@ -1249,10 +1249,10 @@
             </objects>
             <point key="canvasLocation" x="7789.8550724637689" y="14.732142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Billing View Controller-->
         <scene sceneID="Qmv-DO-7uk">
             <objects>
-                <viewController id="COO-5T-3Jl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BillingVC" id="COO-5T-3Jl" customClass="BillingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jSl-0X-M3r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1267,6 +1267,9 @@
                                 <state key="normal" title="PLACE ORDER">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="placeOrderBtnTapped:" destination="COO-5T-3Jl" eventType="touchUpInside" id="jYj-Ab-Pbg"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zI-A6-mrv">
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
@@ -1285,18 +1288,86 @@
                                     <constraint firstItem="8tI-vt-Loe" firstAttribute="centerX" secondItem="7zI-A6-mrv" secondAttribute="centerX" id="acY-7Y-T9t"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AEM-Zg-3ba">
+                                <rect key="frame" x="40" y="496" width="295" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="bUt-ap-1Ok"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MsK-If-U9i">
+                                <rect key="frame" x="40" y="550" width="295" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="HD2-29-vxA"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Delivery Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y87-JG-LUw">
+                                <rect key="frame" x="40" y="388" width="295" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="rvR-nD-hUF"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Billing Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mKS-cN-V6S">
+                                <rect key="frame" x="40" y="442" width="295" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="jK6-RE-igc"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OYR-hF-jbi">
+                                <rect key="frame" x="40" y="334" width="295" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="5gF-uv-7W1"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="56H-mP-JCa" firstAttribute="trailing" secondItem="OYR-hF-jbi" secondAttribute="trailing" constant="40" id="0up-wl-l60"/>
+                            <constraint firstItem="AEM-Zg-3ba" firstAttribute="top" secondItem="mKS-cN-V6S" secondAttribute="bottom" constant="18" id="2PR-K0-Hmb"/>
                             <constraint firstItem="7zI-A6-mrv" firstAttribute="leading" secondItem="56H-mP-JCa" secondAttribute="leading" id="5XB-G6-aVP"/>
+                            <constraint firstItem="y87-JG-LUw" firstAttribute="centerY" secondItem="jSl-0X-M3r" secondAttribute="centerY" id="9G4-Xr-BlR"/>
                             <constraint firstItem="e0H-Fm-ESg" firstAttribute="leading" secondItem="56H-mP-JCa" secondAttribute="leading" constant="15" id="EBj-n5-IXP"/>
+                            <constraint firstItem="AEM-Zg-3ba" firstAttribute="leading" secondItem="56H-mP-JCa" secondAttribute="leading" constant="40" id="Eu2-9y-z6w"/>
+                            <constraint firstItem="56H-mP-JCa" firstAttribute="trailing" secondItem="AEM-Zg-3ba" secondAttribute="trailing" constant="40" id="FH1-nr-mvJ"/>
+                            <constraint firstItem="mKS-cN-V6S" firstAttribute="top" secondItem="y87-JG-LUw" secondAttribute="bottom" constant="18" id="Wzm-5A-VQm"/>
+                            <constraint firstItem="MsK-If-U9i" firstAttribute="top" secondItem="AEM-Zg-3ba" secondAttribute="bottom" constant="18" id="bAw-FM-608"/>
+                            <constraint firstItem="OYR-hF-jbi" firstAttribute="leading" secondItem="56H-mP-JCa" secondAttribute="leading" constant="40" id="bG2-S5-8r4"/>
                             <constraint firstItem="56H-mP-JCa" firstAttribute="trailing" secondItem="e0H-Fm-ESg" secondAttribute="trailing" constant="15" id="bsT-y9-GXi"/>
                             <constraint firstItem="56H-mP-JCa" firstAttribute="trailing" secondItem="7zI-A6-mrv" secondAttribute="trailing" id="chH-MZ-MeH"/>
+                            <constraint firstItem="y87-JG-LUw" firstAttribute="leading" secondItem="56H-mP-JCa" secondAttribute="leading" constant="40" id="fab-IQ-BTU"/>
                             <constraint firstItem="7zI-A6-mrv" firstAttribute="top" secondItem="56H-mP-JCa" secondAttribute="top" id="g09-bE-rH4"/>
+                            <constraint firstItem="y87-JG-LUw" firstAttribute="top" secondItem="OYR-hF-jbi" secondAttribute="bottom" constant="18" id="gb5-nR-scz"/>
+                            <constraint firstItem="56H-mP-JCa" firstAttribute="trailing" secondItem="MsK-If-U9i" secondAttribute="trailing" constant="40" id="isx-8H-eq4"/>
+                            <constraint firstItem="56H-mP-JCa" firstAttribute="trailing" secondItem="mKS-cN-V6S" secondAttribute="trailing" constant="40" id="jTL-Ao-BJW"/>
+                            <constraint firstItem="56H-mP-JCa" firstAttribute="trailing" secondItem="y87-JG-LUw" secondAttribute="trailing" constant="40" id="neZ-W4-eg3"/>
+                            <constraint firstItem="MsK-If-U9i" firstAttribute="leading" secondItem="56H-mP-JCa" secondAttribute="leading" constant="40" id="oC5-Gh-ZMv"/>
                             <constraint firstItem="56H-mP-JCa" firstAttribute="bottom" secondItem="e0H-Fm-ESg" secondAttribute="bottom" constant="20" id="opE-Tg-ozN"/>
+                            <constraint firstItem="mKS-cN-V6S" firstAttribute="leading" secondItem="56H-mP-JCa" secondAttribute="leading" constant="40" id="rDn-92-72t"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="56H-mP-JCa"/>
                     </view>
+                    <connections>
+                        <outlet property="billingAddress" destination="mKS-cN-V6S" id="rBi-fR-jbV"/>
+                        <outlet property="deliveryAddress" destination="y87-JG-LUw" id="tFs-xP-Xom"/>
+                        <outlet property="emailTextfield" destination="MsK-If-U9i" id="6LW-JD-GIT"/>
+                        <outlet property="mobileTextfield" destination="AEM-Zg-3ba" id="fKd-GK-uNN"/>
+                        <outlet property="nameTextfield" destination="OYR-hF-jbi" id="fNQ-yJ-JJR"/>
+                        <outlet property="placeOrderBtn" destination="e0H-Fm-ESg" id="7LG-gp-huC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RsH-m5-Feq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
