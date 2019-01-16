@@ -9,6 +9,7 @@
 #import "BillingViewController.h"
 #import "BraintreeCore.h"
 #import "BraintreeDropIn.h"
+#import "OrderConfirmViewController.h"
 
 @interface BillingViewController ()
 @end
@@ -66,6 +67,12 @@
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         // TODO: Handle success and failure
+        if (error == nil) {
+            OrderConfirmViewController *orderConfirmVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"OrderConfirmVC"];
+            [self presentViewController:orderConfirmVC animated:true completion:nil];
+        } else {
+            NSLog(@"%@", error);
+        }
         NSLog(@"%@", data);
     }] resume];
 }
