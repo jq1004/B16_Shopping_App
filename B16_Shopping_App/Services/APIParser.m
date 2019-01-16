@@ -29,17 +29,31 @@
     return instance;
 }
 
-- (UserInfo *)loginParser:(NSData *)userDetail andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError))block {
+- (UserInfo *)loginParser:(NSData *)userDetail andError:(NSError *)error withCompletion:(void (^)(bool hasError, NSString *errorMsg))block {
     UserInfo *userInfo = nil;
-    NSArray *userInfoJson = [NSJSONSerialization JSONObjectWithData: userDetail options:NSJSONReadingMutableContainers error: &error];
+    id userInfoJson = [NSJSONSerialization JSONObjectWithData: userDetail options:NSJSONReadingMutableContainers error: &error];
 
-    if (!userInfoJson || ![userInfoJson[0][@"msg"] isEqual: @"success"] || error) {
-        
-        NSLog(@"Error parsing JSON: %@", error);
-        block(true);
-        
-    } else {
-        
+    if (error) {
+        block(true, PASSWORDERROR);
+    }
+    else if (!userInfoJson) {
+        block(true, kNoDataError);
+    }
+    else if ([userInfoJson isKindOfClass:[NSDictionary class]])
+    {
+        NSString *resp = userInfoJson[@"msg"][0];
+        if ([resp isEqual:@"Mobile number not register"]) {
+            block(true, MOBILENOTSIGNEDUP);
+        } else {
+            block(true, PASSWORDERROR);
+        }
+    }
+    else if ([userInfoJson isKindOfClass:[NSArray class]] && ![userInfoJson[0][@"msg"] isEqual: @"success"])
+    {
+        block(true, PASSWORDERROR);
+    }
+    else
+    {
         NSLog(@"%@", userInfoJson[0][@"id"]);
         
         userInfo = [[UserInfo alloc] initWithInfo:userInfoJson[0][@"id"] andFirstName:userInfoJson[0][@"firstname"] andLastName:userInfoJson[0][@"lastname"] andEmail:userInfoJson[0][@"email"] andMobile:userInfoJson[0][@"mobile"] andAppApiKey:userInfoJson[0][@"appapikey "]];
@@ -52,8 +66,10 @@
         [[NSUserDefaults standardUserDefaults] setValue:userInfoJson[0][@"id"] forKey:@"userId"];
         [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"isLoggedIn"];
         [[NSUserDefaults standardUserDefaults] setValue:userInfoJson[0][@"appapikey "] forKey:@"appapikey"];
-        block(false);
+        //        [[NSUserDefaults standardUserDefaults] synchronize]; Don't need it, by default now. 
+        block(false, SUCCESS);
     }
+    
     return userInfo;
 }
 

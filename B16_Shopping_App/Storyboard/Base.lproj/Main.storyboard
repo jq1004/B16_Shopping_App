@@ -1189,6 +1189,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jTc-MS-yU3">
+                                        <rect key="frame" x="128" y="0.0" width="180" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="Lq5-t8-RgN"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1197,11 +1206,13 @@
                                     <constraint firstAttribute="trailing" secondItem="7c7-Wr-qaM" secondAttribute="trailing" id="OLu-xv-sSb"/>
                                     <constraint firstAttribute="height" constant="90" id="ULp-7i-GPS"/>
                                     <constraint firstItem="6dL-Qz-HYK" firstAttribute="top" secondItem="NGf-1P-LeS" secondAttribute="bottom" constant="7" id="YMj-mq-6LL"/>
+                                    <constraint firstItem="jTc-MS-yU3" firstAttribute="top" secondItem="Xsn-JR-CAg" secondAttribute="top" id="Zia-rZ-2vc"/>
                                     <constraint firstAttribute="bottom" secondItem="6dL-Qz-HYK" secondAttribute="bottom" constant="2" id="bSZ-Aw-SB5"/>
                                     <constraint firstAttribute="trailing" secondItem="NGf-1P-LeS" secondAttribute="trailing" constant="2" id="eGr-OB-tzH"/>
                                     <constraint firstItem="mIu-IQ-JPu" firstAttribute="top" secondItem="aAx-Pz-RyH" secondAttribute="bottom" constant="7" id="eVl-Il-Wix"/>
                                     <constraint firstItem="7c7-Wr-qaM" firstAttribute="top" secondItem="Xsn-JR-CAg" secondAttribute="top" id="gXz-Ll-M7b"/>
                                     <constraint firstItem="aAx-Pz-RyH" firstAttribute="top" secondItem="GRY-PK-MVI" secondAttribute="bottom" constant="7" id="iFg-d4-LSi"/>
+                                    <constraint firstItem="jTc-MS-yU3" firstAttribute="leading" secondItem="GRY-PK-MVI" secondAttribute="trailing" constant="6" id="ojq-p9-1j9"/>
                                     <constraint firstItem="mIu-IQ-JPu" firstAttribute="leading" secondItem="Xsn-JR-CAg" secondAttribute="leading" constant="2" id="skS-hq-Kcq"/>
                                     <constraint firstAttribute="trailing" secondItem="6dL-Qz-HYK" secondAttribute="trailing" constant="2" id="uCF-cz-I0i"/>
                                     <constraint firstItem="aAx-Pz-RyH" firstAttribute="leading" secondItem="Xsn-JR-CAg" secondAttribute="leading" constant="2" id="vnm-nQ-p0H"/>
@@ -1230,6 +1241,7 @@
                     <connections>
                         <outlet property="applyCouponBtn" destination="7c7-Wr-qaM" id="INo-BV-TbS"/>
                         <outlet property="checkoutBtn" destination="so1-iR-FGD" id="u6j-1Y-h8Y"/>
+                        <outlet property="couponTextfield" destination="jTc-MS-yU3" id="emA-53-oi5"/>
                         <outlet property="deliveryLbl" destination="6dL-Qz-HYK" id="f5Y-Wk-YQe"/>
                         <outlet property="subTotalLbl" destination="NGf-1P-LeS" id="1wf-le-0Bm"/>
                         <outlet property="subTotalView" destination="Xsn-JR-CAg" id="gLw-q1-txs"/>

@@ -24,6 +24,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *checkoutBtn;
 
+@property (weak, nonatomic) IBOutlet UITextField *couponTextfield;
+
 @property (weak, nonatomic) IBOutlet UIView *subTotalView;
 
 @property (weak, nonatomic) IBOutlet UILabel *totalLbl;
