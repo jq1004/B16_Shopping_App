@@ -173,4 +173,69 @@
     return cart;
 }
 
+- (BOOL)productExistWithUserId :(NSString *)userId andProductId:(NSString *)productId
+{
+    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+    BOOL doesExist = false;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@",userId]];
+    
+    NSArray *result = [context executeFetchRequest:request error:nil];
+    
+    if (result.count == 1) {
+        NSObject *user = result[0];
+        
+        NSArray *products = [[user mutableSetValueForKey:@"products"] allObjects];
+        
+        for (int i=0; i<products.count;i++) {
+            if ([[products[i] valueForKey:@"productId"] isEqualToString:productId]) {
+                doesExist = [[user mutableSetValueForKey:@"products"] containsObject:products[i]];
+                break;
+            }
+        }
+    }
+    
+    return doesExist;
+}
+
+- (void)removeProductWithUserId:(NSString *)userId andProductId:(NSString *)productId
+{
+    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@",userId]];
+    
+    NSArray *result = [context executeFetchRequest:request error:nil];
+    
+    if (result.count == 1) {
+        NSObject *user = result[0];
+        NSArray *products = [[user mutableSetValueForKey:@"products"] allObjects];
+        
+        for (int i=0; i<products.count;i++) {
+            if ([[products[i] valueForKey:@"productId"] isEqualToString:productId]) {
+                [[user mutableSetValueForKey:@"products"] removeObject: products[i]];
+                [self saveContext];
+                break;
+            }
+        }
+        
+    }
+}
+
+- (void)removeProductsWithUserId:(NSString *)userId
+{
+    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@",userId]];
+    
+    NSArray *result = [context executeFetchRequest:request error:nil];
+    
+    if (result.count == 1) {
+        NSObject *user = result[0];
+        [[user mutableSetValueForKey:@"products"] removeAllObjects];
+        [self saveContext];
+    }
+}
+
 @end

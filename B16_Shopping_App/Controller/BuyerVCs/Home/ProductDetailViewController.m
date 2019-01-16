@@ -15,6 +15,7 @@
 
 @property NSString *userId;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *myBarBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cartBtn;
 
 @end
 
@@ -34,6 +35,12 @@
     
     _userId = [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"];
     
+    if (_product.pQuantity == 0) {
+        _cartBtn.enabled = false;
+    } else {
+        _cartBtn.enabled = true;
+    }
+    
     [self setUpDetailView];
 }
 
@@ -47,8 +54,13 @@
 }
 
 - (IBAction)addToCartBtn:(UIButton *)sender {
-    [[DataBaseManager sharedInstance] saveToCartWithProduc:_product andUserId:_userId];
-    //show alert success
+    BOOL doesExist = [[DataBaseManager sharedInstance] productExistWithUserId:_userId andProductId:_product.pId];
+    if (doesExist) {
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Reminder" description:@"Product already in cart!" type: TWMessageBarMessageTypeInfo duration:5];
+    } else {
+        [[DataBaseManager sharedInstance] saveToCartWithProduc:_product andUserId:_userId];
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:@"Product added to cart!" type: TWMessageBarMessageTypeSuccess duration:5];
+    }
 }
 
 - (IBAction)cartBtn:(UIBarButtonItem *)sender {

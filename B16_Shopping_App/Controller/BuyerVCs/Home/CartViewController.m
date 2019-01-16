@@ -52,6 +52,15 @@
     [self.tblView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[DataBaseManager sharedInstance] removeProductWithUserId:_userId andProductId:_products[indexPath.row].pId];
+        [_products removeObjectAtIndex:indexPath.row];
+        [_tblView reloadData];
+    }
+}
+
 - (IBAction)checkOutBtn:(UIButton *)sender {
     CheckOutViewController *checkoutVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CheckOutVC"];
     

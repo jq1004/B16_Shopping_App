@@ -33,4 +33,10 @@
 
 - (NSArray<ProductInfo *> *)fetchcartWithUserId :(NSString *)userId;
 
+- (Boolean *)productExistWithUserId :(NSString *)userId andProductId:(NSString *)productId;
+
+- (void)removeProductWithUserId:(NSString *)userId andProductId:(NSString *)productId;
+
+- (void)removeProductsWithUserId:(NSString *)userId;
+
 @end

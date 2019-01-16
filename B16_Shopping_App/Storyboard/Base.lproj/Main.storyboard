@@ -794,23 +794,6 @@
                                     <outlet property="delegate" destination="7ro-jr-Uqg" id="z9Y-va-97c"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LBr-11-XOo">
-                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="PRODUCT LIST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8H-Ta-N9L">
-                                        <rect key="frame" x="124.66666666666669" y="12.5" width="125.66666666666663" height="25"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="d8H-Ta-N9L" firstAttribute="centerX" secondItem="LBr-11-XOo" secondAttribute="centerX" id="NvR-nK-nJ5"/>
-                                    <constraint firstAttribute="height" constant="50" id="hWO-5l-AYw"/>
-                                    <constraint firstItem="d8H-Ta-N9L" firstAttribute="centerY" secondItem="LBr-11-XOo" secondAttribute="centerY" id="yDT-BL-9EY"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -996,6 +979,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addToCart" destination="uQa-Pr-rcT" id="s8c-x8-QgW"/>
+                        <outlet property="cartBtn" destination="uQa-Pr-rcT" id="qjg-FG-C56"/>
                         <outlet property="descriptionTxtV" destination="OD5-f4-b6O" id="zdc-10-obz"/>
                         <outlet property="myBarBtn" destination="5Lg-xR-VbC" id="VAX-mS-oha"/>
                         <outlet property="priceLbl" destination="8fc-p0-76N" id="9TV-s8-PnO"/>

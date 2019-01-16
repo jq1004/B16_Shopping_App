@@ -11,6 +11,6 @@
 
 @interface CartViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property NSArray *products;
+@property NSMutableArray<ProductInfo*> *products;
 
 @end
