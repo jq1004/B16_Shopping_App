@@ -37,18 +37,22 @@
 }
 
 - (IBAction)placeOrderBtnTapped:(id)sender {
-    // TODO: Switch this URL to your own authenticated API
-    NSURL *clientTokenURL = [NSURL URLWithString:@"http://localhost:4567/client_token"];
-    NSMutableURLRequest *clientTokenRequest = [NSMutableURLRequest requestWithURL:clientTokenURL];
-    [clientTokenRequest setValue:@"text/plain" forHTTPHeaderField:@"Accept"];
-
-    [[[NSURLSession sharedSession] dataTaskWithRequest:clientTokenRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        // TODO: Handle errors
-        NSString *clientToken = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        [self showDropInUI:clientToken];
-        // As an example, you may wish to present Drop-in at this point.
-        // Continue to the next section to learn more...
-    }] resume];
+    if (![self.nameTextfield.text  isEqual: @""] && ![self.deliveryAddress.text  isEqual: @""] && ![self.billingAddress.text  isEqual: @""] && ![self.mobileTextfield.text  isEqual: @""] && ![self.emailTextfield.text  isEqual: @""]) {
+        // TODO: Switch this URL to your own authenticated API
+        NSURL *clientTokenURL = [NSURL URLWithString:@"http://localhost:4567/client_token"];
+        NSMutableURLRequest *clientTokenRequest = [NSMutableURLRequest requestWithURL:clientTokenURL];
+        [clientTokenRequest setValue:@"text/plain" forHTTPHeaderField:@"Accept"];
+        
+        [[[NSURLSession sharedSession] dataTaskWithRequest:clientTokenRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            // TODO: Handle errors
+            NSString *clientToken = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            [self showDropInUI:clientToken];
+            // As an example, you may wish to present Drop-in at this point.
+            // Continue to the next section to learn more...
+        }] resume];
+    } else {
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:@"Please fill in all required fields!" type: TWMessageBarMessageTypeError duration:3];
+    }
 }
 
 - (void)showDropInUI:(NSString *)apiToken {
@@ -67,6 +71,7 @@
             // result.paymentDescription
             [self postNonceToServer:@"fake-valid-nonce"];
         }
+        [SVProgressHUD show];
         [controller dismissViewControllerAnimated:true completion:nil];
     }];
     [self presentViewController:dropIn animated:YES completion:nil];
@@ -84,23 +89,15 @@
         if (error == nil) {
             [self generateOrder];
         } else {
-            NSLog(@"%@", error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+            });
         }
-        NSLog(@"%@", data);
     }] resume];
 }
 
 - (void)generateOrder{
-    NSLog(@"product Id %@",self.productId);
-    NSLog(@"productName %@",self.productName);
-    NSLog(@"productQuantity %@",self.productQuantity);
     NSString *str =[NSString stringWithFormat:@"%i", self.total];
-    NSLog(@"toal %@",str);
-    NSLog(@"nameTextfield %@",self.nameTextfield.text);
-    NSLog(@"billingAddress %@",self.self.billingAddress.text);
-    NSLog(@"deliveryAddress %@",self.deliveryAddress.text);
-    NSLog(@"mobileTextfield %@",self.mobileTextfield.text);
-    NSLog(@"emailTextfield %@",self.emailTextfield.text);
     NSString * apiKey = [[NSUserDefaults standardUserDefaults] stringForKey:@"appapikey"];
     NSString * userId = [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"];
     [[APIHandler sharedInstance] orderApiCall:apiKey andItem_id:self.productId andItem_names:self.productName andItem_quantity:self.productQuantity andFinal_price:[NSString stringWithFormat:@"%i", self.total] andUser_id:userId andUser_name:self.nameTextfield.text andBillingadd:self.billingAddress.text andDeliveryAdd:self.deliveryAddress.text andMobile:self.mobileTextfield.text andEmail:self.emailTextfield.text withCompletion:^(NSData *result, NSError *error) {
@@ -108,10 +105,12 @@
         [[APIParser sharedInstance] orderParser:result andError:error withCompletion:^(Boolean *hasError, OrderInfo *result) {
             if(hasError){
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    [SVProgressHUD dismiss];
                     [self showAlert:@"Can't generate order" andMsg:@"Sorry, item is out of inventory."];
                 });
             } else {
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    [SVProgressHUD dismiss];
                     OrderConfirmViewController *orderConfirmVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"OrderConfirmVC"];
                     orderConfirmVC.orderInfo = result;
                     [self presentViewController:orderConfirmVC animated:true completion:nil];
