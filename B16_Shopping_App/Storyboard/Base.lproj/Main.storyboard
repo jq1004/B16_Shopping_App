@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1410,7 +1410,7 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="IT7-dn-bKr">
-                                <rect key="frame" x="38" y="164" width="339" height="415"/>
+                                <rect key="frame" x="38" y="164" width="339" height="360"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Order ID: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKx-wo-wQB">
                                         <rect key="frame" x="0.0" y="0.0" width="339" height="30"/>
@@ -1482,21 +1482,10 @@
                                         <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Card Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTd-EQ-9Qx">
-                                        <rect key="frame" x="0.0" y="385" width="339" height="30"/>
-                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="vL2-8V-Lku"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
-                                        <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="GrA-A4-HUr" firstAttribute="leading" secondItem="IT7-dn-bKr" secondAttribute="leading" id="9Ej-4g-YKT"/>
                                     <constraint firstItem="Jos-Sa-aMw" firstAttribute="leading" secondItem="IT7-dn-bKr" secondAttribute="leading" id="FDn-9T-1r4"/>
-                                    <constraint firstAttribute="trailing" secondItem="HTd-EQ-9Qx" secondAttribute="trailing" id="GkN-Jv-9zG"/>
                                     <constraint firstAttribute="trailing" secondItem="qYb-gy-ex9" secondAttribute="trailing" id="H7l-gR-E1l"/>
                                     <constraint firstAttribute="trailing" secondItem="GrA-A4-HUr" secondAttribute="trailing" id="Htr-lm-MTI"/>
                                     <constraint firstAttribute="trailing" secondItem="Jos-Sa-aMw" secondAttribute="trailing" id="LBQ-DT-AAS"/>
@@ -1505,7 +1494,6 @@
                                     <constraint firstItem="gKx-wo-wQB" firstAttribute="leading" secondItem="IT7-dn-bKr" secondAttribute="leading" id="Szd-1H-Ppz"/>
                                     <constraint firstAttribute="trailing" secondItem="8Nc-Wj-9pK" secondAttribute="trailing" id="Uw0-Ur-4NX"/>
                                     <constraint firstItem="qYb-gy-ex9" firstAttribute="leading" secondItem="IT7-dn-bKr" secondAttribute="leading" id="Zbd-S0-Zuu"/>
-                                    <constraint firstItem="HTd-EQ-9Qx" firstAttribute="leading" secondItem="IT7-dn-bKr" secondAttribute="leading" id="hri-O6-Iyq"/>
                                     <constraint firstAttribute="trailing" secondItem="Kl3-C3-Z4g" secondAttribute="trailing" id="iQa-Th-2QF"/>
                                     <constraint firstItem="Kl3-C3-Z4g" firstAttribute="leading" secondItem="IT7-dn-bKr" secondAttribute="leading" id="lYn-rq-ePl"/>
                                     <constraint firstAttribute="trailing" secondItem="gKx-wo-wQB" secondAttribute="trailing" id="pZn-EM-IhN"/>
@@ -1513,7 +1501,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvi-sm-xxe">
-                                <rect key="frame" x="37" y="657" width="339" height="50"/>
+                                <rect key="frame" x="37" y="644" width="339" height="50"/>
                                 <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="P6W-Dg-uAM"/>
@@ -1527,7 +1515,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QVp-ue-k2X" firstAttribute="trailing" secondItem="bvi-sm-xxe" secondAttribute="trailing" constant="38" id="BKL-aN-Oxz"/>
-                            <constraint firstItem="bvi-sm-xxe" firstAttribute="top" secondItem="IT7-dn-bKr" secondAttribute="bottom" constant="78" id="BQe-cb-wzv"/>
+                            <constraint firstItem="bvi-sm-xxe" firstAttribute="top" secondItem="IT7-dn-bKr" secondAttribute="bottom" constant="120" id="BQe-cb-wzv"/>
                             <constraint firstItem="QVp-ue-k2X" firstAttribute="trailing" secondItem="VaW-Ix-Ypx" secondAttribute="trailing" id="S5W-aD-3jI"/>
                             <constraint firstItem="IT7-dn-bKr" firstAttribute="leading" secondItem="QVp-ue-k2X" secondAttribute="leading" constant="38" id="TA1-Pr-eIE"/>
                             <constraint firstItem="VaW-Ix-Ypx" firstAttribute="top" secondItem="mGh-ej-uZC" secondAttribute="top" id="VMI-3B-fpd"/>
@@ -1543,7 +1531,6 @@
                         <viewLayoutGuide key="safeArea" id="QVp-ue-k2X"/>
                     </view>
                     <connections>
-                        <outlet property="cardNum" destination="HTd-EQ-9Qx" id="MQi-To-4be"/>
                         <outlet property="deliveryAdd" destination="Jos-Sa-aMw" id="E8f-Xz-vNu"/>
                         <outlet property="orderId" destination="gKx-wo-wQB" id="Y75-W9-Mt3"/>
                         <outlet property="paymentType" destination="GrA-A4-HUr" id="mdw-U3-D3J"/>

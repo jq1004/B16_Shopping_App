@@ -14,6 +14,7 @@
 #import "APIParser.h"
 
 @interface BillingViewController ()
+
 @end
 
 @implementation BillingViewController
@@ -25,18 +26,19 @@
 }
 
 - (IBAction)placeOrderBtnTapped:(id)sender {
-    // TODO: Switch this URL to your own authenticated API
-    NSURL *clientTokenURL = [NSURL URLWithString:@"http://localhost:4567/client_token"];
-    NSMutableURLRequest *clientTokenRequest = [NSMutableURLRequest requestWithURL:clientTokenURL];
-    [clientTokenRequest setValue:@"text/plain" forHTTPHeaderField:@"Accept"];
-    
-    [[[NSURLSession sharedSession] dataTaskWithRequest:clientTokenRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        // TODO: Handle errors
-        NSString *clientToken = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        [self showDropInUI:clientToken];
-        // As an example, you may wish to present Drop-in at this point.
-        // Continue to the next section to learn more...
-    }] resume];
+//    // TODO: Switch this URL to your own authenticated API
+//    NSURL *clientTokenURL = [NSURL URLWithString:@"http://localhost:4567/client_token"];
+//    NSMutableURLRequest *clientTokenRequest = [NSMutableURLRequest requestWithURL:clientTokenURL];
+//    [clientTokenRequest setValue:@"text/plain" forHTTPHeaderField:@"Accept"];
+//
+//    [[[NSURLSession sharedSession] dataTaskWithRequest:clientTokenRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        // TODO: Handle errors
+//        NSString *clientToken = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//        [self showDropInUI:clientToken];
+//        // As an example, you may wish to present Drop-in at this point.
+//        // Continue to the next section to learn more...
+//    }] resume];
+    [self generateOrder]; 
 }
 
 - (void)showDropInUI:(NSString *)apiToken {
@@ -79,7 +81,19 @@
 }
 
 - (void)generateOrder{
-    [[APIHandler sharedInstance] orderApiCall:@"6948b84ad9c4e16ec5cb04a2906b120f" andItem_id:@"701" andItem_names:@"laptop" andItem_quantity:@"1" andFinal_price:@"100000" andUser_id:@"1583" andUser_name:@"Aamir" andBillingadd:@"Noida" andDeliveryAdd:@"Noida" andMobile:@"2133215888" andEmail:@"cll1004328@gmail.com" withCompletion:^(NSData *result, NSError *error) {
+    NSLog(@"product Id %@",self.productId);
+    NSLog(@"productName %@",self.productName);
+    NSLog(@"productQuantity %@",self.productQuantity);
+    NSString *str =[NSString stringWithFormat:@"%i", self.total];
+    NSLog(@"toal %@",str);
+    NSLog(@"nameTextfield %@",self.nameTextfield.text);
+    NSLog(@"billingAddress %@",self.self.billingAddress.text);
+    NSLog(@"deliveryAddress %@",self.deliveryAddress.text);
+    NSLog(@"mobileTextfield %@",self.mobileTextfield.text);
+    NSLog(@"emailTextfield %@",self.emailTextfield.text);
+    NSString * apiKey = [[NSUserDefaults standardUserDefaults] stringForKey:@"appapikey"];
+    NSString * userId = [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"];
+    [[APIHandler sharedInstance] orderApiCall:apiKey andItem_id:self.productId andItem_names:self.productName andItem_quantity:self.productQuantity andFinal_price:[NSString stringWithFormat:@"%i", self.total] andUser_id:userId andUser_name:self.nameTextfield.text andBillingadd:self.billingAddress.text andDeliveryAdd:self.deliveryAddress.text andMobile:self.mobileTextfield.text andEmail:self.emailTextfield.text withCompletion:^(NSData *result, NSError *error) {
         NSLog(@"%@",result);
         [[APIParser sharedInstance] orderParser:result andError:error withCompletion:^(Boolean *hasError, OrderInfo *result) {
             if(hasError){

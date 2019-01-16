@@ -14,6 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property int total;
 
+@property NSString * productName;
+
+@property NSString * productId;
+
+@property NSString * productQuantity;
+
 @property (weak, nonatomic) IBOutlet UITextField *nameTextfield;
 
 @property (weak, nonatomic) IBOutlet UITextField *deliveryAddress;

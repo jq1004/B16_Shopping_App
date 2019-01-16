@@ -107,7 +107,12 @@
 
 - (IBAction)checkOutBtnTapped:(id)sender {
     BillingViewController *billingVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"BillingVC"];
-    billingVC.total = self.total; 
+    billingVC.total = self.total;
+    if(_products.count !=0){
+        billingVC.productName = self.products[0].pName;
+        billingVC.productId = self.products[0].pId;
+        billingVC.productQuantity = [NSString stringWithFormat:@"%i", _products.count];
+    }
     [[self navigationController] pushViewController:billingVC animated:true];
 }
 
