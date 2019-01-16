@@ -41,7 +41,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _applyCouponBtn.layer.cornerRadius = 12;
     _checkoutBtn.layer.cornerRadius = 12;
     _totalView.layer.cornerRadius = 12;
     [_applyCouponBtn setTitle:@"Apply" forState:UIControlStateNormal];
@@ -58,9 +57,6 @@
     self.total = subtotal;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 7;
-}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _products.count;
 }
