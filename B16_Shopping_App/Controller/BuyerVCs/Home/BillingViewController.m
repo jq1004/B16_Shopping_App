@@ -11,7 +11,6 @@
 #import "BraintreeDropIn.h"
 
 @interface BillingViewController ()
-
 @end
 
 @implementation BillingViewController
@@ -19,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _placeOrderBtn.layer.cornerRadius = 12; 
+    _placeOrderBtn.layer.cornerRadius = 12;
 }
 
 - (IBAction)placeOrderBtnTapped:(id)sender {
