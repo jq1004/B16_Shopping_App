@@ -33,6 +33,9 @@
 {
     NSString *userId;
     UserInfo *user;
+    NSString *fname;
+    NSString *lname;
+    NSString *email;
 }
 
 - (void)viewDidLoad {
@@ -59,6 +62,10 @@
     _lnameTxtF.text = [user valueForKey:@"lastName"][0];
     _emailTxtF.text = [user valueForKey:@"email"][0];
     _mobileTxtF.text = [user valueForKey:@"mobile"][0];
+    
+    fname = [user valueForKey:@"firstName"][0];
+    lname = [user valueForKey:@"lastName"][0];
+    email = [user valueForKey:@"email"][0];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsPath = [paths objectAtIndex:0]; //Get the docs directory
@@ -89,10 +96,6 @@
         _cancelBtn.hidden = false;
         [self manageTxtFieldsWithChoice:true];
     } else {
-        [_updateBtn setTitle:@"Update" forState:normal];
-        sender.tag = 0;
-        _cancelBtn.hidden = true;
-        [self manageTxtFieldsWithChoice:false];
         
         if (![self.fnameTxtF.text  isEqual: @""] && ![self.lnameTxtF.text  isEqual: @""] && ![self.mobileTxtF.text  isEqual: @""] && ![self.emailTxtF.text  isEqual: @""])
         {
@@ -102,15 +105,28 @@
                     dispatch_async(dispatch_get_main_queue(), ^{
                         UserInfo *userinfo = [[UserInfo alloc] initWithInfo:self->userId andFirstName:self.fnameTxtF.text andLastName:self.lnameTxtF.text andEmail:self.emailTxtF.text andMobile:self.mobileTxtF.text andAppApiKey:@""];
                         [[DataBaseManager sharedInstance] updateUserWithUser:userinfo];
-                    });                    
-                    //show success message
-                } else {
-                    //show error message
+                    });
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:@"Profile Updated Successfully" type: TWMessageBarMessageTypeSuccess duration:5];
+                        self->fname = self.fnameTxtF.text;
+                        self->lname = self.lnameTxtF.text;
+                        self->email = self.emailTxtF.text;
+                        
+                        [self.updateBtn setTitle:@"Update" forState:normal];
+                        sender.tag = 0;
+                        self.cancelBtn.hidden = true;
+                        [self manageTxtFieldsWithChoice:false];
+                    });
+                } else {                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:response type: TWMessageBarMessageTypeError duration:5];
+                    });
                 }
             }];
             
         } else {
-            //show error : all required fields should be filled
+            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:@"All required fields should be filled" type: TWMessageBarMessageTypeError duration:5];
         }
     }
     
@@ -121,6 +137,10 @@
     _updateBtn.tag = 0;
     _cancelBtn.hidden = true;
     [self manageTxtFieldsWithChoice:false];
+    
+    _fnameTxtF.text = fname;
+    _lnameTxtF.text = lname;
+    _emailTxtF.text = email;
 }
 
 

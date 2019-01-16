@@ -12,5 +12,6 @@
 #import "B16_Shopping_App_Constants.h"
 #import "SVProgressHUD.h"
 #import "UIViewController+UIViewControllerCategory.h"
+#import "TWMessageBarManager.h"
 
 #endif /* B16_Shopping_App_PrefixHeader_pch */

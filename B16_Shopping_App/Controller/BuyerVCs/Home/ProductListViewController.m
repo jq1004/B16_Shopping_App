@@ -11,12 +11,15 @@
 #import "APIHandler.h"
 #import "APIParser.h"
 #import "ProductDetailViewController.h"
+#import "SWRevealViewController.h"
+#import "CartViewController.h"
 
 @interface ProductListViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSArray *productItems;
     }
 
 @property (weak, nonatomic) IBOutlet UITableView *tbv;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *myBarBtn;
 
 @end
 
@@ -25,6 +28,12 @@
     [super viewDidLoad];
     self.products = [[NSMutableArray alloc] init];
     self.productImgs = [[NSMutableArray alloc] init];
+    
+    _myBarBtn.target = self.revealViewController;
+    _myBarBtn.action = @selector(revealToggle:);
+    
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
     
     self.tbv.delegate = self;
     self.tbv.dataSource = self;
@@ -71,15 +80,13 @@
         
     }];
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 7;
-}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _products.count;
     
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 280;
+    return 320;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -101,5 +108,11 @@
     ctrl.productImg = _productImgs[indexPath.row];
     [[self navigationController] pushViewController:ctrl animated:true];
 }
+
+- (IBAction)cartBtn:(UIBarButtonItem *)sender {
+    CartViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CartViewController"];
+    [[self navigationController] pushViewController:ctrl animated:true];
+}
+
 
 @end

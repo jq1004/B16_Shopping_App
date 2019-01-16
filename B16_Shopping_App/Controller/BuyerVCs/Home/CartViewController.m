@@ -47,6 +47,11 @@
     return 150;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tblView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 - (IBAction)checkOutBtn:(UIButton *)sender {
     CheckOutViewController *checkoutVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CheckOutVC"];
     

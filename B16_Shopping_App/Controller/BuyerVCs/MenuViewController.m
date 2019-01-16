@@ -31,7 +31,7 @@
 }
 
 - (void) setUp {
-    menuItems = @[@"profile", @"shop", @"myOrder", @"logout"];
+    menuItems = @[@"profile", @"shop", @"myOrder", @"Settings", @"logout"];
     _profileImgView.layer.borderWidth = 2;
     _profileImgView.layer.borderColor = [UIColor whiteColor].CGColor;
     _profileImgView.layer.cornerRadius = _profileImgView.frame.size.width / 2;
@@ -39,7 +39,7 @@
     
     _tbv.tableFooterView = [[UIView alloc] init];
     
-    self.revealViewController.rearViewRevealWidth =  self.view.frame.size.width-68;
+    self.revealViewController.rearViewRevealWidth =  self.view.frame.size.width-55;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -66,7 +66,7 @@
     return menuItems.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    return 70;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -80,19 +80,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tbv deselectRowAtIndexPath:indexPath animated:YES];
     NSInteger row = [indexPath row];
-    if (row == 3){
+    if (row == 4){
         [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"isLoggedIn"];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
         [[UIApplication sharedApplication].keyWindow setRootViewController:loginVC];
     }
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-
-    NSIndexPath *indexPath = [self.tbv indexPathForSelectedRow];
-    UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
-
 }
 
 @end

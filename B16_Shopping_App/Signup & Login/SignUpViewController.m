@@ -30,7 +30,7 @@
     [super viewDidLoad];
     
     self.backBtn.layer.borderWidth = 1;
-    self.backBtn.layer.borderColor = [UIColor redColor].CGColor;
+    self.backBtn.layer.borderColor = [UIColor colorWithRed:12 green:31 blue:143 alpha:0.94].CGColor;
 }
 
 - (IBAction)signUpBtnClicked:(UIButton *)sender {
@@ -42,18 +42,27 @@
             [[APIHandler sharedInstance] signUpUserWithFirstName:self.fnameTxtF.text lastName:self.lnameTxtF.text address:self.addressTxtF.text password:self.pwdTxtF.text email:self.emailTxtF.text mobile:self.mobileTxtF.text completionHandler:^(NSString *response) {
                 if ([response isEqual:@"successfully registered"]) {
                     [self dismissViewControllerAnimated:true completion:nil];
-                    //show success message
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                         [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:@"You have successfully registerd. Shop your way out!" type: TWMessageBarMessageTypeSuccess duration:5];
+                    });
+                    
                 } else {
-                    //show error message
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:response type: TWMessageBarMessageTypeError duration:5];
+                    });
                 }
             }];
             
         } else {
-            //show error : password mismatch
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:@"Password Mismatch!" type: TWMessageBarMessageTypeError duration:5];
+            });
         }
         
     } else {
-        //show error : fill in all reauired fields
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:@"Please fill in all required fields!" type: TWMessageBarMessageTypeError duration:5];
+        });
     }
 }
 
