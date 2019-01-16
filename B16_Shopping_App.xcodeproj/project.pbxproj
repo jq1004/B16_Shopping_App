@@ -13,6 +13,7 @@
 		454B885521E941AA00DF190F /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B884E21E941A900DF190F /* MyOrderViewController.m */; };
 		454B885621E941AA00DF190F /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B885021E941A900DF190F /* UserProfileViewController.m */; };
 		454B885721E941AA00DF190F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B885121E941A900DF190F /* MenuViewController.m */; };
+		455ED9A321EEEF1E0061C1B7 /* OrderConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 455ED9A221EEEF1E0061C1B7 /* OrderConfirmViewController.m */; };
 		45723DA121EB3AA80009B90A /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45723DA021EB3AA80009B90A /* ProductListViewController.m */; };
 		45723DA621EB3E230009B90A /* ProductListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45723DA521EB3E230009B90A /* ProductListCell.m */; };
 		45723DA921EB4E280009B90A /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45723DA821EB4E280009B90A /* ProductDetailViewController.m */; };
@@ -56,6 +57,8 @@
 		454B885021E941A900DF190F /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 		454B885121E941A900DF190F /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		454B885221E941A900DF190F /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
+		455ED9A121EEEF1E0061C1B7 /* OrderConfirmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderConfirmViewController.h; sourceTree = "<group>"; };
+		455ED9A221EEEF1E0061C1B7 /* OrderConfirmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmViewController.m; sourceTree = "<group>"; };
 		45723D9F21EB3AA80009B90A /* ProductListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductListViewController.h; sourceTree = "<group>"; };
 		45723DA021EB3AA80009B90A /* ProductListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductListViewController.m; sourceTree = "<group>"; };
 		45723DA421EB3E230009B90A /* ProductListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductListCell.h; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				B9EFD2A021ED844500574DCC /* CartViewController.m */,
 				D29F447621EED92E002C69AE /* BillingViewController.h */,
 				D29F447721EED92E002C69AE /* BillingViewController.m */,
+				455ED9A121EEEF1E0061C1B7 /* OrderConfirmViewController.h */,
+				455ED9A221EEEF1E0061C1B7 /* OrderConfirmViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -480,6 +485,7 @@
 				D20796EC21EACEC3008AB7EF /* TopSellerInfo.m in Sources */,
 				D25A23AE21EE889B002997ED /* CheckoutCell.m in Sources */,
 				45723DA121EB3AA80009B90A /* ProductListViewController.m in Sources */,
+				455ED9A321EEEF1E0061C1B7 /* OrderConfirmViewController.m in Sources */,
 				D2E09F2E21E7F43F00F14D43 /* LoginViewController.m in Sources */,
 				D20796E921EACE88008AB7EF /* CategoryInfo.m in Sources */,
 				D2C4751221E97B9F00428E67 /* SignUpViewController.m in Sources */,
