@@ -9,6 +9,9 @@
 #import "BillingViewController.h"
 #import "BraintreeCore.h"
 #import "BraintreeDropIn.h"
+#import "OrderConfirmViewController.h"
+#import "APIHandler.h"
+#import "APIParser.h"
 
 @interface BillingViewController ()
 @end
@@ -66,8 +69,33 @@
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         // TODO: Handle success and failure
+        if (error == nil) {
+            [self generateOrder];
+        } else {
+            NSLog(@"%@", error);
+        }
         NSLog(@"%@", data);
     }] resume];
+}
+
+- (void)generateOrder{
+    [[APIHandler sharedInstance] orderApiCall:@"6948b84ad9c4e16ec5cb04a2906b120f" andItem_id:@"701" andItem_names:@"laptop" andItem_quantity:@"1" andFinal_price:@"100000" andUser_id:@"1583" andUser_name:@"Aamir" andBillingadd:@"Noida" andDeliveryAdd:@"Noida" andMobile:@"2133215888" andEmail:@"cll1004328@gmail.com" withCompletion:^(NSData *result, NSError *error) {
+        NSLog(@"%@",result);
+        [[APIParser sharedInstance] orderParser:result andError:error withCompletion:^(Boolean *hasError, OrderInfo *result) {
+            if(hasError){
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self showAlert:@"Can't generate order" andMsg:@"Sorry, item is out of inventory."];
+                });
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    OrderConfirmViewController *orderConfirmVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"OrderConfirmVC"];
+                    orderConfirmVC.orderInfo = result;
+                    [self presentViewController:orderConfirmVC animated:true completion:nil];
+                });
+            }
+            
+        }];
+    }];
 }
 
 @end

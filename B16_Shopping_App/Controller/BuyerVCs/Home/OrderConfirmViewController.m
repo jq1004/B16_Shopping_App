@@ -38,7 +38,7 @@
     // Do any additional setup after loading the view.
 }
 
--(void) setup{
+- (void)setup{
     _orderId.layer.cornerRadius = 8;
     _placeDay.layer.cornerRadius = 8;
     _deliveryAdd.layer.cornerRadius = 8;
@@ -48,6 +48,15 @@
     _paymentType.layer.cornerRadius = 8;
     _cardNum.layer.cornerRadius = 8;
     _trackBtn.layer.cornerRadius = 8;
+    
+//    _orderId.text = self.orderInfo.oId;
+    [_orderId setText:self.orderInfo.oId];
+    _placeDay.text = self.orderInfo.oPlacedon;
+    _deliveryAdd.text = self.orderInfo.oDeliveryadd;
+    _phoneNum.text = self.orderInfo.oMobile;
+    _totalPrice.text = self.orderInfo.oTotalprice;
+    _youPaid.text = self.orderInfo.oPaidprice;
+    _paymentType.text = @"Credit Card";
 }
 /*
 #pragma mark - Navigation

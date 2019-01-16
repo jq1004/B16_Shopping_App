@@ -24,6 +24,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *checkoutBtn;
 
+@property (weak, nonatomic) IBOutlet UIView *subTotalView;
+
 @property (weak, nonatomic) IBOutlet UILabel *totalLbl;
 
 @property (weak, nonatomic) IBOutlet UIView *totalView;
@@ -43,6 +45,8 @@
     // Do any additional setup after loading the view.
     _checkoutBtn.layer.cornerRadius = 12;
     _totalView.layer.cornerRadius = 12;
+    _applyCouponBtn.layer.cornerRadius = 6;
+    _subTotalView.layer.cornerRadius = 12;
     [_applyCouponBtn setTitle:@"Apply" forState:UIControlStateNormal];
     [self computePrice];
 }
@@ -72,7 +76,7 @@
 }
 
 - (IBAction)applyCouponBtnTapped:(id)sender {
-    [[APIHandler sharedInstance] applyForCouponWithApiKey:[[NSUserDefaults standardUserDefaults] stringForKey:@"appapikey"] andUserId:[[NSUserDefaults standardUserDefaults] stringForKey:@"userId"] andCouponNo:@"2147483648" withCompletion:^(NSData *result, NSError *error) {
+    [[APIHandler sharedInstance] applyForCouponWithApiKey:[[NSUserDefaults standardUserDefaults] stringForKey:@"appapikey"] andUserId:[[NSUserDefaults standardUserDefaults] stringForKey:@"userId"] andCouponNo:@"123" withCompletion:^(NSData *result, NSError *error) {
         [[APIParser sharedInstance] couponParser:result andError:error withCompletion:^(Boolean *hasError, NSString *discountAmount) {
             if (hasError) {
                 dispatch_async(dispatch_get_main_queue(), ^{

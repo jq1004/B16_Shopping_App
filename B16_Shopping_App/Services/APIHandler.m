@@ -206,5 +206,17 @@
     [dataTask resume];
 }
 
+- (void)orderApiCall:(NSString *)apiKey andItem_id:(NSString *)item_id andItem_names:(NSString *)item_names andItem_quantity:(NSString *)item_quantity andFinal_price:(NSString *)final_price andUser_id:(NSString *)user_id andUser_name:(NSString *)user_name andBillingadd:(NSString *)billingadd andDeliveryAdd:(NSString *)deliveryadd andMobile:(NSString *)mobile andEmail:(NSString *)email withCompletion:(void (^)(NSData *result, NSError *error))block{
+    NSString *strURL = [NSString stringWithFormat:@"%@api_key=%@&item_id=%@&item_names=%@&item_quantity=%@&final_price=%@&user_id=%@&user_name=%@&billingadd=%@&deliveryadd=%@&mobile=%@&email=%@", kORDERAPI,apiKey,item_id,item_names,item_quantity,final_price,user_id,user_name,billingadd,deliveryadd,mobile,email];
+    NSURL *url = [NSURL URLWithString:strURL];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        block(data, error);
+    }];
+    [dataTask resume];
+}
 @end
 

@@ -143,4 +143,19 @@
     }
 }
 
+- (void)orderParser:(NSData *)orderInfo andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, OrderInfo *result))block;{
+    NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:orderInfo options:NSJSONReadingMutableContainers error:&error];
+    
+    if (!jsonData || error) {
+        NSLog(@"Error parsing JSON: %@", error);
+        block(true, nil);
+    } else {
+        NSArray *orderArr = jsonData[@"Order confirmed"];
+        NSLog(@"check api parse nsarray %@",orderArr);
+        NSDictionary *order = orderArr[0];
+        OrderInfo *orderItem = [[OrderInfo alloc] initWithInfo:order[@"orderid"] andOrderName:order[@"name"] andOrderBillingadd:order[@"billingadd"] andOrderDeliveryadd:order[@"deliveryadd"] andOrderMobile:order[@"mobile"] andOrderItemname:order[@"itemname"] andOrderTotalprice:order[@"totalprice"] andPaidprice:order[@"paidprice"] andOrderPlacedone:order[@"placedon"]];
+        block(false, orderItem);
+    }
+}
+
 @end
