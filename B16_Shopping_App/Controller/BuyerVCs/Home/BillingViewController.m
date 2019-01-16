@@ -70,8 +70,6 @@
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         // TODO: Handle success and failure
         if (error == nil) {
-            OrderConfirmViewController *orderConfirmVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"OrderConfirmVC"];
-            [self presentViewController:orderConfirmVC animated:true completion:nil];
             [self generateOrder];
         } else {
             NSLog(@"%@", error);
@@ -92,7 +90,7 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     OrderConfirmViewController *orderConfirmVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"OrderConfirmVC"];
                     orderConfirmVC.orderInfo = result;
-                    [[self navigationController] pushViewController:orderConfirmVC animated:true];
+                    [self presentViewController:orderConfirmVC animated:true completion:nil];
                 });
             }
             

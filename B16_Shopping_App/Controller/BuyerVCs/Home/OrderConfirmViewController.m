@@ -49,7 +49,8 @@
     _cardNum.layer.cornerRadius = 8;
     _trackBtn.layer.cornerRadius = 8;
     
-    _orderId.text = self.orderInfo.oId;
+//    _orderId.text = self.orderInfo.oId;
+    [_orderId setText:self.orderInfo.oId];
     _placeDay.text = self.orderInfo.oPlacedon;
     _deliveryAdd.text = self.orderInfo.oDeliveryadd;
     _phoneNum.text = self.orderInfo.oMobile;
