@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property NSString *userId;
+@property (weak, nonatomic) IBOutlet UIButton *checkOutBtn;
 @end
 
 @implementation CartViewController
@@ -28,7 +29,22 @@
     _tblView.delegate = self;
     _tblView.dataSource = self;
     
+    [self fetchProductsInCart];
+}
+
+- (void)fetchProductsInCart {
     _products = [[DataBaseManager sharedInstance] fetchcartWithUserId:_userId];
+    if (_products.count == 0) {
+        _checkOutBtn.enabled = false;
+        _checkOutBtn.backgroundColor = [UIColor lightGrayColor];
+        _checkOutBtn.titleLabel.textColor = [UIColor grayColor];
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Empty" description:@"Continue Shopping!" type: TWMessageBarMessageTypeInfo duration:3];
+    } else {
+        _checkOutBtn.enabled = true;
+        _checkOutBtn.backgroundColor = [UIColor colorWithHue:0.6389 saturation:0.99 brightness:0.57 alpha:1.0]; 
+        _checkOutBtn.titleLabel.textColor = [UIColor whiteColor];
+        _checkOutBtn.titleLabel.textColor = [UIColor grayColor];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

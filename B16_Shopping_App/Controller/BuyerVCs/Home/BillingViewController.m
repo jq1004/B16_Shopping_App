@@ -38,6 +38,7 @@
 }
 
 - (IBAction)placeOrderBtnTapped:(id)sender {
+    [self.view endEditing:YES]; 
     if (![self.nameTextfield.text  isEqual: @""] && ![self.deliveryAddress.text  isEqual: @""] && ![self.billingAddress.text  isEqual: @""] && ![self.mobileTextfield.text  isEqual: @""] && ![self.emailTextfield.text  isEqual: @""]) {
         [self.view endEditing:YES];
         // TODO: Switch this URL to your own authenticated API
