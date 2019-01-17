@@ -7,6 +7,9 @@
 //
 
 #import "OrderConfirmViewController.h"
+#import "SWRevealViewController.h"
+#import "ShipmentTrackViewController.h"
+#import "APIHandler.h"
 
 @interface OrderConfirmViewController ()
 
@@ -22,10 +25,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *youPaid;
 @property (weak, nonatomic) IBOutlet UILabel *paymentType;
 
-@property (weak, nonatomic) IBOutlet UILabel *cardNum;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *myBarBtn;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *trackBtn;
+
+@property NSString *userId;
+@property NSString *apikey;
 
 
 @end
@@ -39,6 +45,15 @@
 }
 
 - (void)setup{
+    
+    _myBarBtn.target = self.revealViewController;
+    _myBarBtn.action = @selector(revealToggle:);
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    
+    _userId = [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"];
+    _apikey = [[NSUserDefaults standardUserDefaults] stringForKey:@"appapikey"];
+    
     _orderId.layer.cornerRadius = 8;
     _placeDay.layer.cornerRadius = 8;
     _deliveryAdd.layer.cornerRadius = 8;
@@ -46,7 +61,6 @@
     _totalPrice.layer.cornerRadius = 8;
     _youPaid.layer.cornerRadius = 8;
     _paymentType.layer.cornerRadius = 8;
-    _cardNum.layer.cornerRadius = 8;
     _trackBtn.layer.cornerRadius = 8;
     
     
@@ -82,14 +96,17 @@
 
     _paymentType.text = @"  Payment Type: Credit Card";
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)trackBtn:(UIButton *)sender {
+    ShipmentTrackViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ShipmentTrackViewController"];
+    
+    [[APIHandler sharedInstance] shipmentTrackWithApiKey:_apikey andUserId:_userId andOrderId:_orderId.text withCompletion:^(NSDictionary *result) {
+        ctrl.shipStatus = result;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[self navigationController] pushViewController:ctrl animated:true];
+        });
+    }];
 }
-*/
+
 
 @end
