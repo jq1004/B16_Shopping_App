@@ -1419,28 +1419,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="aUe-0a-bK0">
-                                <rect key="frame" x="0.0" y="-1024" width="414" height="1920"/>
+                                <rect key="frame" x="0.0" y="-64" width="414" height="960"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VaW-Ix-Ypx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="g2D-9Q-wrv">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for your order !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2L-PQ-YiL">
-                                            <rect key="frame" x="72" y="120" width="270.5" height="31.5"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBoldItalic" family="Avenir Next" pointSize="23"/>
-                                            <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="I2L-PQ-YiL" firstAttribute="top" secondItem="g2D-9Q-wrv" secondAttribute="top" constant="120" id="2ue-DX-a8F"/>
-                                        <constraint firstItem="I2L-PQ-YiL" firstAttribute="centerX" secondItem="g2D-9Q-wrv" secondAttribute="centerX" id="kpl-1a-F5d"/>
-                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for your order !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2L-PQ-YiL">
+                                <rect key="frame" x="72" y="118" width="270.5" height="31.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31.5" id="cJ2-zX-6HD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBoldItalic" family="Avenir Next" pointSize="23"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="IT7-dn-bKr">
                                 <rect key="frame" x="38" y="208" width="339" height="360"/>
                                 <subviews>
@@ -1549,20 +1546,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="IT7-dn-bKr" firstAttribute="top" secondItem="QVp-ue-k2X" secondAttribute="top" constant="120" id="FAJ-5e-HPQ"/>
+                            <constraint firstItem="I2L-PQ-YiL" firstAttribute="centerX" secondItem="mGh-ej-uZC" secondAttribute="centerX" id="AvS-HB-5L8"/>
                             <constraint firstItem="QVp-ue-k2X" firstAttribute="trailing" secondItem="VaW-Ix-Ypx" secondAttribute="trailing" id="S5W-aD-3jI"/>
                             <constraint firstItem="IT7-dn-bKr" firstAttribute="leading" secondItem="QVp-ue-k2X" secondAttribute="leading" constant="38" id="TA1-Pr-eIE"/>
                             <constraint firstItem="VaW-Ix-Ypx" firstAttribute="top" secondItem="mGh-ej-uZC" secondAttribute="top" id="VMI-3B-fpd"/>
-                            <constraint firstItem="IT7-dn-bKr" firstAttribute="top" secondItem="QVp-ue-k2X" secondAttribute="top" constant="120" id="W4G-xG-C2V"/>
                             <constraint firstAttribute="bottom" secondItem="aUe-0a-bK0" secondAttribute="bottom" id="aY9-9H-EzZ"/>
                             <constraint firstItem="QVp-ue-k2X" firstAttribute="trailing" secondItem="aUe-0a-bK0" secondAttribute="trailing" id="dkZ-WL-dcQ"/>
                             <constraint firstItem="VaW-Ix-Ypx" firstAttribute="leading" secondItem="QVp-ue-k2X" secondAttribute="leading" id="e3D-Nf-vno"/>
                             <constraint firstItem="bvi-sm-xxe" firstAttribute="top" secondItem="IT7-dn-bKr" secondAttribute="bottom" constant="120" id="jdc-lq-4Wy"/>
                             <constraint firstItem="aUe-0a-bK0" firstAttribute="leading" secondItem="QVp-ue-k2X" secondAttribute="leading" id="kcD-8a-sDu"/>
+                            <constraint firstItem="IT7-dn-bKr" firstAttribute="top" secondItem="I2L-PQ-YiL" secondAttribute="bottom" constant="58.5" id="n0S-Et-fs6"/>
                             <constraint firstAttribute="bottom" secondItem="VaW-Ix-Ypx" secondAttribute="bottom" id="s5K-ZJ-Shu"/>
                             <constraint firstItem="QVp-ue-k2X" firstAttribute="trailing" secondItem="IT7-dn-bKr" secondAttribute="trailing" constant="37" id="s7f-jc-sAI"/>
                             <constraint firstItem="bvi-sm-xxe" firstAttribute="leading" secondItem="IT7-dn-bKr" secondAttribute="leading" id="t8b-rV-T5w"/>
                             <constraint firstItem="bvi-sm-xxe" firstAttribute="centerX" secondItem="mGh-ej-uZC" secondAttribute="centerX" id="xmA-qg-SqE"/>
+                            <constraint firstItem="I2L-PQ-YiL" firstAttribute="top" secondItem="QVp-ue-k2X" secondAttribute="top" constant="30" id="yVn-oU-ooU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QVp-ue-k2X"/>
                     </view>
@@ -2890,19 +2888,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="appIcon" width="512" height="512"/>
-        <image name="back" width="37.5" height="37.5"/>
-        <image name="background" width="1080" height="1920"/>
-        <image name="cartIcon" width="144" height="144"/>
-        <image name="edit" width="180" height="180"/>
-        <image name="logout" width="180" height="180"/>
-        <image name="menu" width="180" height="180"/>
-        <image name="not_found" width="264" height="191"/>
-        <image name="order" width="180" height="180"/>
-        <image name="profile" width="180" height="180"/>
-        <image name="settings" width="180" height="180"/>
-        <image name="shipping" width="379" height="316"/>
-        <image name="shop" width="180" height="180"/>
+        <image name="appIcon" width="256" height="256"/>
+        <image name="back" width="25" height="25"/>
+        <image name="background" width="540" height="960"/>
+        <image name="cartIcon" width="40" height="40"/>
+        <image name="edit" width="25" height="25"/>
+        <image name="logout" width="25" height="25"/>
+        <image name="menu" width="25" height="25"/>
+        <image name="not_found" width="132" height="95"/>
+        <image name="order" width="25" height="25"/>
+        <image name="profile" width="25" height="25"/>
+        <image name="settings" width="25" height="25"/>
+        <image name="shipping" width="189" height="158"/>
+        <image name="shop" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FKI-DN-ply"/>

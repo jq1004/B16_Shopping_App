@@ -29,11 +29,11 @@
     _tblView.delegate = self;
     _tblView.dataSource = self;
     
+    _products = [[DataBaseManager sharedInstance] fetchcartWithUserId:_userId];
     [self fetchProductsInCart];
 }
 
 - (void)fetchProductsInCart {
-    _products = [[DataBaseManager sharedInstance] fetchcartWithUserId:_userId];
     if (_products.count == 0) {
         _checkOutBtn.enabled = false;
         _checkOutBtn.backgroundColor = [UIColor lightGrayColor];
@@ -41,7 +41,7 @@
         [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Empty" description:@"Continue Shopping!" type: TWMessageBarMessageTypeInfo duration:3];
     } else {
         _checkOutBtn.enabled = true;
-        _checkOutBtn.backgroundColor = [UIColor colorWithHue:0.6389 saturation:0.99 brightness:0.57 alpha:1.0]; 
+        _checkOutBtn.backgroundColor = [UIColor colorWithHue:0.6389 saturation:0.99 brightness:0.57 alpha:1.0];
         _checkOutBtn.titleLabel.textColor = [UIColor whiteColor];
         _checkOutBtn.titleLabel.textColor = [UIColor grayColor];
     }
@@ -73,6 +73,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [[DataBaseManager sharedInstance] removeProductWithUserId:_userId andProductId:_products[indexPath.row].pId];
         [_products removeObjectAtIndex:indexPath.row];
+        [self fetchProductsInCart]; 
         [_tblView reloadData];
     }
 }

@@ -76,10 +76,12 @@
 {
     OrderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.order = _orders[indexPath.row];
-    cell.trackBtn.tag = indexPath.row;
     [cell.trackBtn addTarget:self action:@selector(push:) forControlEvents:UIControlEventTouchUpInside];
     [[APIHandler sharedInstance] shipmentTrackWithApiKey:_apikey andUserId:_userId andOrderId:_orders[indexPath.row].oId withCompletion:^(NSDictionary *result) {
         cell.shipStatus = result;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.trackBtn.tag = indexPath.row;
+        });
         [self.shiparray addObject:result];
         [cell manageshipStatus];
     }];

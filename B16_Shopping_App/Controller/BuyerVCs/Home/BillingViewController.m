@@ -38,7 +38,7 @@
 }
 
 - (IBAction)placeOrderBtnTapped:(id)sender {
-    [self.view endEditing:YES]; 
+    [self.view endEditing:YES];
     if (![self.nameTextfield.text  isEqual: @""] && ![self.deliveryAddress.text  isEqual: @""] && ![self.billingAddress.text  isEqual: @""] && ![self.mobileTextfield.text  isEqual: @""] && ![self.emailTextfield.text  isEqual: @""]) {
         [self.view endEditing:YES];
         // TODO: Switch this URL to your own authenticated API
@@ -117,7 +117,7 @@
                     [SVProgressHUD dismiss];
                     OrderConfirmViewController *orderConfirmVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"OrderConfirmVC"];
                     orderConfirmVC.orderInfo = result;
-                    [self presentViewController:orderConfirmVC animated:true completion:nil];
+                    [[self navigationController] pushViewController:orderConfirmVC animated:true];
                 });
             }
             

@@ -100,7 +100,7 @@
 - (IBAction)trackBtn:(UIButton *)sender {
     ShipmentTrackViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ShipmentTrackViewController"];
     
-    [[APIHandler sharedInstance] shipmentTrackWithApiKey:_apikey andUserId:_userId andOrderId:_orderId.text withCompletion:^(NSDictionary *result) {
+    [[APIHandler sharedInstance] shipmentTrackWithApiKey:_apikey andUserId:_userId andOrderId:self.orderInfo.oId withCompletion:^(NSDictionary *result) {
         ctrl.shipStatus = result;
         dispatch_async(dispatch_get_main_queue(), ^{
             [[self navigationController] pushViewController:ctrl animated:true];
