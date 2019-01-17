@@ -88,6 +88,13 @@
     _emailTxtF.enabled = choice;
 }
 
+- (BOOL)validateEmailWithString:(NSString*)email
+{
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:email];
+}
+
 - (IBAction)updateProfileBtnClicked:(UIButton *)sender {
     
     if (sender.tag == 0) {
@@ -95,7 +102,11 @@
         sender.tag = 1;
         _cancelBtn.hidden = false;
         [self manageTxtFieldsWithChoice:true];
-    } else {
+    }
+    else if(![self.emailTxtF.text  isEqual: @""]&& ![self validateEmailWithString:self.emailTxtF.text]){
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:@"Email should be correct!" type: TWMessageBarMessageTypeError duration:5];
+    }
+    else {
         
         if (![self.fnameTxtF.text  isEqual: @""] && ![self.lnameTxtF.text  isEqual: @""] && ![self.mobileTxtF.text  isEqual: @""] && ![self.emailTxtF.text  isEqual: @""])
         {

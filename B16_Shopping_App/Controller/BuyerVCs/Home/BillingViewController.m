@@ -37,9 +37,30 @@
     [self.emailTextfield resignFirstResponder];
 }
 
+- (BOOL)validatePhoneWithString:(NSString *)phoneNumber
+{
+    NSString *phoneRegex = @"^[0-9]{6,14}$";
+    NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phoneRegex];
+    
+    return [phoneTest evaluateWithObject:phoneNumber];
+}
+- (BOOL)validateEmailWithString:(NSString*)email
+{
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:email];
+}
+
 - (IBAction)placeOrderBtnTapped:(id)sender {
     [self.view endEditing:YES];
-    if (![self.nameTextfield.text  isEqual: @""] && ![self.deliveryAddress.text  isEqual: @""] && ![self.billingAddress.text  isEqual: @""] && ![self.mobileTextfield.text  isEqual: @""] && ![self.emailTextfield.text  isEqual: @""]) {
+    if(![self.emailTextfield.text  isEqual: @""]&&![self validateEmailWithString:self.emailTextfield.text]){
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:@"Please use the correct email!" type: TWMessageBarMessageTypeError duration:3];
+    }
+    else if(![self.mobileTextfield.text  isEqual: @""]&&![self validatePhoneWithString:self.mobileTextfield.text]){
+         [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:@"Please use correct mobile number !" type: TWMessageBarMessageTypeError duration:3];
+    }
+    
+    else if (![self.nameTextfield.text  isEqual: @""] && ![self.deliveryAddress.text  isEqual: @""] && ![self.billingAddress.text  isEqual: @""] && ![self.mobileTextfield.text  isEqual: @""] && ![self.emailTextfield.text  isEqual: @""]) {
         [self.view endEditing:YES];
         // TODO: Switch this URL to your own authenticated API
         NSURL *clientTokenURL = [NSURL URLWithString:@"http://localhost:4567/client_token"];
