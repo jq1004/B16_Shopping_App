@@ -38,6 +38,7 @@
 
 - (IBAction)placeOrderBtnTapped:(id)sender {
     if (![self.nameTextfield.text  isEqual: @""] && ![self.deliveryAddress.text  isEqual: @""] && ![self.billingAddress.text  isEqual: @""] && ![self.mobileTextfield.text  isEqual: @""] && ![self.emailTextfield.text  isEqual: @""]) {
+        [self.view endEditing:YES];
         // TODO: Switch this URL to your own authenticated API
         NSURL *clientTokenURL = [NSURL URLWithString:@"http://localhost:4567/client_token"];
         NSMutableURLRequest *clientTokenRequest = [NSMutableURLRequest requestWithURL:clientTokenURL];
