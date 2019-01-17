@@ -1,14 +1,9 @@
 PODS:
-  - Braintree/Apple-Pay (4.20.2):
-    - Braintree/Core
   - Braintree/Card (4.20.2):
     - Braintree/Core
   - Braintree/Core (4.20.2)
   - Braintree/PaymentFlow (4.20.2):
     - Braintree/Card
-    - Braintree/Core
-    - Braintree/PayPalOneTouch
-  - Braintree/PayPal (4.20.2):
     - Braintree/Core
     - Braintree/PayPalOneTouch
   - Braintree/PayPalDataCollector (4.20.2):
@@ -22,9 +17,6 @@ PODS:
   - Braintree/UnionPay (4.20.2):
     - Braintree/Card
     - Braintree/Core
-  - Braintree/Venmo (4.20.2):
-    - Braintree/Core
-    - Braintree/PayPalDataCollector
   - BraintreeDropIn (6.5.0):
     - BraintreeDropIn/DropIn (= 6.5.0)
   - BraintreeDropIn/DropIn (6.5.0):
@@ -39,9 +31,6 @@ PODS:
   - TWMessageBarManager (1.8.1)
 
 DEPENDENCIES:
-  - Braintree/Apple-Pay
-  - Braintree/PayPal
-  - Braintree/Venmo
   - BraintreeDropIn
   - SVProgressHUD (~> 2.2)
   - SWRevealViewController (~> 2.3)
@@ -62,6 +51,6 @@ SPEC CHECKSUMS:
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
 
-PODFILE CHECKSUM: 8518732ee04fd7527349acba7cf8be3fbd4b4cb5
+PODFILE CHECKSUM: 13ff8aed22a2b7761f385ed1f9195963add2a162
 
 COCOAPODS: 1.5.3

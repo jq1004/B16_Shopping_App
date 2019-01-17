@@ -68,14 +68,14 @@
 }
 
 - (IBAction)forgotPwdBtnTapped:(id)sender {
-    NSString *phone = _phoneText.text;
-    [[APIHandler sharedInstance] forgetPwdApiCall:phone withCompletion:^(NSError *error) {
-        if (error == nil) {
-            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:FORGOTPWDSUCCESS type: TWMessageBarMessageTypeSuccess duration:3];
-        } else {
-            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:FORGOTPWDFAILURE type: TWMessageBarMessageTypeError duration:3];
-        }
-    }];
+//    NSString *phone = _phoneText.text;
+//    [[APIHandler sharedInstance] forgetPwdApiCall:phone withCompletion:^(NSError *error) {
+//        if (error == nil) {
+//            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:FORGOTPWDSUCCESS type: TWMessageBarMessageTypeSuccess duration:3];
+//        } else {
+//            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:FORGOTPWDFAILURE type: TWMessageBarMessageTypeError duration:3];
+//        }
+//    }];
 }
 
 @end

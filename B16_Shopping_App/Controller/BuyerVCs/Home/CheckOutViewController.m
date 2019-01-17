@@ -16,6 +16,7 @@
 #import "TWMessageBarManager.h"
 
 @interface CheckOutViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tbView;
 
 @property (weak, nonatomic) IBOutlet UIButton *applyCouponBtn;
 
@@ -75,6 +76,7 @@
     CheckoutCell *cell = [tableView dequeueReusableCellWithIdentifier:@"checkoutCustomCell"];
     cell.product = _products[indexPath.row];
     cell.qtyTextField.text = _qtys[_products[indexPath.row].pId];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     return cell;
 }
 
