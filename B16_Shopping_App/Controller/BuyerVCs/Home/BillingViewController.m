@@ -12,6 +12,7 @@
 #import "OrderConfirmViewController.h"
 #import "APIHandler.h"
 #import "APIParser.h"
+#import "DataBaseManager.h"
 
 @interface BillingViewController ()
 
@@ -38,6 +39,7 @@
 
 - (IBAction)placeOrderBtnTapped:(id)sender {
     if (![self.nameTextfield.text  isEqual: @""] && ![self.deliveryAddress.text  isEqual: @""] && ![self.billingAddress.text  isEqual: @""] && ![self.mobileTextfield.text  isEqual: @""] && ![self.emailTextfield.text  isEqual: @""]) {
+        [self.view endEditing:YES];
         // TODO: Switch this URL to your own authenticated API
         NSURL *clientTokenURL = [NSURL URLWithString:@"http://localhost:4567/client_token"];
         NSMutableURLRequest *clientTokenRequest = [NSMutableURLRequest requestWithURL:clientTokenURL];
@@ -71,7 +73,6 @@
             // result.paymentDescription
             [self postNonceToServer:@"fake-valid-nonce"];
         }
-        [SVProgressHUD show];
         [controller dismissViewControllerAnimated:true completion:nil];
     }];
     [self presentViewController:dropIn animated:YES completion:nil];
@@ -79,6 +80,7 @@
 
 - (void)postNonceToServer:(NSString *)paymentMethodNonce {
     // Update URL with your server
+    [SVProgressHUD show];
     NSURL *paymentURL = [NSURL URLWithString:@"http://localhost:4567/checkouts"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:paymentURL];
     request.HTTPBody = [[NSString stringWithFormat:@"payment_method_nonce=%@&amount=%d", paymentMethodNonce, self.total] dataUsingEncoding:NSUTF8StringEncoding];
@@ -87,6 +89,7 @@
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         // TODO: Handle success and failure
         if (error == nil) {
+            [[DataBaseManager sharedInstance] removeProductsWithUserId:[[NSUserDefaults standardUserDefaults] stringForKey:@"userId"]]; 
             [self generateOrder];
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
