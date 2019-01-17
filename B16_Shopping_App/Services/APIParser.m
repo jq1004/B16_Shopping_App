@@ -158,4 +158,21 @@
     }
 }
 
+- (NSMutableArray*)orderHistoryParserWithData :(NSDictionary *)orderhistory
+{
+    NSArray<NSDictionary*> *orderHistory = orderhistory[@"Order history"];
+    NSMutableArray<OrderInfo*> *orders = [[NSMutableArray alloc]init];
+    for (NSDictionary *order in orderHistory) {
+        OrderInfo *orderItem = [[OrderInfo alloc] initWithInfo:order[@"orderid"] andOrderName:order[@"name"] andOrderBillingadd:order[@"billingadd"] andOrderDeliveryadd:order[@"deliveryadd"] andOrderMobile:order[@"mobile"] andOrderItemname:order[@"itemname"] andOrderTotalprice:order[@"totalprice"] andPaidprice:order[@"paidprice"] andOrderPlacedone:order[@"placedon"]];
+        [orders addObject:orderItem];
+    }
+    return orders;
+}
+
+- (NSDictionary*)shipStatusWithData :(NSDictionary *)shipStatus
+{
+    NSArray<NSDictionary*> *ship = shipStatus[@"Shipment track"];
+    return ship[0];
+}
+
 @end

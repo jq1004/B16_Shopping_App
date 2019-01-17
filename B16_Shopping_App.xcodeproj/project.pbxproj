@@ -23,6 +23,8 @@
 		B9BAEEBB21EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9BAEEB921EA5A24009D2C7C /* B16_Shopping_App.xcdatamodeld */; };
 		B9BAEEBE21EA5A7C009D2C7C /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BAEEBD21EA5A7C009D2C7C /* DataBaseManager.m */; };
 		B9DD75D821EE90D800DC0770 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DD75D721EE90D800DC0770 /* SettingsViewController.m */; };
+		B9DD75DF21EFC9C400DC0770 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DD75DE21EFC9C400DC0770 /* OrderCell.m */; };
+		B9DD75E221EFE7F800DC0770 /* ShipmentTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DD75E121EFE7F800DC0770 /* ShipmentTrackViewController.m */; };
 		B9EFD29521EBE8EA00574DCC /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EFD29421EBE8EA00574DCC /* ResetPasswordViewController.m */; };
 		B9EFD29821ED1EA700574DCC /* SubCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EFD29721ED1EA700574DCC /* SubCategoryViewController.m */; };
 		B9EFD29B21ED1F6A00574DCC /* SubCategoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EFD29A21ED1F6A00574DCC /* SubCategoryInfo.m */; };
@@ -78,6 +80,10 @@
 		B9BAEEBD21EA5A7C009D2C7C /* DataBaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
 		B9DD75D721EE90D800DC0770 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B9DD75D921EE916500DC0770 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		B9DD75DD21EFC9B600DC0770 /* OrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderCell.h; sourceTree = "<group>"; };
+		B9DD75DE21EFC9C400DC0770 /* OrderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderCell.m; sourceTree = "<group>"; };
+		B9DD75E021EFE7D600DC0770 /* ShipmentTrackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShipmentTrackViewController.h; sourceTree = "<group>"; };
+		B9DD75E121EFE7F800DC0770 /* ShipmentTrackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShipmentTrackViewController.m; sourceTree = "<group>"; };
 		B9EFD29321EBE8DB00574DCC /* ResetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
 		B9EFD29421EBE8EA00574DCC /* ResetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
 		B9EFD29621ED1E8D00574DCC /* SubCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubCategoryViewController.h; sourceTree = "<group>"; };
@@ -172,6 +178,8 @@
 				D29F447721EED92E002C69AE /* BillingViewController.m */,
 				455ED9A121EEEF1E0061C1B7 /* OrderConfirmViewController.h */,
 				455ED9A221EEEF1E0061C1B7 /* OrderConfirmViewController.m */,
+				B9DD75E021EFE7D600DC0770 /* ShipmentTrackViewController.h */,
+				B9DD75E121EFE7F800DC0770 /* ShipmentTrackViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -197,6 +205,8 @@
 				B9EFD29D21ED4A7800574DCC /* SubCategoryCell.m */,
 				D25A23AC21EE889B002997ED /* CheckoutCell.h */,
 				D25A23AD21EE889B002997ED /* CheckoutCell.m */,
+				B9DD75DD21EFC9B600DC0770 /* OrderCell.h */,
+				B9DD75DE21EFC9C400DC0770 /* OrderCell.m */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -514,6 +524,7 @@
 				45723DA621EB3E230009B90A /* ProductListCell.m in Sources */,
 				D28CF1EB21EBB11D009D66A4 /* CategoryCell.m in Sources */,
 				45D1A9A321EBDFA4006016D8 /* CheckoutProductCell.m in Sources */,
+				B9DD75DF21EFC9C400DC0770 /* OrderCell.m in Sources */,
 				454B885521E941AA00DF190F /* MyOrderViewController.m in Sources */,
 				454B885621E941AA00DF190F /* UserProfileViewController.m in Sources */,
 				454B885721E941AA00DF190F /* MenuViewController.m in Sources */,
@@ -525,6 +536,7 @@
 				B9BAEEBE21EA5A7C009D2C7C /* DataBaseManager.m in Sources */,
 				B9EFD29E21ED4A7800574DCC /* SubCategoryCell.m in Sources */,
 				B9EFD29821ED1EA700574DCC /* SubCategoryViewController.m in Sources */,
+				B9DD75E221EFE7F800DC0770 /* ShipmentTrackViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,4 +36,8 @@
 
 - (void)orderApiCall:(NSString *)apiKey andItem_id:(NSString *)item_id andItem_names:(NSString *)item_names andItem_quantity:(NSString *)item_quantity andFinal_price:(NSString *)final_price andUser_id:(NSString *)user_id andUser_name:(NSString *)user_name andBillingadd:(NSString *)billingadd andDeliveryAdd:(NSString *)deliveryadd andMobile:(NSString *)mobile andEmail:(NSString *)email withCompletion:(void (^)(NSData *result, NSError *error))block;
 
+- (void)orderHistoryWithApiKey : (NSString *)apikey andUserId:(NSString *)userId andMobile:(NSString *)mobile withCompletion:(void (^)(NSArray *result))completionHandler;
+
+-(void)shipmentTrackWithApiKey:(NSString*)apikey andUserId:(NSString*)userId andOrderId:(NSString*)orderId withCompletion:(void (^)(NSDictionary *result))completionHandler;
+
 @end

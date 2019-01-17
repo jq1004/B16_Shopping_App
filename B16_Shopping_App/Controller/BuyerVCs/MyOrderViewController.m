@@ -8,8 +8,21 @@
 
 #import "MyOrderViewController.h"
 #import "SWRevealViewController.h"
+#import "OrderCell.h"
+#import "APIHandler.h"
+#import "UserInfo.h"
+#import "DataBaseManager.h"
+#import "ShipmentTrackViewController.h"
+#import "CartViewController.h"
 
 @interface MyOrderViewController ()
+
+@property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property NSString *userId;
+@property NSString *apikey;
+@property UserInfo *user;
+@property NSDictionary *shipStatus;
+@property NSMutableArray *shiparray;
 
 @end
 
@@ -21,16 +34,74 @@
     _myBarBtn.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     // Do any additional setup after loading the view.
+    
+    _shiparray = [[NSMutableArray alloc] init];
+    
+    _tblView.delegate = self;
+    _tblView.dataSource = self;
+    _tblView.tableFooterView = [[UIView alloc] init];
+    
+    _userId = [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"];
+    _user = [[DataBaseManager sharedInstance] fetchUserInfoWithId:_userId];
+    _apikey = [[NSUserDefaults standardUserDefaults] stringForKey:@"appapikey"];
+    
+    [self fetchOrderHistory];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)fetchOrderHistory
+{
+    [SVProgressHUD show];
+    [[APIHandler sharedInstance] orderHistoryWithApiKey:_apikey andUserId:_userId andMobile:[_user valueForKey:@"mobile"][0] withCompletion:^(NSArray *result) {
+        if (result != nil) {
+            self.orders = result;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tblView reloadData];
+                [SVProgressHUD dismiss];
+            });
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Info" description:@"No Data" type: TWMessageBarMessageTypeInfo duration:5];
+                [SVProgressHUD dismiss];
+            });
+        }
+    }];
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _orders.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    OrderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.order = _orders[indexPath.row];
+    cell.trackBtn.tag = indexPath.row;
+    [cell.trackBtn addTarget:self action:@selector(push:) forControlEvents:UIControlEventTouchUpInside];
+    [[APIHandler sharedInstance] shipmentTrackWithApiKey:_apikey andUserId:_userId andOrderId:_orders[indexPath.row].oId withCompletion:^(NSDictionary *result) {
+        cell.shipStatus = result;
+        [self.shiparray addObject:result];
+        [cell manageshipStatus];
+    }];
+   return cell;
+}
+
+- (void)push :(UIButton *) sender
+{
+    ShipmentTrackViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ShipmentTrackViewController"];
+    ctrl.shipStatus = _shiparray[sender.tag];
+    [[self navigationController] pushViewController:ctrl animated:true];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 87;
+}
+
+- (IBAction)cartBtn:(UIBarButtonItem *)sender {
+    CartViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CartViewController"];
+    [[self navigationController] pushViewController:ctrl animated:true];
+}
+
 
 @end

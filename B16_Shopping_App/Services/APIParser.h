@@ -32,4 +32,8 @@
 
 - (void)orderParser:(NSData *)orderInfo andError:(NSError *)error withCompletion:(void (^)(Boolean *hasError, OrderInfo * result))block;
 
+- (NSMutableArray*)orderHistoryParserWithData :(NSDictionary *)orderhistory;
+
+- (NSDictionary*)shipStatusWithData :(NSDictionary *)shipStatus;
+
 @end

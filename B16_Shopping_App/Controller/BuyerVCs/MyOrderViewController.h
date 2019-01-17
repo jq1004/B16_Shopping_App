@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OrderInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MyOrderViewController : UIViewController
+@interface MyOrderViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *myBarBtn;
+@property NSArray<OrderInfo*> *orders;
 
 @end
 

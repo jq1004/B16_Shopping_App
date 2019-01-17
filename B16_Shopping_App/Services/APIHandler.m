@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "APIHandler.h"
+#import "APIParser.h"
 
 @interface APIHandler()
 
@@ -218,5 +219,46 @@
     }];
     [dataTask resume];
 }
+
+- (void)orderHistoryWithApiKey : (NSString *)apikey andUserId:(NSString *)userId andMobile:(NSString *)mobile withCompletion:(void (^)(NSArray *result))completionHandler
+{
+    NSString *strURL = [NSString stringWithFormat:@"%@api_key=%@&user_id=%@&mobile=%@", kORDERHISTORY,apikey, userId, mobile];
+    NSURL *url = [NSURL URLWithString:strURL];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error == nil && data != nil) {
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSMutableArray *response = [[APIParser sharedInstance] orderHistoryParserWithData:json];
+            completionHandler(response);
+        } else {
+            completionHandler(nil);
+        }
+    }];
+    [dataTask resume];
+}
+
+-(void)shipmentTrackWithApiKey:(NSString*)apikey andUserId:(NSString*)userId andOrderId:(NSString*)orderId withCompletion:(void (^)(NSDictionary *result))completionHandler
+{
+    NSString *strURL = [NSString stringWithFormat:@"%@api_key=%@&user_id=%@&order_id=%@", kSHIPMENTTRACKAPI,apikey, userId, orderId];
+    NSURL *url = [NSURL URLWithString:strURL];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error == nil && data != nil) {
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSDictionary *response = [[APIParser sharedInstance] shipStatusWithData:json];
+            completionHandler(response);
+        } else {
+            completionHandler(nil);
+        }
+    }];
+    [dataTask resume];
+}
+
 @end
 

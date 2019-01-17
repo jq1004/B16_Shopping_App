@@ -114,5 +114,10 @@
     [[self navigationController] pushViewController:ctrl animated:true];
 }
 
+- (IBAction)backBtn:(UIBarButtonItem *)sender {
+    [[self navigationController] popViewControllerAnimated:true];
+}
+
+
 
 @end
