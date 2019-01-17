@@ -12,6 +12,7 @@
 #import "OrderConfirmViewController.h"
 #import "APIHandler.h"
 #import "APIParser.h"
+#import "DataBaseManager.h"
 
 @interface BillingViewController ()
 
@@ -88,6 +89,7 @@
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         // TODO: Handle success and failure
         if (error == nil) {
+            [[DataBaseManager sharedInstance] removeProductsWithUserId:[[NSUserDefaults standardUserDefaults] stringForKey:@"userId"]]; 
             [self generateOrder];
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
