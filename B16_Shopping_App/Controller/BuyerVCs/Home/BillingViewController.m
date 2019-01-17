@@ -71,7 +71,6 @@
             // result.paymentDescription
             [self postNonceToServer:@"fake-valid-nonce"];
         }
-        [SVProgressHUD show];
         [controller dismissViewControllerAnimated:true completion:nil];
     }];
     [self presentViewController:dropIn animated:YES completion:nil];
@@ -79,6 +78,7 @@
 
 - (void)postNonceToServer:(NSString *)paymentMethodNonce {
     // Update URL with your server
+    [SVProgressHUD show];
     NSURL *paymentURL = [NSURL URLWithString:@"http://localhost:4567/checkouts"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:paymentURL];
     request.HTTPBody = [[NSString stringWithFormat:@"payment_method_nonce=%@&amount=%d", paymentMethodNonce, self.total] dataUsingEncoding:NSUTF8StringEncoding];
