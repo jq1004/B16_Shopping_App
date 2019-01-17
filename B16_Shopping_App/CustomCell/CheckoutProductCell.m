@@ -30,6 +30,7 @@
     if ([_product.pQuantity isEqual:@"1"]) {
         _plusBtn.enabled = false;
     }
+    _minusBtn.enabled = false;
     
     _productName.text = _product.pName;
     _productPrice.text = _product.pPrice;
@@ -78,7 +79,7 @@
         _plusBtn.enabled = true;
     }
     
-    if (qtyEntered+1 < 1) {
+    if (qtyEntered+1 <= 1) {
         _minusBtn.enabled = false;
     } else {
         _minusBtn.enabled = true;
@@ -92,7 +93,7 @@
     _qtyTxtF.text = [NSString stringWithFormat:@"%d", qtyEntered-1];
     _qty = _qtyTxtF.text; 
     
-    if (qtyEntered-1 < 1) {
+    if (qtyEntered-1 <= 1) {
         _minusBtn.enabled = false;
     } else {
         _minusBtn.enabled = true;

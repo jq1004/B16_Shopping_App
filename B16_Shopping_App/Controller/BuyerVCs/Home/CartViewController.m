@@ -71,10 +71,19 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [[DataBaseManager sharedInstance] removeProductWithUserId:_userId andProductId:_products[indexPath.row].pId];
-        [_products removeObjectAtIndex:indexPath.row];
-        [self fetchProductsInCart]; 
-        [_tblView reloadData];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Delete" message:@"Are you sure?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction *alertAction2 = [UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            [[DataBaseManager sharedInstance] removeProductWithUserId:self.userId andProductId:self.products[indexPath.row].pId];
+            [self.products removeObjectAtIndex:indexPath.row];
+            [self fetchProductsInCart];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tblView reloadData];
+            });
+        }];
+        [alertController addAction:alertAction];
+        [alertController addAction:alertAction2];
+        [self presentViewController:alertController animated:true completion:nil];
     }
 }
 
