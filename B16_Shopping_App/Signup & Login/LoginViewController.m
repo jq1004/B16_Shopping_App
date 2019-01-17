@@ -35,17 +35,17 @@
     
     if (![phone isEqual:@""] && ![pwd isEqual:@""]) {
         [[APIHandler sharedInstance] loginApiCall:phone password:pwd withCompletion:^(NSData* result, NSError* error) {
-            [[APIParser sharedInstance] loginParser:result andError:error withCompletion:^(Boolean *hasError) {
+            [[APIParser sharedInstance] loginParser:result andError:error withCompletion:^(bool hasError, NSString *errorMsg) {
                 if (hasError) {
-                    [self showAlert:@"Login Failed" andMsg:@"Please try again later."];
+//                    [self showAlert:LOGINFAILURE andMsg:errorMsg];
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
-                        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:@"Some problem occured. Please try again later!" type: TWMessageBarMessageTypeError duration:5];
+                        [[TWMessageBarManager sharedInstance] showMessageWithTitle:LOGINFAILURE description:errorMsg type: TWMessageBarMessageTypeError duration:3];
                     });
                 } else {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
-                        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:@"Logged in successfully" type: TWMessageBarMessageTypeSuccess duration:5];
+                        [[TWMessageBarManager sharedInstance] showMessageWithTitle:LOGINSUCCESS description:@"" type: TWMessageBarMessageTypeSuccess duration:3];
                         
                         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                         SWRevealViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"SWRevealVC"];
@@ -56,13 +56,13 @@
             }];
         }];
     } else {
-        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:@"Please fill in all required fields!" type: TWMessageBarMessageTypeError duration:5];
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:TEXTFIELDINPUTERROR type: TWMessageBarMessageTypeError duration:3];
     }
 }
 
 - (IBAction)goToSignUpPageBtnTapped:(id)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    SignUpViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"SignUpVC"];
+//    UIStoryboard *storyboard = kMainStoryboard;
+    SignUpViewController *controller = [kMainStoryboard instantiateViewControllerWithIdentifier:@"SignUpVC"];
     
     [self presentViewController:controller animated:true completion:nil];
 }
@@ -71,9 +71,9 @@
     NSString *phone = _phoneText.text;
     [[APIHandler sharedInstance] forgetPwdApiCall:phone withCompletion:^(NSError *error) {
         if (error == nil) {
-            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:@"A password reset email have been sent successfully!" type: TWMessageBarMessageTypeSuccess duration:5];
+            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:FORGOTPWDSUCCESS type: TWMessageBarMessageTypeSuccess duration:3];
         } else {
-            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:@"Something went wrong, Please try again later!" type: TWMessageBarMessageTypeError duration:5];
+            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Error" description:FORGOTPWDFAILURE type: TWMessageBarMessageTypeError duration:3];
         }
     }];
 }

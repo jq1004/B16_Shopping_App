@@ -9,6 +9,7 @@
 #ifndef B16_Shopping_App_Constants_h
 #define B16_Shopping_App_Constants_h
 
+<<<<<<< HEAD
 #define kLOGINAPI @"http://rjtmobile.com/aamir/e-commerce/ios-app/shop_login.php?"
 #define kFORGETPWDAPI @"http://rjtmobile.com/aamir/e-commerce/ios-app/forgot_pass_email.php?"
 #define KSIGNUPAPI @"http://rjtmobile.com/aamir/e-commerce/ios-app/shop_reg.php?"
@@ -22,6 +23,7 @@
 #define kORDERAPI @"http://rjtmobile.com/aamir/e-commerce/ios-app/orders.php?"
 #define kORDERHISTORY @"http://rjtmobile.com/aamir/e-commerce/ios-app/order_history.php?"
 #define kSHIPMENTTRACKAPI @"http://rjtmobile.com/aamir/e-commerce/ios-app/shipment_track.php?"
+=======
 // API constants
 #define kLOGINAPI               @"http://rjtmobile.com/aamir/e-commerce/ios-app/shop_login.php?"
 #define kFORGETPWDAPI           @"http://rjtmobile.com/aamir/e-commerce/ios-app/forgot_pass_email.php?"
@@ -47,5 +49,6 @@
 #define FORGOTPWDFAILURE        @"Something went wrong, Please try again later!"
 
 #define kMainStoryboard         [UIStoryboard storyboardWithName:@"Main" bundle:nil]
+>>>>>>> 7e2a2db206a34c83eafd3e81e578612e273c7a47
 
 #endif /* B16_Shopping_App_Constants_h */

@@ -49,14 +49,38 @@
     _cardNum.layer.cornerRadius = 8;
     _trackBtn.layer.cornerRadius = 8;
     
-//    _orderId.text = self.orderInfo.oId;
-    [_orderId setText:self.orderInfo.oId];
-    _placeDay.text = self.orderInfo.oPlacedon;
-    _deliveryAdd.text = self.orderInfo.oDeliveryadd;
-    _phoneNum.text = self.orderInfo.oMobile;
-    _totalPrice.text = self.orderInfo.oTotalprice;
-    _youPaid.text = self.orderInfo.oPaidprice;
-    _paymentType.text = @"Credit Card";
+    
+    NSMutableString *orderView = [NSMutableString string];
+    [orderView appendString:@"  OrderId: "];
+    [orderView appendString:self.orderInfo.oId];
+    _orderId.text =  orderView;
+    
+    NSMutableString *placeDateView = [NSMutableString string];
+    [placeDateView appendString:@"  Placed on: "];
+    [placeDateView appendString:self.orderInfo.oPlacedon];
+    _placeDay.text = placeDateView;
+    
+    NSMutableString *deliveryAddressView = [NSMutableString string];
+    [deliveryAddressView appendString:@"  Delivery Address: "];
+    [deliveryAddressView appendString:self.orderInfo.oDeliveryadd];
+    _deliveryAdd.text = deliveryAddressView;
+    
+    NSMutableString *phoneNumView = [NSMutableString string];
+    [phoneNumView appendString:@"  Phone Number: "];
+    [phoneNumView appendString:self.orderInfo.oMobile];
+    _phoneNum.text = phoneNumView;
+    
+    NSMutableString *totalPriceView = [NSMutableString string];
+    [totalPriceView appendString:@"  Total Price: "];
+    [totalPriceView appendString:self.orderInfo.oTotalprice];
+    _totalPrice.text = totalPriceView;
+    
+    NSMutableString *youPaidView = [NSMutableString string];
+    [youPaidView appendString:@"  You Paid: "];
+    [youPaidView appendString:self.orderInfo.oPaidprice];
+    _youPaid.text = youPaidView;
+
+    _paymentType.text = @"  Payment Type: Credit Card";
 }
 /*
 #pragma mark - Navigation

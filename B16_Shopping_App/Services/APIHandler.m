@@ -33,7 +33,7 @@
 - (void)signUpUserWithFirstName:(NSString *)fname lastName:(NSString *)lname address:(NSString *)address password:(NSString *)password email:(NSString *)email mobile:(NSString *)mobile completionHandler:(void (^) (NSString *response))completionHandler
 {
     
-    NSString *urlstring = [NSString stringWithFormat:@"%@fname=%@&lname=%@&address=%@&email=%@&mobile=%@&password=%@",KSIGNUPAPI,fname,lname,address,email,mobile,password];
+    NSString *urlstring = [NSString stringWithFormat:@"%@fname=%@&lname=%@&address=%@&email=%@&mobile=%@&password=%@",kSIGNUPAPI,fname,lname,address,email,mobile,password];
 
     
     NSURL *serviceUrl = [NSURL URLWithString: urlstring];
@@ -57,7 +57,7 @@
 - (void)updateProfileUserWithFirstName:(NSString *)fname lastName:(NSString *)lname email:(NSString *)email mobile:(NSString *)mobile completionHandler:(void (^) (NSString *response))completionHandler
 {
     
-    NSString *urlstring = [NSString stringWithFormat:@"%@fname=%@&lname=%@&address=address&email=%@&mobile=%@",KUPDATEPROFILEAPI,fname,lname,email,mobile];
+    NSString *urlstring = [NSString stringWithFormat:@"%@fname=%@&lname=%@&address=address&email=%@&mobile=%@",kUPDATEPROFILEAPI,fname,lname,email,mobile];
     
     
     NSURL *serviceUrl = [NSURL URLWithString: urlstring];
@@ -106,7 +106,7 @@
 - (void)resetUserPasswordWithMobile: (NSString *)mobile oldPassword:(NSString *)oldPassword newPassword:(NSString *)newPassword completionHandler:(void (^) (NSString *response))completionHandler
 {
     
-    NSString *urlString = [NSString stringWithFormat:@"%@mobile=%@&password=%@&newpassword=%@",KRESETPASSWORDAPI,mobile,oldPassword,newPassword];
+    NSString *urlString = [NSString stringWithFormat:@"%@mobile=%@&password=%@&newpassword=%@",kRESETPASSWORDAPI,mobile,oldPassword,newPassword];
     
     NSURL *url = [NSURL URLWithString:urlString];
     
